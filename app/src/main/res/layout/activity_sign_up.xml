@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".Activities.SignUpActivity">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:src="@drawable/ic_upldpi"
+        />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:layout_below="@+id/iv_icon"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorText"
+        />
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_username"
+        android:singleLine="true"
+        android:layout_marginTop="16dp"
+        android:inputType="textPersonName"
+        android:textSize="22sp"
+        android:padding="6dp"
+        android:textColor="@color/colorText"
+        android:background="@color/colorGray"
+        />
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:layout_below="@+id/et_username"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorText"
+        />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_password"
+        android:singleLine="true"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:inputType="textPassword"
+        android:padding="6dp"
+        android:textColor="@color/colorText"
+        android:background="@color/colorGray"
+        />
+
+    <TextView
+        android:id="@+id/tv_confirm_password"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm Password"
+        android:layout_below="@+id/et_password"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorText"
+        />
+
+    <EditText
+        android:id="@+id/et_confirm_password"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_confirm_password"
+        android:singleLine="true"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:inputType="textPassword"
+        android:padding="6dp"
+        android:textColor="@color/colorText"
+        android:background="@color/colorGray"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_matricol"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Matricol number"
+        android:layout_below="@+id/et_confirm_password"
+        android:layout_marginTop="16dp"
+        android:textSize="18sp"
+        android:textColor="@color/colorText"
+        />
+
+    <EditText
+        android:id="@+id/et_matricol"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_matricol"
+        android:singleLine="true"
+        android:layout_marginTop="16dp"
+        android:textSize="22sp"
+        android:inputType="textPassword"
+        android:padding="6dp"
+        android:textColor="@color/colorText"
+        android:background="@color/colorGray"
+        />
+
+    <Button
+        android:id="@+id/btn_signin"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_matricol"
+        android:layout_marginTop="32dp"
+        android:textSize="24sp"
+        android:text="Create account"
+        android:padding="6dp"
+        android:textAllCaps="false"
+        android:textColor="@color/colorText"
+        android:background="@color/colorYellow"
+        android:layout_marginBottom="20dp"
+        />
+
+</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
