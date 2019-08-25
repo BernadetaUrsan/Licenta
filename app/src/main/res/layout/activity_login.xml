@@ -91,6 +91,7 @@
             android:textAllCaps="false"
             android:textColor="@color/colorText"
             android:background="@color/colorYellow"
+            android:onClick="OnSignIn"
             />
 
         <TextView
@@ -134,6 +135,7 @@
             android:textSize="20sp"
             android:textColor="@color/colorText"
             android:layout_marginBottom="20dp"
+            android:onClick="OnSignUp"
             />
 
     </RelativeLayout>
