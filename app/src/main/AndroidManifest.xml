@@ -14,10 +14,9 @@
             android:label="@string/title_activity_home" />
         <activity android:name=".Activities.SignUpActivity" />
         <activity android:name=".Activities.EditProfileActivity" />
-        <activity android:name=".Activities.LoginActivity" />
-        <activity android:name=".Activities.ProfileActivity" />
+        <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Activities.HomeActivity">
+        <activity android:name=".Activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
