@@ -15,7 +15,7 @@
             android:id="@+id/iv_icon"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            android:src="@drawable/ic_upldpi"
+            android:src="@drawable/ic_up_background"
             android:layout_alignParentTop="true"
             />
 

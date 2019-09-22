@@ -3,6 +3,9 @@
     <color name="colorPurple">#9873f0</color>
     <color name="colorPurpleLight">#bda7bd</color>
 
+    <color name="colorPrimary">#9873f0</color>
+    <color name="colorSecondary">#f8cf57</color>
+
     <color name="colorYellow">#f8cf57</color>
     <color name="colorYellowLight">#e7cd83</color>
 
