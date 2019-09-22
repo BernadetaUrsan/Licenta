@@ -15,6 +15,6 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     public void OnSave(View view) {
-
+        this.finish();
     }
 }
