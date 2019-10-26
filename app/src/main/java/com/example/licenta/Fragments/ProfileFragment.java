@@ -13,6 +13,7 @@ import android.widget.Button;
 import com.example.licenta.Activities.EditProfileActivity;
 import com.example.licenta.Activities.LoginActivity;
 import com.example.licenta.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileFragment extends Fragment {
     private Button signOutBtn, editProfileBtn;
@@ -48,6 +49,7 @@ public class ProfileFragment extends Fragment {
     }
 
     public void OnSignOut() {
+        FirebaseAuth.getInstance().signOut();
         Intent myInt= new Intent(getActivity(), LoginActivity.class);
         startActivity(myInt);
     }

@@ -1,13 +1,14 @@
 package com.example.licenta.Activities;
 
 import android.content.Intent;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.licenta.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
 

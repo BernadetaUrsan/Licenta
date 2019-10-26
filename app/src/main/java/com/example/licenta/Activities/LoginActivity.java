@@ -5,10 +5,12 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Debug;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.licenta.BuildConfig;
 import com.example.licenta.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,6 +28,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initializeViews();
+
+        if (BuildConfig.DEBUG)
+        {
+            emailEt.setText("berna@classboard.com");
+            passwordEt.setText("cosmin");
+        }
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
