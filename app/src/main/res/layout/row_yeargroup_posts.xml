@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFEEFF">
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="26.10.2019"
+            android:textColor="@color/colorText"
+            />
+
+        <TextView
+            android:id="@+id/tv_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"
+            android:layout_below="@+id/tv_date"
+            android:text="22:11"
+            android:textColor="@color/colorText"
+            />
+
+        <TextView
+            android:id="@+id/tv_title_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true"
+            android:text="Plata restante"
+            android:textColor="@color/colorText"
+            />
+
+        <TextView
+            android:id="@+id/tv_text_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true"
+            android:text="la secretariat pana in 30 octombire (inclusiv). Orarul secretariatului il gasiti la orare sau pe facebook. Daca nu platiti veti fi pusi pe lista de propusi spre exmatriculare. Dupa, se va adauga ceva la suma si abia atunci daca nu platiti veti ajunge exmatriculati. asjflajfleijfiejdngnsi neignidng ein gidn igndkngein giengdngke"
+            android:layout_below="@+id/tv_title_subject"
+            android:textColor="@color/colorText"
+            android:layout_marginBottom="20dp"
+            />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
