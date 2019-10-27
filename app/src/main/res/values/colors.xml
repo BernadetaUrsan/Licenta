@@ -12,5 +12,6 @@
     <color name="colorText">#231f20</color>
     <color name="colorGray">#d9d1e5</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorToolbar">#f8cf57</color>
 
 </resources>

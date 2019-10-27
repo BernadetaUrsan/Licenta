@@ -1,22 +1,18 @@
 package com.example.licenta.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
-import android.telephony.mbms.MbmsErrors;
-import android.widget.Adapter;
 
 import com.example.licenta.Adapters.YearPostsAdapter;
 import com.example.licenta.Models.YearPosts;
 import com.example.licenta.R;
 
-import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
-public class YearGroupActivity extends AppCompatActivity {
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class YearGroupActivity extends BaseActivity {
 
     private YearPostsAdapter yearPostsAdapter;
     private List<YearPosts> postsList;
@@ -26,6 +22,7 @@ public class YearGroupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_year_group);
+        super.setToolbarTitle("Year Group");
         initializeViews();
 
         postsList = new ArrayList<>();
