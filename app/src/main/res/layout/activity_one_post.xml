@@ -8,85 +8,72 @@
 
     <include layout="@layout/toolbar_with_back_button"/>
 
-    <RelativeLayout
-        android:id="@+id/rl_post"
-        android:layout_width="match_parent"
-        android:layout_height="310dp"
-        android:layout_below="@+id/toolbar_with_back_button"
-        android:background="@color/colorPurpleLight">
-        <TextView
-            android:id="@+id/tv_title_subject"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_with_back_button">
+        <RelativeLayout
+            android:id="@+id/rl_post"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:text="Subiect"
-            android:textColor="@color/colorText"
-            android:textSize="24sp"
-            android:textStyle="bold"/>
-        <TextView
-            android:id="@+id/tv_text_subject"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_title_subject"
-            android:textSize="14sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:textColor="@color/colorText"
-            android:text="orice vreau eu bla bla"
-            />
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_title_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:text="Subiect"
+                android:textColor="@color/colorText"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tv_text_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title_subject"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/colorText"
+                android:text="orice vreau eu bla bla"
+                />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comments"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorText"
+                android:layout_below="@+id/tv_text_subject"
+                />
 
-    <RelativeLayout
-        android:id="@+id/rl_comments"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_below="@+id/rl_post"
-        android:background="@color/colorYellowLight">
+            <TextView
+                android:id="@+id/tv_text_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:textSize="14sp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/colorText"
+                android:text="trebuie sa inplementez o lista: numele persoanei si ce anume a zis"
+                />
 
-        <TextView
-            android:id="@+id/tv_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Comments"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorText"
-            />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 
-        <TextView
-            android:id="@+id/tv_text_comment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_name"
-            android:textSize="14sp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="20dp"
-            android:textColor="@color/colorText"
-            android:text="trebuie sa inplementez o lista: numele persoanei si ce anume a zis"
-            />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@+id/rl_comments"
-        android:background="@color/colorPurple"
-        >
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/colorPurple"
-            android:text="Add a commnent"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:textColor="@color/colorText"
-            />
-
-    </RelativeLayout>
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/colorPurpleLight"
+        android:src="@drawable/ic_add2"
+        android:layout_margin="20dp"
+        app:fabSize="normal"
+        />
 </RelativeLayout>
