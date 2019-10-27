@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activities.LoginActivity"/>
         <activity android:name=".Activities.YearGroupActivity" />
         <activity
             android:name=".Activities.SplashActivity"
@@ -17,7 +18,7 @@
         <activity android:name=".Activities.EditProfileActivity" />
         <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Activities.LoginActivity">
+        <activity android:name=".Activities.ScoreActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
