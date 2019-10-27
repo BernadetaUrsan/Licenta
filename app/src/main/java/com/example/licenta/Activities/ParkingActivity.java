@@ -29,7 +29,13 @@ public class ParkingActivity extends BaseActivity {
 
         postsList = new ArrayList<>();
         postsList.add(new YearPosts("Politie","la aspc","26.10.2019","21:14"));
-        postsList.add(new YearPosts("Blocat masina","TM 13 BAU","14.10.2019","23:01"));
+        postsList.add(new YearPosts("Blocat masina","TM 13 BAU","13.10.2019","23:01"));
+        postsList.add(new YearPosts("Blocat masina","TM 12 BAU","12.10.2019","23:01"));
+        postsList.add(new YearPosts("Blocat masina","TM 11 BAU","11.10.2019","23:01"));
+        postsList.add(new YearPosts("Blocat masina","TM 15 BAU","4.10.2019","23:01"));
+        postsList.add(new YearPosts("Blocat masina","TM 16 BAU","4.10.2019","23:01"));
+        postsList.add(new YearPosts("Politie","la constructii","26.10.2019","21:14"));
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         parkingsAdapter = new YearPostsAdapter(postsList, getApplicationContext());
