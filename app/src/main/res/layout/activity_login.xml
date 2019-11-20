@@ -122,6 +122,7 @@
             android:textColor="@color/colorText"
             />
 
+
         <TextView
             android:id="@+id/tv_signup"
             android:layout_marginStart="20dp"

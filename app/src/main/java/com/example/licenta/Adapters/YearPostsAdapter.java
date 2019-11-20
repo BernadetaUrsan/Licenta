@@ -4,18 +4,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import com.example.licenta.Models.YearPosts;
+import com.example.licenta.Models.PostModel;
 import com.example.licenta.R;
+
+import java.util.Calendar;
 import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class YearPostsAdapter extends RecyclerView.Adapter<YearPostsAdapter.ViewHolder> {
 
-    private List<YearPosts> yearGroupPosts;
+    private List<PostModel> yearGroupPosts;
     private Context context;
 
-    public YearPostsAdapter(List<YearPosts> yearGroupPosts, Context context) {
+    public YearPostsAdapter(List<PostModel> yearGroupPosts, Context context) {
         this.yearGroupPosts = yearGroupPosts;
         this.context = context;
     }
@@ -34,13 +36,12 @@ public class YearPostsAdapter extends RecyclerView.Adapter<YearPostsAdapter.View
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         String title = yearGroupPosts.get(position).getTitle();
         String message = yearGroupPosts.get(position).getMessage();
-        String date = yearGroupPosts.get(position).getDate();
-        String hour = yearGroupPosts.get(position).getHour();
+        String date = yearGroupPosts.get(position).getDate().toString();
 
         holder.titleTv.setText(title);
         holder.messageTv.setText(message);
         holder.dateTv.setText(date);
-        holder.hourTv.setText(hour);
+        holder.hourTv.setText(date);
     }
 
     @Override

@@ -3,7 +3,7 @@ package com.example.licenta.Activities;
 import android.os.Bundle;
 
 import com.example.licenta.Adapters.YearPostsAdapter;
-import com.example.licenta.Models.YearPosts;
+import com.example.licenta.Models.PostModel;
 import com.example.licenta.R;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class YearGroupActivity extends BaseActivity {
 
     private YearPostsAdapter yearPostsAdapter;
-    private List<YearPosts> postsList;
+    private List<PostModel> postsList;
     private RecyclerView recyclerView;
 
     @Override
@@ -26,8 +26,7 @@ public class YearGroupActivity extends BaseActivity {
         initializeViews();
 
         postsList = new ArrayList<>();
-        postsList.add(new YearPosts("Contracte","se gasesc in sediu","26.10.2019","21:14"));
-        postsList.add(new YearPosts("Carnete","blab alafelghl","14.10.2019","23:01"));
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         yearPostsAdapter = new YearPostsAdapter(postsList,getApplicationContext());
