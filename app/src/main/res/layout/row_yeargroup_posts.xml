@@ -61,7 +61,21 @@
             android:text="la secretariat pana in 30 octombire (inclusiv). Orarul secretariatului il gasiti la orare sau pe facebook. Daca nu platiti veti fi pusi pe lista de propusi spre exmatriculare. Dupa, se va adauga ceva la suma si abia atunci daca nu platiti veti ajunge exmatriculati. asjflajfleijfiejdngnsi neignidng ein gidn igndkngein giengdngke"
             android:layout_below="@+id/tv_title_subject"
             android:textColor="@color/colorText"
+            android:maxLines="4"
             android:layout_marginBottom="20dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:layout_alignParentEnd="true"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/colorText"
+            android:layout_below="@id/tv_text_subject"
             />
 
     </RelativeLayout>

@@ -37,11 +37,13 @@ public class YearPostsAdapter extends RecyclerView.Adapter<YearPostsAdapter.View
         String title = yearGroupPosts.get(position).getTitle();
         String message = yearGroupPosts.get(position).getMessage();
         String date = yearGroupPosts.get(position).getDate().toString();
+        String author = yearGroupPosts.get(position).getAuthorName().toString();
 
         holder.titleTv.setText(title);
         holder.messageTv.setText(message);
-        holder.dateTv.setText(date);
-        holder.hourTv.setText(date);
+        holder.dateTv.setText(date.substring(4,10));
+        holder.hourTv.setText(date.substring(11,16));
+        holder.authorTv.setText(author);
     }
 
     @Override
@@ -55,6 +57,7 @@ public class YearPostsAdapter extends RecyclerView.Adapter<YearPostsAdapter.View
         private TextView messageTv;
         private TextView dateTv;
         private TextView hourTv;
+        private TextView authorTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,6 +70,7 @@ public class YearPostsAdapter extends RecyclerView.Adapter<YearPostsAdapter.View
             messageTv= itemView.findViewById(R.id.tv_text_subject);
             dateTv= itemView.findViewById(R.id.tv_date);
             hourTv= itemView.findViewById(R.id.tv_hour);
+            authorTv= itemView.findViewById(R.id.tv_author);
         }
     }
 }

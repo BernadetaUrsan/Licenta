@@ -2,23 +2,34 @@ package com.example.licenta.Models;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class PostModel {
+    private String id;
     private String title;
     private String message;
     private Date date;
-    private StudentModel author;
+    private String authorName;
     private List<CommentModel> comments;
 
-    public PostModel(String title, String message, Date date, StudentModel author, List<CommentModel> comments) {
+    public PostModel(String id, String title, String message, Date date, String author, List<CommentModel> comments) {
         this.title = title;
         this.message = message;
         this.date = date;
-        this.author = author;
+        this.authorName = author;
         this.comments = comments;
+        this.id = id;
     }
 
     public PostModel() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -45,12 +56,12 @@ public class PostModel {
         this.date = date;
     }
 
-    public StudentModel getAuthor() {
-        return author;
+    public String getAuthorName() {
+        return authorName;
     }
 
-    public void setAuthor(StudentModel author) {
-        this.author = author;
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
     public List<CommentModel> getComments() {

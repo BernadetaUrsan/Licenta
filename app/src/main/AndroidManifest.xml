@@ -14,7 +14,7 @@
         <activity android:name=".Activities.OnePostActivity" />
         <activity android:name=".Activities.OneScheduleActivity" />
         <activity android:name=".Activities.ParkingActivity" />
-        <activity android:name=".Activities.LoginActivity" />
+        <activity android:name=".Activities.YearGroupActivity" />
         <activity
             android:name=".Activities.SplashActivity"
             android:label="@string/title_activity_home" />
@@ -22,7 +22,7 @@
         <activity android:name=".Activities.EditProfileActivity" />
         <activity android:name=".Activities.HomeActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Activities.YearGroupActivity">
+        <activity android:name=".Activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
