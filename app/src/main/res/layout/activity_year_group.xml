@@ -42,6 +42,18 @@
                 android:layout_margin="10dp"
                 android:layout_below="@+id/tv_search"/>
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_add_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                app:fabSize="mini"
+                android:backgroundTint="@color/colorPrimary"
+                android:src="@drawable/ic_add"
+                android:layout_margin="20dp"
+                android:onClick="OnAddPost"/>
+
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
 </RelativeLayout>

@@ -1,6 +1,8 @@
 package com.example.licenta.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.licenta.Adapters.YearPostsAdapter;
 import com.example.licenta.Models.PostModel;
@@ -31,6 +33,11 @@ public class YearGroupActivity extends BaseActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         yearPostsAdapter = new YearPostsAdapter(postsList,getApplicationContext());
         recyclerView.setAdapter(yearPostsAdapter);
+    }
+
+    public void OnAddPost(View view) {
+        Intent myInt2= new Intent(YearGroupActivity.this,AddPostActivity.class);
+        startActivity(myInt2);
     }
 
     private void initializeViews(){

@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.licenta.BuildConfig;
+import com.example.licenta.Helpers.FirebaseHelper;
+import com.example.licenta.Helpers.UserHelper;
 import com.example.licenta.Models.StudentModel;
 import com.example.licenta.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,8 +20,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
@@ -71,6 +76,23 @@ public class LoginActivity extends AppCompatActivity {
 
     private void onSignInSuccesful()
     {
+        FirebaseHelper.usersDatabase.child("LO610275").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                setData(dataSnapshot.getValue(StudentModel.class));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
+
+    private void setData(StudentModel student)
+    {
+        UserHelper.Instance().setStudent(student);
         Intent myInt=new Intent(LoginActivity.this,HomeActivity.class);
         startActivity(myInt);
     }
