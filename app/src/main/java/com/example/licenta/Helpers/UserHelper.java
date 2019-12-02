@@ -26,4 +26,9 @@ public class UserHelper {
     public void setStudent(StudentModel student) {
         this.student = student;
     }
+
+    public String getFullName()
+    {
+        return  student.getSurname().concat(" ").concat(student.getName());
+    }
 }

@@ -9,19 +9,22 @@ import android.widget.EditText;
 
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Helpers.UserHelper;
+import com.example.licenta.Models.CommentModel;
 import com.example.licenta.Models.PostModel;
 import com.example.licenta.Models.StudentModel;
 import com.example.licenta.R;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 public class AddPostActivity extends BaseActivity {
-
     private PostModel post;
     private EditText titleEt;
     private EditText messageEt;
+    private List<CommentModel> comments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class AddPostActivity extends BaseActivity {
         setContentView(R.layout.activity_add_post);
         initializeViews();
         post = new PostModel();
+        comments = new ArrayList<>();
     }
 
     private void getValues(){
@@ -39,6 +43,7 @@ public class AddPostActivity extends BaseActivity {
         Date currentTime = Calendar.getInstance().getTime();
         post.setDate(currentTime);
         post.setId(UUID.randomUUID().toString());
+        post.setComments(comments);
     }
 
     private void initializeViews(){
@@ -49,7 +54,7 @@ public class AddPostActivity extends BaseActivity {
 
     public void onAddPost(View view) {
         getValues();
-        FirebaseHelper.yearGroupPostsDatabase.child(post.getId().toString()).setValue(post);
+        FirebaseHelper.yearGroupPostsDatabase.child(post.getId()).setValue(post);
         finish();
     }
 }

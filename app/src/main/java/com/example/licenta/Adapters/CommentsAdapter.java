@@ -1,75 +1,64 @@
 package com.example.licenta.Adapters;
+
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.licenta.Activities.OnePostActivity;
+import com.example.licenta.Models.CommentModel;
 import com.example.licenta.Models.PostModel;
 import com.example.licenta.R;
+
 import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class YearPostsAdapter extends RecyclerView.Adapter<YearPostsAdapter.ViewHolder> {
+public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.ViewHolder> {
 
-    private List<PostModel> yearGroupPosts;
+    private List<CommentModel> comments;
     private Context context;
 
-    public YearPostsAdapter(List<PostModel> yearGroupPosts, Context context) {
-        this.yearGroupPosts = yearGroupPosts;
+    public CommentsAdapter(List<CommentModel> comments, Context context) {
+        this.comments = comments;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CommentsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.row_yeargroup_posts, parent, false);
+        View view = layoutInflater.inflate(R.layout.row_comments, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final String id = yearGroupPosts.get(position).getId();
-        String title = yearGroupPosts.get(position).getTitle();
-        String message = yearGroupPosts.get(position).getMessage();
-        String date = yearGroupPosts.get(position).getDate().toString();
-        String author = yearGroupPosts.get(position).getAuthorName();
+    public void onBindViewHolder(@NonNull CommentsAdapter.ViewHolder holder, int position) {
 
-        holder.titleTv.setText(title);
+        String message = comments.get(position).getMessage();
+        String date = comments.get(position).getDate().toString();
+        String author = comments.get(position).getFullName();
+
         holder.messageTv.setText(message);
         holder.dateTv.setText(date.substring(4,10));
         holder.hourTv.setText(date.substring(11,16));
         holder.authorTv.setText(author);
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, OnePostActivity.class);
-                intent.putExtra("id_key",id);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
-            }
-        });
     }
 
     @Override
     public int getItemCount() {
-        return yearGroupPosts.size();
+        return comments.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView titleTv;
+        private TextView authorTv;
         private TextView messageTv;
         private TextView dateTv;
         private TextView hourTv;
-        private TextView authorTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -78,7 +67,6 @@ public class YearPostsAdapter extends RecyclerView.Adapter<YearPostsAdapter.View
 
         private void initializeViews(View itemView)
         {
-            titleTv= itemView.findViewById(R.id.tv_title_subject);
             messageTv= itemView.findViewById(R.id.tv_text_subject);
             dateTv= itemView.findViewById(R.id.tv_date);
             hourTv= itemView.findViewById(R.id.tv_hour);
@@ -86,4 +74,3 @@ public class YearPostsAdapter extends RecyclerView.Adapter<YearPostsAdapter.View
         }
     }
 }
-

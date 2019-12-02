@@ -45,13 +45,12 @@ public class YearGroupActivity extends BaseActivity {
         FirebaseHelper.yearGroupPostsDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot data: dataSnapshot.getChildren()
-                     ) {
+                for (DataSnapshot data: dataSnapshot.getChildren()) {
                     PostModel post = data.getValue(PostModel.class);
                     postsList.add(post);
                 }
                 recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-                yearPostsAdapter = new YearPostsAdapter(postsList,getApplicationContext());
+                yearPostsAdapter = new YearPostsAdapter(postsList, getApplicationContext());
                 recyclerView.setAdapter(yearPostsAdapter);
             }
 

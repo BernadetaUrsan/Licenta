@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:id="@+id/tv_title_subject"
+                android:id="@+id/tv_post_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -54,10 +54,25 @@
                 />
 
             <TextView
+                android:id="@+id/tv_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/colorText"
+                android:layout_below="@id/tv_hour_subject"
+                android:text="Author name"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
                 android:id="@+id/tv_text_subject"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_title_subject"
+                android:layout_below="@+id/tv_author"
                 android:textSize="14sp"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
@@ -80,73 +95,41 @@
                 android:layout_below="@+id/tv_text_subject"
                 />
 
-            <TextView
-                android:id="@+id/tv_text_comment_name"
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_listed_comments"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_name"
-                android:textSize="12sp"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:textStyle="italic"
-                android:textColor="@color/colorText"
-                android:text="NUME Prenume"
-                />
+                android:layout_marginStart="10dp"/>
 
 
-
-            <TextView
-                android:id="@+id/tv_text_comment_text"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_text_comment_name"
-                android:textSize="14sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:textColor="@color/colorText"
-                android:text="trebuie sa inplementez o lista: numele persoanei si ce anume a zis"
-                />
+                android:layout_below="@+id/rv_listed_comments"
+                android:layout_marginStart="10dp">
 
-            <TextView
-                android:id="@+id/tv_text_comment_name2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_text_comment_text"
-                android:textSize="12sp"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:textStyle="italic"
-                android:textColor="@color/colorText"
-                android:text="NUME Prenume"
-                />
+                <EditText
+                    android:id="@+id/et_post_new_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:maxLength="180"
+                    android:maxLines="3"
+                    android:layout_toStartOf="@+id/iv_send_message"
+                    android:hint="Adaugă un comentariu ..."/>
 
-            <TextView
-                android:id="@+id/tv_text_comment_text2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_text_comment_name2"
-                android:textSize="14sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:textColor="@color/colorText"
-                android:text="trebuie sa inplementez o lista: numele persoanei si ce anume a zis"
-                />
+                <ImageView
+                    android:id="@+id/iv_send_message"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_message"
+                    android:onClick="OnAddComment"/>
 
+            </RelativeLayout>
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:backgroundTint="@color/colorPurpleLight"
-        android:src="@drawable/ic_add2"
-        android:layout_margin="20dp"
-        app:fabSize="normal"
-        />
 </RelativeLayout>
