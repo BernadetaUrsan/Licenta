@@ -32,7 +32,6 @@ public class YearGroupActivity extends BaseActivity {
         super.setToolbarTitle("Year Group");
         initializeViews();
 
-        postsList = new ArrayList<>();
         getData();
     }
 
@@ -45,6 +44,7 @@ public class YearGroupActivity extends BaseActivity {
         FirebaseHelper.yearGroupPostsDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                postsList = new ArrayList<>();
                 for (DataSnapshot data: dataSnapshot.getChildren()) {
                     PostModel post = data.getValue(PostModel.class);
                     postsList.add(post);
