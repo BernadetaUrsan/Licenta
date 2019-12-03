@@ -43,8 +43,8 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.ViewHo
         String author = comments.get(position).getFullName();
 
         holder.messageTv.setText(message);
-        holder.dateTv.setText(date.substring(4,10));
-        holder.hourTv.setText(date.substring(11,16));
+//        holder.dateTv.setText(date.substring(4,10));
+//        holder.hourTv.setText(date.substring(11,16));
         holder.authorTv.setText(author);
     }
 
@@ -57,8 +57,8 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.ViewHo
 
         private TextView authorTv;
         private TextView messageTv;
-        private TextView dateTv;
-        private TextView hourTv;
+//        private TextView dateTv;
+//        private TextView hourTv;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,10 +67,10 @@ public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.ViewHo
 
         private void initializeViews(View itemView)
         {
-            messageTv= itemView.findViewById(R.id.tv_text_subject);
-            dateTv= itemView.findViewById(R.id.tv_date);
-            hourTv= itemView.findViewById(R.id.tv_hour);
-            authorTv= itemView.findViewById(R.id.tv_author);
+            messageTv= itemView.findViewById(R.id.tv_text_comment_text);
+//            dateTv= itemView.findViewById(R.id.tv_date);
+//            hourTv= itemView.findViewById(R.id.tv_hour);
+            authorTv= itemView.findViewById(R.id.tv_text_comment_name);
         }
     }
 }

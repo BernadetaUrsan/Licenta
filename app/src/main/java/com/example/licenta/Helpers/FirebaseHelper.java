@@ -10,6 +10,7 @@ public class FirebaseHelper {
     private static FirebaseHelper firebaseHelper;
     static FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     public static DatabaseReference yearGroupPostsDatabase = firebaseDatabase.getReference("YearPosts");
+    public static DatabaseReference postCommentsDatabase = firebaseDatabase.getReference("Comments");
     public static DatabaseReference usersDatabase = firebaseDatabase.getReference("Users");
     public static FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     public static FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
@@ -23,5 +24,8 @@ public class FirebaseHelper {
         return firebaseHelper;
     }
 
+    private FirebaseHelper()
+    {
+    }
 
 }

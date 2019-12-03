@@ -24,7 +24,6 @@ public class AddPostActivity extends BaseActivity {
     private PostModel post;
     private EditText titleEt;
     private EditText messageEt;
-    private List<CommentModel> comments;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +31,6 @@ public class AddPostActivity extends BaseActivity {
         setContentView(R.layout.activity_add_post);
         initializeViews();
         post = new PostModel();
-        comments = new ArrayList<>();
     }
 
     private void getValues(){
@@ -43,7 +41,6 @@ public class AddPostActivity extends BaseActivity {
         Date currentTime = Calendar.getInstance().getTime();
         post.setDate(currentTime);
         post.setId(UUID.randomUUID().toString());
-        post.setComments(comments);
     }
 
     private void initializeViews(){

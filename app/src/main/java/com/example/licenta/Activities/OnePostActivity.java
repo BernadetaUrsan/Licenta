@@ -18,12 +18,15 @@ import com.example.licenta.Models.PostModel;
 import com.example.licenta.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class OnePostActivity extends BaseActivity {
     private String postId;
@@ -40,13 +43,30 @@ public class OnePostActivity extends BaseActivity {
         super.setToolbarTitle("Year group");
         initializeViews();
         postId = getIntent().getStringExtra("id_key");
-        commentsList = new ArrayList<>();
 
         FirebaseHelper.yearGroupPostsDatabase.child(postId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 PostModel post = dataSnapshot.getValue(PostModel.class);
                 setData(post);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+
+        FirebaseHelper.postCommentsDatabase.child(postId).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                commentsList = new ArrayList<>();
+                for (DataSnapshot data: dataSnapshot.getChildren()
+                     ) {
+                    commentsList.add(data.getValue(CommentModel.class));
+                }
+                if (commentsList != null)
+                {
+                    setCommentsRecycler();
+                }
             }
 
             @Override
@@ -63,11 +83,6 @@ public class OnePostActivity extends BaseActivity {
         dateTv.setText(post.getDate().toString().substring(11,16));
         timeTv.setText(post.getDate().toString().substring(1,5));
         authorTv.setText(post.getAuthorName());
-        commentsList = post.getComments();
-        if (commentsList != null)
-        {
-            setCommentsRecycler();
-        }
     }
 
     private void setCommentsRecycler()
@@ -84,7 +99,8 @@ public class OnePostActivity extends BaseActivity {
         newComment.setDate(currentTime);
         newComment.setMessage(commentEt.getText().toString());
 
-        FirebaseHelper.yearGroupPostsDatabase.child(postId).child("comments").push().setValue(newComment);
+        FirebaseHelper.postCommentsDatabase.child(postId).push().setValue(newComment);
+        commentEt.setText("");
     }
 
     private void initializeViews()
