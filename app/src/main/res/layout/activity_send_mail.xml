@@ -19,19 +19,17 @@
             android:layout_alignParentTop="true"
             />
 
-        <EditText
-            android:id="@+id/et_email_prof"
+        <TextView
+            android:id="@+id/tv_email_prof"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv_icon"
             android:textSize="22sp"
-            android:singleLine="true"
             android:layout_marginTop="16dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:enabled="false"
             android:textColor="@color/colorText"
-            android:hint="Alege un profesor"
+            android:text="Alege un profesor"
             android:padding="6dp"
             android:onClick="OnChooseProf"
             />
@@ -43,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Subiect"
-            android:layout_below="@+id/et_email_prof"
+            android:layout_below="@+id/tv_email_prof"
             android:layout_marginTop="16dp"
             android:textSize="18sp"
             android:textColor="@color/colorText"

@@ -1,19 +1,28 @@
 package com.example.licenta.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.licenta.Adapters.TeacherDialogAdapter;
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Models.TeacherModel;
 import com.example.licenta.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +31,7 @@ import java.util.UUID;
 public class SendMailActivity extends AppCompatActivity {
     private EditText subiectEt, messageEt;
     private String subiect, mesaj;
+    private TextView teacherTv;
     private TeacherModel selectedTeacher;
 
     @Override
@@ -38,9 +48,14 @@ public class SendMailActivity extends AppCompatActivity {
     }
 
     public void OnSend(View view) {
-        FirebaseHelper.teachersDatabase.child(UUID.randomUUID().toString()).setValue(new TeacherModel("Ana DAN", "ursan.bernadeta@gmail.com", "0760234123"));
         getData();
-        String[] TO = {"ursan.bernadeta@gmail.com"};
+        String teacherEmail = selectedTeacher.getEmail();
+        if (teacherEmail == null || teacherEmail.isEmpty())
+        {
+            Toast.makeText(this, "Selectează un profesor pentru a trimite mail", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String[] TO = {selectedTeacher.getEmail()};
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setData(Uri.parse("mailto:"));
@@ -63,20 +78,46 @@ public class SendMailActivity extends AppCompatActivity {
     {
         subiectEt = findViewById(R.id.et_email_subiect);
         messageEt = findViewById(R.id.et_email_mesaj);
+        teacherTv = findViewById(R.id.tv_email_prof);
     }
 
     public void OnChooseProf(View view) {
-        List<TeacherModel> teachers = new ArrayList<>();
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Pick a color");
-        builder.setItems(colors, new DialogInterface.OnClickListener() {
+        final List<TeacherModel> teachers = new ArrayList<>();
+        FirebaseHelper.teachersDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                // the user clicked on colors[which]
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot data: dataSnapshot.getChildren()) {
+                        teachers.add(data.getValue(TeacherModel.class));
+                }
+                setDialog(teachers);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
             }
         });
+    }
 
-        builder.show();
+    private void setDialog(List<TeacherModel> teachers)
+    {
+        final Dialog dialog = new Dialog(this);
+        View rootView = getLayoutInflater().inflate(R.layout.teacher_dialog_adapter, null);
+        final ListView lv = rootView.findViewById(R.id.dialogListView);
+        TeacherDialogAdapter aba = new TeacherDialogAdapter(SendMailActivity.this, teachers);
+        lv.setAdapter(aba);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+                                    long arg3) {
+                selectedTeacher = (TeacherModel) lv.getItemAtPosition(arg2);
+                teacherTv.setText(selectedTeacher.getName());
+                dialog.dismiss();
+
+            }
+        });
+        dialog.setContentView(rootView);
+        dialog.show();
     }
 }
