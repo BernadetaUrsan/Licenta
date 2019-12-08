@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.SendMailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:src="@drawable/ic_up_background"
+            android:layout_alignParentTop="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_prof"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alege profesorul"
+            android:layout_below="@+id/iv_icon"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"
+            />
+
+        <EditText
+            android:id="@+id/et_prof"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_prof"
+            android:textSize="22sp"
+            android:singleLine="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/colorText"
+            android:hint="ceva@aut.upt.ro"
+            android:padding="6dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_subiect"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Subiect"
+            android:layout_below="@+id/et_prof"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"
+            />
+
+        <EditText
+            android:id="@+id/et_subiect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_subiect"
+            android:textSize="22sp"
+            android:singleLine="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/colorText"
+            android:hint="Nota examen TS"
+            android:padding="6dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_mesaj"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mesaj"
+            android:layout_below="@+id/et_subiect"
+            android:layout_marginTop="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/colorText"
+            />
+
+        <EditText
+            android:id="@+id/et_mesaj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_mesaj"
+            android:textSize="22sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/colorText"
+            android:hint="Nu este trecuta nota corecta. Se poate sa mai verificati o data? Mulrumesc."
+            android:padding="6dp"
+            android:maxLines="7"
+            android:lines="7"
+            />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_mesaj"
+            android:layout_marginTop="32dp"
+            android:textSize="24sp"
+            android:text="Trimite"
+            android:padding="6dp"
+            android:textAllCaps="false"
+            android:textColor="@color/colorText"
+            android:background="@color/colorYellow"
+            android:onClick="OnSend"
+            />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
