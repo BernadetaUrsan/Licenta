@@ -15,7 +15,7 @@
         android:layout_marginBottom="30dp"/>
 
     <Button
-        android:id="@+id/btn_send"
+        android:id="@+id/btn_send_mail"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_width="match_parent"
@@ -24,12 +24,11 @@
         android:layout_marginBottom="32dp"
         android:layout_marginTop="32dp"
         android:textSize="24sp"
-        android:text="Tritime mail unui profesor"
+        android:text="Trimite mail unui profesor"
         android:padding="6dp"
         android:textAllCaps="false"
         android:textColor="@color/colorText"
         android:background="@color/colorYellow"
-        android:onClick="OnSendMail"
         />
 
 

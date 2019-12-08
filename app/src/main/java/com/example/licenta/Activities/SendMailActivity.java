@@ -49,8 +49,7 @@ public class SendMailActivity extends AppCompatActivity {
 
     public void OnSend(View view) {
         getData();
-        String teacherEmail = selectedTeacher.getEmail();
-        if (teacherEmail == null || teacherEmail.isEmpty())
+        if (selectedTeacher == null)
         {
             Toast.makeText(this, "Selectează un profesor pentru a trimite mail", Toast.LENGTH_SHORT).show();
             return;
