@@ -43,7 +43,7 @@
                         android:layout_marginEnd="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="First name"
+                        android:text="Prenume"
                         android:layout_below="@+id/iv_icon"
                         android:layout_marginTop="16dp"
                         android:textSize="18sp"
@@ -58,13 +58,12 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_firstname"
                         android:singleLine="true"
-                        android:layout_marginTop="16dp"
-                        android:inputType="textPersonName"
                         android:textSize="22sp"
+                        android:inputType="textPersonName"
                         android:padding="6dp"
                         android:textColor="@color/colorText"
-                        android:background="@color/colorGray"
-                        android:enabled="false"
+                        android:backgroundTint="@color/colorGray"
+                        android:layout_marginBottom="10dp"
                         />
 
                 </LinearLayout>
@@ -82,7 +81,7 @@
                         android:layout_marginEnd="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name"
+                        android:text="Nume"
                         android:layout_marginTop="16dp"
                         android:textSize="18sp"
                         android:textColor="@color/colorText"
@@ -96,13 +95,12 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_name"
                         android:singleLine="true"
-                        android:layout_marginTop="16dp"
-                        android:inputType="textPersonName"
                         android:textSize="22sp"
+                        android:inputType="textPersonName"
                         android:padding="6dp"
                         android:textColor="@color/colorText"
-                        android:background="@color/colorGray"
-                        android:enabled="false"
+                        android:backgroundTint="@color/colorGray"
+                        android:layout_marginBottom="10dp"
                         />
 
                 </LinearLayout>
@@ -115,7 +113,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Matricol number"
+                android:text="Număr matricol"
                 android:layout_below="@+id/ll_name_container"
                 android:layout_marginTop="16dp"
                 android:textSize="18sp"
@@ -130,12 +128,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_matricolnr"
                 android:singleLine="true"
-                android:layout_marginTop="16dp"
                 android:textSize="22sp"
                 android:padding="6dp"
                 android:textColor="@color/colorText"
-                android:background="@color/colorGray"
-                android:enabled="false"
+                android:backgroundTint="@color/colorGray"
+                android:layout_marginBottom="10dp"
                 />
 
             <TextView
@@ -144,7 +141,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Phone number"
+                android:text="Număr de telefon"
                 android:layout_below="@+id/et_matricolnr"
                 android:layout_marginTop="16dp"
                 android:textSize="18sp"
@@ -159,12 +156,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_phone"
                 android:singleLine="true"
-                android:layout_marginTop="16dp"
                 android:textSize="22sp"
                 android:padding="6dp"
                 android:textColor="@color/colorText"
-                android:background="@color/colorGray"
-                android:enabled="false"
+                android:backgroundTint="@color/colorGray"
+                android:layout_marginBottom="10dp"
                 />
 
             <TextView
@@ -173,7 +169,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Car number"
+                android:text="Număr înmatriculare"
                 android:layout_below="@+id/et_phone"
                 android:layout_marginTop="16dp"
                 android:textSize="18sp"
@@ -188,12 +184,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_car"
                 android:singleLine="true"
-                android:layout_marginTop="16dp"
                 android:textSize="22sp"
                 android:padding="6dp"
                 android:textColor="@color/colorText"
-                android:background="@color/colorGray"
-                android:enabled="false"
+                android:backgroundTint="@color/colorGray"
+                android:layout_marginBottom="10dp"
                 />
 
             <LinearLayout
@@ -211,12 +206,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginTop="32dp"
-                    android:textSize="24sp"
-                    android:text="Edit profile"
+                    android:textSize="20sp"
+                    android:text="Editează profilul"
                     android:padding="6dp"
                     android:textAllCaps="false"
                     android:textColor="@color/colorText"
-                    android:background="@color/colorYellow"
+                    android:background="@drawable/border_yellow"
                     android:layout_marginBottom="20dp"
                     />
 
@@ -229,12 +224,12 @@
                     android:layout_weight="1"
                     android:layout_below="@+id/et_car"
                     android:layout_marginTop="32dp"
-                    android:textSize="24sp"
-                    android:text="Sign out"
+                    android:textSize="20sp"
+                    android:text="Deconectare"
                     android:padding="6dp"
                     android:textAllCaps="false"
                     android:textColor="@color/colorText"
-                    android:background="@color/colorYellow"
+                    android:background="@drawable/border"
                     android:layout_marginBottom="20dp"
                     />
             </LinearLayout>

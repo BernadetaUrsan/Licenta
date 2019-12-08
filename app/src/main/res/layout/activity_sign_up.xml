@@ -24,7 +24,7 @@ tools:context=".Activities.SignUpActivity">
         android:layout_marginEnd="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Username"
+        android:text="Utilizator"
         android:layout_below="@+id/iv_icon"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
@@ -39,12 +39,12 @@ tools:context=".Activities.SignUpActivity">
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_username"
         android:singleLine="true"
-        android:layout_marginTop="16dp"
-        android:inputType="textPersonName"
         android:textSize="22sp"
+        android:inputType="textPersonName"
         android:padding="6dp"
         android:textColor="@color/colorText"
-        android:background="@color/colorGray"
+        android:backgroundTint="@color/colorGray"
+        android:layout_marginBottom="10dp"
         />
 
     <TextView
@@ -53,7 +53,7 @@ tools:context=".Activities.SignUpActivity">
         android:layout_marginEnd="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password"
+        android:text="Parolă"
         android:layout_below="@+id/et_username"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
@@ -68,12 +68,12 @@ tools:context=".Activities.SignUpActivity">
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_password"
         android:singleLine="true"
-        android:layout_marginTop="16dp"
         android:textSize="22sp"
         android:inputType="textPassword"
         android:padding="6dp"
         android:textColor="@color/colorText"
-        android:background="@color/colorGray"
+        android:backgroundTint="@color/colorGray"
+        android:layout_marginBottom="10dp"
         />
 
     <TextView
@@ -82,7 +82,7 @@ tools:context=".Activities.SignUpActivity">
         android:layout_marginEnd="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirm Password"
+        android:text="Confirmare parolă"
         android:layout_below="@+id/et_password"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
@@ -97,13 +97,12 @@ tools:context=".Activities.SignUpActivity">
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_confirm_password"
         android:singleLine="true"
-        android:layout_marginTop="16dp"
         android:textSize="22sp"
         android:inputType="textPassword"
         android:padding="6dp"
         android:textColor="@color/colorText"
-        android:background="@color/colorGray"
-
+        android:backgroundTint="@color/colorGray"
+        android:layout_marginBottom="10dp"
         />
 
     <TextView
@@ -112,7 +111,7 @@ tools:context=".Activities.SignUpActivity">
         android:layout_marginEnd="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Matricol number"
+        android:text="Număr matricol"
         android:layout_below="@+id/et_confirm_password"
         android:layout_marginTop="16dp"
         android:textSize="18sp"
@@ -127,12 +126,11 @@ tools:context=".Activities.SignUpActivity">
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_matricol"
         android:singleLine="true"
-        android:layout_marginTop="16dp"
         android:textSize="22sp"
-        android:inputType="textPassword"
         android:padding="6dp"
         android:textColor="@color/colorText"
-        android:background="@color/colorGray"
+        android:backgroundTint="@color/colorGray"
+        android:layout_marginBottom="10dp"
         />
 
     <Button
@@ -144,11 +142,11 @@ tools:context=".Activities.SignUpActivity">
         android:layout_below="@+id/et_matricol"
         android:layout_marginTop="32dp"
         android:textSize="24sp"
-        android:text="Create account"
+        android:text="Creează cont"
         android:padding="6dp"
         android:textAllCaps="false"
         android:textColor="@color/colorText"
-        android:background="@color/colorYellow"
+        android:background="@drawable/border"
         android:layout_marginBottom="20dp"
         />
 

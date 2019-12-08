@@ -25,9 +25,9 @@
             android:layout_marginEnd="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username"
+            android:text="Utilizator"
             android:layout_below="@+id/iv_icon"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:textSize="18sp"
             android:textColor="@color/colorText"
             />
@@ -40,12 +40,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_username"
             android:singleLine="true"
-            android:layout_marginTop="16dp"
-            android:inputType="textPersonName"
             android:textSize="22sp"
+            android:inputType="textPersonName"
             android:padding="6dp"
             android:textColor="@color/colorText"
-            android:background="@color/colorGray"
+            android:backgroundTint="@color/colorGray"
+            android:layout_marginBottom="10dp"
             />
 
         <TextView
@@ -54,7 +54,7 @@
             android:layout_marginEnd="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:text="Parolă"
             android:layout_below="@+id/et_username"
             android:layout_marginTop="16dp"
             android:textSize="18sp"
@@ -69,12 +69,12 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_password"
             android:singleLine="true"
-            android:layout_marginTop="16dp"
             android:textSize="22sp"
             android:inputType="textPassword"
             android:padding="6dp"
             android:textColor="@color/colorText"
-            android:background="@color/colorGray"
+            android:backgroundTint="@color/colorGray"
+            android:layout_marginBottom="10dp"
             />
 
         <Button
@@ -85,58 +85,30 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/et_password"
             android:layout_marginTop="32dp"
-            android:textSize="24sp"
-            android:text="Sign in"
+            android:textSize="22sp"
+            android:text="Autentificare"
             android:padding="6dp"
             android:textAllCaps="false"
             android:textColor="@color/colorText"
-            android:background="@color/colorYellow"
+            android:background="@drawable/border_yellow"
             android:onClick="OnSignIn"
             />
 
-        <TextView
-            android:id="@+id/tv_forget_pass"
+        <Button
+            android:id="@+id/btn_signup"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Forget password?"
             android:layout_below="@+id/btn_signin"
             android:layout_marginTop="32dp"
-            android:layout_centerHorizontal="true"
-            android:textSize="20sp"
+            android:textSize="22sp"
+            android:text="Înregistrare"
+            android:padding="6dp"
+            android:textAllCaps="false"
             android:textColor="@color/colorText"
-            />
-
-        <TextView
-            android:id="@+id/tv_sign_up_or"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="or"
-            android:layout_below="@+id/tv_forget_pass"
-            android:layout_marginTop="8dp"
-            android:layout_centerHorizontal="true"
-            android:textSize="18sp"
-            android:textColor="@color/colorText"
-            />
-
-
-        <TextView
-            android:id="@+id/tv_signup"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign up"
-            android:layout_below="@+id/tv_sign_up_or"
-            android:layout_marginTop="8dp"
-            android:layout_centerHorizontal="true"
-            android:textSize="20sp"
-            android:textColor="@color/colorText"
-            android:layout_marginBottom="20dp"
-            android:onClick="OnSignUp"
+            android:background="@drawable/border"
+            android:onClick="OnSignIn"
             />
 
     </RelativeLayout>

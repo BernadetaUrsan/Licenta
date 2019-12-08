@@ -4,7 +4,9 @@
     <color name="colorPurpleLight">#bda7bd</color>
 
     <color name="colorPrimary">#9873f0</color>
-    <color name="colorSecondary">#f8cf57</color>
+    <color name="colorSecondary">#231f20</color>
+    <color name="colorPrimaryDark">#231f20</color>
+    <color name="colorButton">#231f20</color>
 
     <color name="colorYellow">#f8cf57</color>
     <color name="colorYellowLight">#e7cd83</color>
