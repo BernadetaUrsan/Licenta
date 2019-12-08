@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
     tools:context=".Activities.SendMailActivity">
 
     <RelativeLayout
@@ -19,51 +20,38 @@
             />
 
         <TextView
-            android:id="@+id/tv_prof"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Alege profesorul"
-            android:layout_below="@+id/iv_icon"
-            android:layout_marginTop="16dp"
-            android:textSize="18sp"
-            android:textColor="@color/colorText"
-            />
-
-        <EditText
-            android:id="@+id/et_prof"
+            android:id="@+id/tv_email_prof"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_prof"
+            android:layout_below="@+id/iv_icon"
             android:textSize="22sp"
-            android:singleLine="true"
             android:layout_marginTop="16dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:textColor="@color/colorText"
-            android:hint="ceva@aut.upt.ro"
+            android:text="Alege un profesor"
             android:padding="6dp"
+            android:onClick="OnChooseProf"
             />
 
         <TextView
-            android:id="@+id/tv_subiect"
+            android:id="@+id/tv_email_subiect"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Subiect"
-            android:layout_below="@+id/et_prof"
+            android:layout_below="@+id/tv_email_prof"
             android:layout_marginTop="16dp"
             android:textSize="18sp"
             android:textColor="@color/colorText"
             />
 
         <EditText
-            android:id="@+id/et_subiect"
+            android:id="@+id/et_email_subiect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_subiect"
+            android:layout_below="@+id/tv_email_subiect"
             android:textSize="22sp"
             android:singleLine="true"
             android:layout_marginTop="16dp"
@@ -75,24 +63,25 @@
             />
 
         <TextView
-            android:id="@+id/tv_mesaj"
+            android:id="@+id/tv_email_mesaj"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Mesaj"
-            android:layout_below="@+id/et_subiect"
+            android:layout_below="@+id/et_email_subiect"
             android:layout_marginTop="16dp"
             android:textSize="18sp"
             android:textColor="@color/colorText"
             />
 
         <EditText
-            android:id="@+id/et_mesaj"
+            android:id="@+id/et_email_mesaj"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_mesaj"
+            android:layout_below="@+id/tv_email_mesaj"
             android:textSize="22sp"
+            android:gravity="left"
             android:layout_marginTop="16dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
@@ -109,7 +98,7 @@
             android:layout_marginEnd="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/et_mesaj"
+            android:layout_below="@+id/et_email_mesaj"
             android:layout_marginTop="32dp"
             android:textSize="24sp"
             android:text="Trimite"
@@ -119,7 +108,5 @@
             android:background="@color/colorYellow"
             android:onClick="OnSend"
             />
-
     </RelativeLayout>
-
 </androidx.core.widget.NestedScrollView>
