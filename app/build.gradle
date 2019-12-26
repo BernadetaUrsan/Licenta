@@ -1,8 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.android.databinding'
 
 android {
     compileSdkVersion 28
+
+    dataBinding{
+        enabled = true
+    }
     defaultConfig {
         applicationId "com.example.licenta"
         minSdkVersion 23
@@ -31,4 +36,5 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
 }

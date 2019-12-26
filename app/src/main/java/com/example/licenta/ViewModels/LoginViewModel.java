@@ -1,40 +1,80 @@
-package com.example.licenta.ViewModels;
+package com.example.licenta.viewModels;
 
-import android.app.Application;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
 
-import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.ViewModel;
 
-import com.example.licenta.Interfaces.loginCommand;
+import com.example.licenta.Interfaces.LoginCallbacks;
 import com.example.licenta.Models.StudentModel;
 
-public class LoginViewModel extends AndroidViewModel implements loginCommand {
+public class LoginViewModel extends ViewModel {
     private String userEmail;
     private String userPassword;
     private StudentModel student;
+    private LoginCallbacks loginCallbacks;
 
-    public LoginViewModel(@NonNull Application application) {
-        super(application);
+    public TextWatcher emailTextWatcher(){
+         return new TextWatcher() {
+             @Override
+             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+             }
+
+             @Override
+             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+             }
+
+             @Override
+             public void afterTextChanged(Editable s) {
+                 userEmail=(s.toString());
+             }
+         };
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public TextWatcher passwordTextWatcher(){
+        return new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                userPassword = s.toString();
+            }
+        };
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public LoginViewModel(LoginCallbacks loginCallbacks) {
+        this.loginCallbacks = loginCallbacks;
+        this.student = new StudentModel();
     }
 
-    public String getUserPassword() {
-        return userPassword;
+    public StudentModel getStudent() {
+        return student;
     }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+    public void setStudent(StudentModel student) {
+        this.student = student;
     }
 
-    @Override
-    public void onLoginClicked() {
+    public LoginCallbacks getLoginCallbacks() {
+        return loginCallbacks;
+    }
 
+    public void setLoginCallbacks(LoginCallbacks loginCallbacks) {
+        this.loginCallbacks = loginCallbacks;
+    }
+
+    public void onLoginClicked(View view) {
+        int a =0;
     }
 }

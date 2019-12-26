@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.licenta.viewModels.LoginViewModel" />
+    </data>
+
+<androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.LoginActivity">
@@ -43,9 +51,11 @@
             android:textSize="22sp"
             android:inputType="textPersonName"
             android:padding="6dp"
+            android:hint="Email"
             android:textColor="@color/colorText"
             android:backgroundTint="@color/colorGray"
             android:layout_marginBottom="10dp"
+            app:addTextChangedListener= "@{viewModel.emailTextWatcher}"
             />
 
         <TextView
@@ -72,9 +82,11 @@
             android:textSize="22sp"
             android:inputType="textPassword"
             android:padding="6dp"
+            android:hint="Parola"
             android:textColor="@color/colorText"
             android:backgroundTint="@color/colorGray"
             android:layout_marginBottom="10dp"
+            app:addTextChangedListener= "@{viewModel.passwordTextWatcher}"
             />
 
         <Button
@@ -91,7 +103,7 @@
             android:textAllCaps="false"
             android:textColor="@color/colorText"
             android:background="@drawable/border_yellow"
-            android:onClick="OnSignIn"
+            android:onClick="@{viewModel::onLoginClicked}"
             />
 
         <Button
@@ -108,8 +120,8 @@
             android:textAllCaps="false"
             android:textColor="@color/colorText"
             android:background="@drawable/border"
-            android:onClick="OnSignIn"
             />
 
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
+</layout>
