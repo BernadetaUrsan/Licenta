@@ -99,10 +99,10 @@ public class LoginViewModel extends ViewModel {
     }
 
     public void onLoginClicked(View view) {
-        onSignIn(userEmail, userPassword);
+        onSignIn();
     }
 
-    private void onSignIn(String email, String password)
+    private void onSignIn()
     {
         mAuth.signInWithEmailAndPassword(userEmail, userPassword)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
