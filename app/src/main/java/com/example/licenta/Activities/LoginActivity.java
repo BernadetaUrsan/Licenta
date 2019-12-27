@@ -41,66 +41,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
         setContentView(R.layout.activity_login);
         initializeViews();
         ActivityLoginBinding loginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
-        loginBinding.setViewModel(ViewModelProviders.of(this, new LoginViewModelFactory(this)).get(LoginViewModel.class));
-
-        if (BuildConfig.DEBUG)
-        {
-            emailEt.setText("berna@classboard.com");
-            passwordEt.setText("cosmin");
-        }
-
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-    }
-
-    public void OnSignIn(View view) {
-        String email = String.valueOf(emailEt.getText());
-        String password = String.valueOf(passwordEt.getText());
-        onSignIn(email, password);
-    }
-
-    public void OnSignUp(View view) {
-        Intent myInt2= new Intent(LoginActivity.this,SignUpActivity.class);
-        startActivity(myInt2);
-    }
-
-    private void onSignIn(String email, String password)
-    {
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            onSignInSuccesful();
-                        } else {
-                            Toast.makeText(LoginActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }
-
-    private void onSignInSuccesful()
-    {
-        FirebaseHelper.usersDatabase.child("LO610275").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                setData(dataSnapshot.getValue(StudentModel.class));
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-    }
-
-    private void setData(StudentModel student)
-    {
-        UserHelper.Instance().setStudent(student);
-        Intent myInt=new Intent(LoginActivity.this,HomeActivity.class);
-        startActivity(myInt);
+        loginBinding.setViewModel(ViewModelProviders.of(this, new LoginViewModelFactory(this, this)).get(LoginViewModel.class));
     }
 
     private void initializeViews()
