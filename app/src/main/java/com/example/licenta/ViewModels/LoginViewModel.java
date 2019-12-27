@@ -111,22 +111,12 @@ public class LoginViewModel extends ViewModel {
                         if (task.isSuccessful()) {
                             onSignInSuccesful();
                         }
+                        else {
+                            Toast.makeText(context, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                        }
                     }
                 });
-
-//        mAuth.signInWithEmailAndPassword(email, password)
-//                .addOnCompleteListener((Executor) this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (task.isSuccessful()) {
-//                            onSignInSuccesful();
-//                        }
-//                        else {
-//                            Toast.makeText(context, "Authentication failed.",
-//                                    Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
     }
 
     private void onSignInSuccesful()
