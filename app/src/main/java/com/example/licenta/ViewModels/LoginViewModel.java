@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 
 import com.example.licenta.Activities.HomeActivity;
-import com.example.licenta.Activities.LoginActivity;
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Helpers.UserHelper;
 import com.example.licenta.Interfaces.LoginCallbacks;
@@ -23,8 +22,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.concurrent.Executor;
 
 public class LoginViewModel extends ViewModel {
     private String userEmail;
