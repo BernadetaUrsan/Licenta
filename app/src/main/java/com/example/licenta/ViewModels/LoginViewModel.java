@@ -3,7 +3,9 @@ package com.example.licenta.viewModels;
 import android.content.Context;
 import android.content.Intent;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,6 +24,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.regex.Pattern;
 
 public class LoginViewModel extends ViewModel {
     private String userEmail;
@@ -74,6 +78,16 @@ public class LoginViewModel extends ViewModel {
         this.context = context;
         this.student = new StudentModel();
         mAuth = FirebaseAuth.getInstance();
+    }
+
+    public boolean validateEmail(String email)
+    {
+        return email.matches("[a-zA-Z0-9._-]+@[a-z]+.[a-z]+");
+    }
+
+    public boolean validatePassword(String password)
+    {
+        return password.length() >= 4;
     }
 
     public LoginViewModel() {
