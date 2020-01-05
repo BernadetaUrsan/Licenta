@@ -3,9 +3,7 @@ package com.example.licenta.viewModels;
 import android.content.Context;
 import android.content.Intent;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
@@ -19,21 +17,25 @@ import com.example.licenta.Interfaces.LoginCallbacks;
 import com.example.licenta.Models.StudentModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.regex.Pattern;
+import static com.example.licenta.AppConstants.LOGIN_FAIL;
+import static com.example.licenta.AppConstants.LOGIN_SUCCES;
 
-public class LoginViewModel extends ViewModel {
+public class LoginViewModel extends ViewModel{
     private String userEmail;
     private String userPassword;
     private StudentModel student;
     private LoginCallbacks loginCallbacks;
     private FirebaseAuth mAuth;
     private Context context;
+    private static String result;
+
 
     public TextWatcher emailTextWatcher(){
          return new TextWatcher() {
@@ -73,6 +75,7 @@ public class LoginViewModel extends ViewModel {
         };
     }
 
+
     public LoginViewModel(LoginCallbacks loginCallbacks, Context context) {
         this.loginCallbacks = loginCallbacks;
         this.context = context;
@@ -110,24 +113,29 @@ public class LoginViewModel extends ViewModel {
     }
 
     public void onLoginClicked(View view) {
-        onSignIn();
+        onSignIn(userEmail, userPassword);
     }
 
-    private void onSignIn()
+    public String onSignIn(String email, String password)
     {
-        mAuth.signInWithEmailAndPassword(userEmail, userPassword)
+        FirebaseApp.initializeApp(context);
+        mAuth = FirebaseAuth.getInstance();
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             onSignInSuccesful();
+                            result = LOGIN_SUCCES;
                         }
                         else {
                             Toast.makeText(context, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                            result = LOGIN_FAIL;
                         }
                     }
                 });
+        return result;
     }
 
     private void onSignInSuccesful()
@@ -150,5 +158,9 @@ public class LoginViewModel extends ViewModel {
         UserHelper.Instance().setStudent(student);
         Intent myInt=new Intent(context, HomeActivity.class);
         context.startActivity(myInt);
+    }
+
+    public void setmAuth(FirebaseAuth mAuth) {
+        this.mAuth = mAuth;
     }
 }

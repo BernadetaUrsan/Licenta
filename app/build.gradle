@@ -5,6 +5,9 @@ apply plugin: 'com.android.databinding'
 android {
     compileSdkVersion 28
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
     dataBinding{
         enabled = true
     }
