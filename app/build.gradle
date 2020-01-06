@@ -5,6 +5,9 @@ apply plugin: 'com.android.databinding'
 android {
     compileSdkVersion 28
 
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
     dataBinding{
         enabled = true
     }
@@ -33,6 +36,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:19.2.0'
     implementation 'com.google.firebase:firebase-database:19.2.0'
     testImplementation 'junit:junit:4.12'
+    testImplementation 'org.mockito:mockito-core:2.19.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
