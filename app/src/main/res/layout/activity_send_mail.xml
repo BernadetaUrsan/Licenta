@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:text="Subiect"
             android:layout_below="@+id/tv_email_prof"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="26dp"
             android:textSize="18sp"
             android:textColor="@color/colorText"
             />
@@ -105,7 +105,7 @@
             android:padding="6dp"
             android:textAllCaps="false"
             android:textColor="@color/colorText"
-            android:background="@color/colorYellow"
+            android:background="@drawable/border_yellow"
             android:onClick="OnSend"
             />
     </RelativeLayout>

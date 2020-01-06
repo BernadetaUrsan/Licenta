@@ -40,7 +40,7 @@ public class OnePostActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_post);
-        super.setToolbarTitle("Year group");
+        super.setToolbarTitle("Știri studenți");
         initializeViews();
         postId = getIntent().getStringExtra("id_key");
 

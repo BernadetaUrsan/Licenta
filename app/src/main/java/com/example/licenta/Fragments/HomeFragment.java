@@ -35,18 +35,18 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        parkingsV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myInt3 = new Intent(getActivity(), ParkingActivity.class);
-                startActivity(myInt3);
-            }
-        });
+//        parkingsV.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent myInt3 = new Intent(getActivity(), ParkingActivity.class);
+//                startActivity(myInt3);
+//            }
+//        });
         return rootView;
     }
 
     private void initializeViews(View view){
         yearGroupV = view.findViewById(R.id.cv_year);
-        parkingsV = view.findViewById(R.id.cv_park);
+//        parkingsV = view.findViewById(R.id.cv_park);
     }
 }

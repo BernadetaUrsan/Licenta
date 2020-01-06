@@ -19,6 +19,7 @@ import com.example.licenta.viewModels.LoginViewModel;
 import com.example.licenta.viewModels.LoginViewModelFactory;
 import com.facebook.share.model.ShareHashtag;
 import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.DeviceShareButton;
 import com.facebook.share.widget.ShareDialog;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -54,17 +55,17 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
 
     }
 
-    public void shareOnFacebook(View view) {
-        if (ShareDialog.canShow(ShareLinkContent.class)) {
-            ShareLinkContent linkContent = new ShareLinkContent.Builder()
-                    .setContentTitle("Android Facebook Integration and Login Tutorial")
-                    .setQuote("Testing test")
-                    .setImageUrl(Uri.parse("https://www.studytutorial.in/wp-content/uploads/2017/02/FacebookLoginButton-min-300x136.png"))
-                                   .setContentUrl(Uri.parse("https://www.studytutorial.in/android-facebook-integration-and-login-tutorial"))
-                                                                    .build();
-            shareDialog.show(linkContent);
-        }
-    }
+//    public void shareOnFacebook(View view) {
+//        if (ShareDialog.canShow(ShareLinkContent.class)) {
+//            ShareLinkContent linkContent = new ShareLinkContent.Builder()
+//                    .setContentTitle("Android Facebook Integration and Login Tutorial")
+//                    .setQuote("Testing test")
+//                    .setImageUrl(Uri.parse("https://www.studytutorial.in/wp-content/uploads/2017/02/FacebookLoginButton-min-300x136.png"))
+//                                   .setContentUrl(Uri.parse("https://www.studytutorial.in/android-facebook-integration-and-login-tutorial"))
+//                                                                    .build();
+//            shareDialog.show(linkContent);
+//        }
+//    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

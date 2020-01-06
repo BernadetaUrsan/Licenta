@@ -29,7 +29,7 @@ public class YearGroupActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_year_group);
-        super.setToolbarTitle("Year Group");
+        super.setToolbarTitle("Știri studenți");
         initializeViews();
 
         getData();

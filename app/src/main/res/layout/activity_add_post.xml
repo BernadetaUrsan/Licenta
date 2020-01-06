@@ -23,7 +23,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="Subject"
+                android:text="Subiect"
                 android:textColor="@color/colorText"
                 android:textSize="24sp"
                 android:textStyle="bold"/>
@@ -34,13 +34,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_title_subject"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:singleLine="true"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:textColor="@color/colorText"
-                android:hint="orice vreau eu bla bla"
+                android:hint="a b c ..."
                 />
 
             <TextView
@@ -50,7 +50,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="Message"
+                android:text="Mesaj"
                 android:textColor="@color/colorText"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -64,15 +64,31 @@
                 android:layout_below="@+id/tv_post_message"
                 android:maxLines="7"
                 android:lines="7"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:textColor="@color/colorText"
-                android:hint="orice vreau eu bla bla"
+                android:hint="..."
                 android:gravity="top|left"
                 />
 
+            <Button
+                android:id="@+id/btn_facebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="shareOnFacebook"
+                android:text="Distribuie pe Facebook"
+                android:layout_below="@+id/et_post_message"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="32dp"
+                android:textSize="24sp"
+                android:padding="6dp"
+                android:layout_margin="20dp"
+                android:textAllCaps="false"
+                android:textColor="@color/colorText"
+                android:background="@drawable/border_yellow"
+                />
 
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>
