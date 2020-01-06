@@ -118,6 +118,7 @@ public class LoginViewModel extends ViewModel{
 
     public String onSignIn(String email, String password)
     {
+        userEmail = email;
         FirebaseApp.initializeApp(context);
         mAuth = FirebaseAuth.getInstance();
         mAuth.signInWithEmailAndPassword(email, password)
@@ -140,10 +141,17 @@ public class LoginViewModel extends ViewModel{
 
     private void onSignInSuccesful()
     {
-        FirebaseHelper.usersDatabase.child("LO610275").addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseHelper.usersDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                setData(dataSnapshot.getValue(StudentModel.class));
+                for (DataSnapshot data: dataSnapshot.getChildren()) {
+                    StudentModel student = data.getValue(StudentModel.class);
+                    if (student.getEmail().equalsIgnoreCase(userEmail))
+                    {
+                        setData(student);
+                        break;
+                    }
+                }
             }
 
             @Override
@@ -151,6 +159,18 @@ public class LoginViewModel extends ViewModel{
 
             }
         });
+
+//        FirebaseHelper.usersDatabase.child("LO610275").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                setData(dataSnapshot.getValue(StudentModel.class));
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
     }
 
     private void setData(StudentModel student)
