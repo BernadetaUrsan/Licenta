@@ -12,7 +12,37 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/tv_email_destinatar"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DESTINATAR"
+            android:layout_marginTop="26dp"
+            android:textSize="16sp"
+            android:textColor="@color/colorText"
+            />
+
+        <TextView
+            android:id="@+id/tv_email_prof"
+            android:layout_below="@+id/tv_email_destinatar"
+            android:layout_width="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorTextHint"
+            android:textColor="@color/colorWhite"
+            android:text="Click pentru a alege profesorul"
+            android:padding="6dp"
+            android:onClick="OnChooseProf"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            />
+
+        <TextView
             android:id="@+id/tv_email_subiect"
+            android:layout_below="@id/tv_email_prof"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_width="wrap_content"
@@ -72,27 +102,9 @@
             android:backgroundTint="@color/colorTextBold"
             />
 
-        <TextView
-            android:id="@+id/tv_email_prof"
-            android:layout_below="@+id/et_email_mesaj"
-            android:layout_width="match_parent"
-            android:layout_centerHorizontal="true"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginTop="16dp"
-            android:background="@color/colorWhite"
-            android:textColor="@color/colorText"
-            android:text="Profesori"
-            android:padding="6dp"
-            android:onClick="OnChooseProf"
-            android:layout_marginStart="90dp"
-            android:layout_marginEnd="90dp"
-            android:textAlignment="center"
-            />
-
         <Button
             android:id="@+id/btn_send"
-            android:layout_below="@+id/tv_email_prof"
+            android:layout_below="@+id/et_email_mesaj"
             android:layout_marginTop="32dp"
             android:textSize="20sp"
             android:text="Trimite"

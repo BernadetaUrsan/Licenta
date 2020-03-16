@@ -3,6 +3,8 @@ package com.example.licenta.Activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CalendarView;
@@ -40,5 +42,8 @@ public class CalendarActivity extends AppCompatActivity {
     public void OnAddEvent (View view)
     {
         myEvent.setText(" ");
+        Intent myInt2= new Intent(CalendarActivity.this,AddEventActivity.class);
+        startActivity(myInt2);
     }
+
 }

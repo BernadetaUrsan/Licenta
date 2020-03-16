@@ -5,13 +5,17 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPurple</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorPurpleLight</item>
+        <item name="colorAccent">@color/colorPurple</item>
     </style>
 
     <style name="ToolbarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textColorPrimary">@color/colorPurple</item>
         <item name="android:textColorSecondary">@color/colorWhite</item>
         <item name="android:textColor">@color/colorText</item>
-    </style>`
+    </style>
+
+    <style name="CustomPickerTheme">
+        <item name="colorAccent">@color/colorPurple</item>
+    </style>
 
 </resources>

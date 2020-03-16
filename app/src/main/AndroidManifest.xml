@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/sigla2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.FindStudentActivity"></activity>
+        <activity android:name=".Activities.AddEventActivity"></activity>
+        <activity android:name=".Activities.FindStudentActivity" />
         <activity android:name=".Activities.CalendarActivity" />
         <activity android:name=".Activities.SchedulesActivity" />
         <activity android:name=".Activities.NewsActivity" />
