@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPurple">#9873f0</color>
-    <color name="colorPurpleLight">#bda7bd</color>
+    <color name="colorPurple">#4d5273</color>
+    <color name="colorPurpleLight">#dd4065</color>
 
-    <color name="colorPrimary">#9873f0</color>
+    <color name="colorPrimary">#4d5273</color>
     <color name="colorSecondary">#231f20</color>
     <color name="colorPrimaryDark">#231f20</color>
-    <color name="colorButton">#231f20</color>
+    <color name="colorButton">#4d5273</color>
 
-    <color name="colorYellow">#f8cf57</color>
-    <color name="colorYellowLight">#e7cd83</color>
+    <color name="colorYellow">#4d5273</color>
+    <color name="colorYellowLight">#dd4065</color>
 
-    <color name="colorText">#231f20</color>
-    <color name="colorGray">#d9d1e5</color>
+    <color name="colorText">#444143</color>
+    <color name="colorTextHint">#4d5273</color>
+    <color name="colorTextButton">#4d5273</color>
+    <color name="colorTextBold">#231f20</color>
+    <color name="colorGray">#231f20</color>
     <color name="colorWhite">#ffffff</color>
-    <color name="colorToolbar">#f8cf57</color>
+    <color name="colorToolbar">#4d5273</color>
 
 </resources>

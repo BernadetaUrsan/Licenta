@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.SchedulesActivity"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+        android:id="@+id/cv_1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_margin="8dp"
+            android:onClick="OnBiblioteca">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@+id/tv_1"
+            android:scaleType="centerInside"
+            android:src="@drawable/biblio"
+            android:alpha="0.7"/>
+
+        <View
+            android:id="@+id/v_1"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:alpha="0.7"
+            android:background="#e6e9ef"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Bibliotecă"
+                android:maxLines="1"
+                android:textSize="24sp"
+                android:textAppearance="@color/colorText"
+                android:textStyle="bold"
+                android:layout_marginEnd="16dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_2"
+            android:layout_below="@+id/cv_1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:onClick="OnRectorat">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@+id/tv_1"
+                android:scaleType="centerInside"
+                android:src="@drawable/rectorat"
+                android:alpha="0.7"/>
+
+            <View
+                android:id="@+id/v_2"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:alpha="0.7"
+                android:background="#e6e9ef"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_2"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:id="@+id/tv_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Rectorat"
+                    android:maxLines="1"
+                    android:textSize="24sp"
+                    android:textAppearance="@color/colorText"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="16dp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_3"
+            android:layout_below="@+id/cv_2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:onClick="OnSport">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@+id/tv_2"
+                android:scaleType="centerInside"
+                android:src="@drawable/sport"
+                android:alpha="0.7"/>
+
+            <View
+                android:id="@+id/v_3"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:alpha="0.7"
+                android:background="#e6e9ef"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_3"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:id="@+id/tv_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Sport"
+                    android:maxLines="1"
+                    android:textSize="24sp"
+                    android:textAppearance="@color/colorText"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="16dp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

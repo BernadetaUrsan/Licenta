@@ -1,24 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.NotificationsFragment">
+    tools:context=".Fragments.NotificationsFragment"
+    android:fillViewport="true">
 
-    <Button
-        android:id="@+id/btn_send_mail"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:layout_marginTop="32dp"
-        android:textSize="22sp"
-        android:text="Trimite mail unui profesor"
-        android:padding="6dp"
-        android:textAllCaps="false"
-        android:textColor="@color/colorText"
-        android:background="@drawable/border_yellow"
-        />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_1"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/rl_1"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/student"
+                    android:alpha="0.7"/>
+
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:layout_alignParentEnd="true"
+                    android:background="#e6e9ef"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_1"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iv_m1"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/ic_email_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/tv_1"
+                        android:layout_below="@+id/iv_m1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="COLEG"
+                        android:textSize="20sp"
+                        android:textAppearance="@color/colorText"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_2"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_below="@+id/cv_1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/rl_2"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/prof"
+
+                    android:alpha="0.7"/>
+
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:layout_alignParentEnd="true"
+                    android:background="#e6e9ef"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_2"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iv_m2"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/ic_email_black_24dp" />
+
+                    <TextView
+                        android:id="@+id/tv_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PROFESOR"
+                        android:layout_below="@+id/iv_m2"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="20sp"
+                        android:textAppearance="@color/colorText"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

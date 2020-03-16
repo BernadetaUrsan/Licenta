@@ -8,7 +8,7 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
-    dataBinding{
+    dataBinding {
         enabled = true
     }
     defaultConfig {

@@ -23,9 +23,9 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:text="Subject"
+                android:text="Subiect"
                 android:textColor="@color/colorText"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/tv_date_subject"
@@ -74,11 +74,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_author"
                 android:textSize="14sp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:textColor="@color/colorText"
                 android:text="orice vreau eu bla bla"
+                android:padding="6dp"
+                android:backgroundTint="@color/colorTextBold"
                 />
 
             <TextView
@@ -89,7 +91,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="24dp"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorText"
                 android:layout_below="@+id/tv_text_subject"
@@ -98,6 +100,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_listed_comments"
+                android:layout_margin="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_name"
@@ -118,6 +121,8 @@
                     android:maxLength="180"
                     android:maxLines="3"
                     android:layout_toStartOf="@+id/iv_send_message"
+                    android:padding="6dp"
+                    android:backgroundTint="@color/colorTextBold"
                     android:hint="Adaugă un comentariu ..."/>
 
                 <ImageView

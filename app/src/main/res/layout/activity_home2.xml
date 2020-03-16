@@ -23,10 +23,10 @@
             android:id="@+id/navigation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorYellow"
+            android:background="@color/colorWhite"
             android:layout_alignParentBottom="true"
-            app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
-            app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
+            app:itemIconTint="@color/colorTextBold"
+            app:itemTextColor="@color/colorTextBold"
             app:menu="@menu/navigation" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

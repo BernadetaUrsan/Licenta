@@ -37,6 +37,10 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
         ActivityLoginBinding loginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         loginBinding.setViewModel(ViewModelProviders.of(this, new LoginViewModelFactory(this, this)).get(LoginViewModel.class));
         shareDialog = new ShareDialog(this);  // initialize facebook shareDialog.
+
+        //TO DO remove
+        emailEt.setText("berna4@classboard.com");
+        passwordEt.setText("cosmin");
     }
 
     private void initializeViews()

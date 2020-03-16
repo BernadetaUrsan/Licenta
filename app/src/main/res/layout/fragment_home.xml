@@ -25,8 +25,10 @@
                     android:id="@+id/iv_cardview_group"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/mm"
-                    android:scaleType="centerCrop"
+                    android:layout_toStartOf="@+id/rl_grup"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/grup"
+
                     android:alpha="0.7"/>
 
                 <View
@@ -37,6 +39,7 @@
                     android:background="#e6e9ef"/>
 
                 <RelativeLayout
+                    android:id="@+id/rl_grup"
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
@@ -47,10 +50,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="Știri studenți"
-                        android:textSize="30sp"
+                        android:text="Grup de an"
+                        android:textSize="24sp"
                         android:textAppearance="@color/colorText"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:layout_marginEnd="16dp"/>
 
 <!--                    <ImageView-->
 <!--                    android:id="@+id/iv_cardview_group_pic"-->
@@ -65,50 +69,53 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:id="@+id/cv_park"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="150dp"-->
-<!--            android:layout_margin="8dp"-->
-<!--            android:layout_below="@+id/cv_year">-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_park"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_below="@+id/cv_year">
 
-<!--            <RelativeLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent">-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/iv_cardview_parking"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:src="@drawable/park"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:alpha="0.7" />-->
+                <ImageView
+                    android:id="@+id/iv_cardview_parking"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/parcari"
+                    android:layout_toStartOf="@+id/rl_parcare"
+                    android:scaleType="centerInside"
+                    android:alpha="0.7" />
 
-<!--                <View-->
-<!--                    android:layout_width="150dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:alpha="0.5"-->
-<!--                    android:background="#e6e9ef"/>-->
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:alpha="0.5"
+                    android:background="#e6e9ef"/>
 
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="150dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:layout_centerInParent="true"-->
-<!--                    android:gravity="center|end"-->
-<!--                    >-->
+                <RelativeLayout
+                    android:id="@+id/rl_parcare"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|end"
+                    >
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/tv_cardview_parking"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_alignParentEnd="true"-->
-<!--                        android:text="Parking"-->
-<!--                        android:textSize="30sp"-->
-<!--                        android:textAppearance="@color/colorText"-->
-<!--                        android:textStyle="bold"-->
-<!--                        />-->
+                    <TextView
+                        android:id="@+id/tv_cardview_parking"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="Grup șoferi"
+                        android:textSize="24sp"
+                        android:layout_marginEnd="16dp"
+                        android:textAppearance="@color/colorText"
+                        android:textStyle="bold"
+                        />
 <!--                    <ImageView-->
 <!--                        android:id="@+id/iv_cardview_parking_pic"-->
 <!--                        android:layout_width="60dp"-->
@@ -117,54 +124,57 @@
 <!--                        android:src="@drawable/mm"-->
 <!--                        android:layout_below="@+id/tv_cardview_parking"-->
 <!--                        />-->
-<!--                </RelativeLayout>-->
-<!--            </RelativeLayout>-->
-<!--        </androidx.cardview.widget.CardView>-->
+                </RelativeLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:id="@+id/cv_news"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="150dp"-->
-<!--            android:layout_margin="8dp"-->
-<!--            android:layout_below="@+id/cv_park">-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_news"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_below="@id/cv_park">
 
-<!--            <RelativeLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent">-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/iv_cardview_news"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:src="@drawable/news"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:alpha="0.7" />-->
+                <ImageView
+                    android:id="@+id/iv_cardview_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/stiri"
+                    android:layout_toStartOf="@+id/rl_stiri"
+                    android:scaleType="centerInside"
+                    android:alpha="0.7" />
 
-<!--                <View-->
-<!--                    android:layout_width="150dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:alpha="0.5"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:background="#e6e9ef"/>-->
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:layout_alignParentEnd="true"
+                    android:background="#e6e9ef"/>
 
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="150dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:layout_centerInParent="true"-->
-<!--                    android:gravity="center|end"-->
-<!--                    >-->
+                <RelativeLayout
+                    android:id="@+id/rl_stiri"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|end"
+                    >
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/tv_cardview_news"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_alignParentEnd="true"-->
-<!--                        android:text="News"-->
-<!--                        android:textSize="30sp"-->
-<!--                        android:textAppearance="@color/colorText"-->
-<!--                        android:textStyle="bold"-->
-<!--                        />-->
+                    <TextView
+                        android:id="@+id/tv_cardview_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="Noutăți"
+                        android:textSize="24sp"
+                        android:layout_marginEnd="16dp"
+                        android:textAppearance="@color/colorText"
+                        android:textStyle="bold"
+                        />
 <!--                    <ImageView-->
 <!--                        android:id="@+id/iv_cardview_news_pic"-->
 <!--                        android:layout_width="60dp"-->
@@ -175,55 +185,58 @@
 <!--                        />-->
 
 
-<!--                </RelativeLayout>-->
-<!--            </RelativeLayout>-->
+                </RelativeLayout>
+            </RelativeLayout>
 
-<!--        </androidx.cardview.widget.CardView>-->
+        </androidx.cardview.widget.CardView>
 
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:id="@+id/cv_schedule"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="150dp"-->
-<!--            android:layout_margin="8dp"-->
-<!--            android:layout_below="@+id/cv_news">-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_below="@+id/cv_news">
 
-<!--            <RelativeLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent">-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/iv_cardview_schedule"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:src="@drawable/sche"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:alpha="0.7" />-->
+                <ImageView
+                    android:id="@+id/iv_cardview_schedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/orare"
+                    android:layout_toStartOf="@+id/rl_orare"
+                    android:scaleType="centerInside"
+                    android:alpha="0.7" />
 
-<!--                <View-->
-<!--                    android:layout_width="150dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:alpha="0.5"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:background="#e6e9ef"/>-->
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:layout_alignParentEnd="true"
+                    android:background="#e6e9ef"/>
 
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="150dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:layout_centerInParent="true"-->
-<!--                    android:gravity="center|end"-->
-<!--                    >-->
+                <RelativeLayout
+                    android:id="@+id/rl_orare"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|end"
+                    >
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/tv_cardview_schedule"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_alignParentEnd="true"-->
-<!--                        android:text="Schedules"-->
-<!--                        android:textSize="30sp"-->
-<!--                        android:textAppearance="@color/colorText"-->
-<!--                        android:textStyle="bold"-->
-<!--                        />-->
+                    <TextView
+                        android:id="@+id/tv_cardview_schedule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="Orare"
+                        android:textSize="24sp"
+                        android:layout_marginEnd="16dp"
+                        android:textAppearance="@color/colorText"
+                        android:textStyle="bold"
+                        />
 <!--                    <ImageView-->
 <!--                        android:id="@+id/iv_cardview_schedule_pic"-->
 <!--                        android:layout_width="60dp"-->
@@ -234,55 +247,58 @@
 <!--                        />-->
 
 
-<!--                </RelativeLayout>-->
-<!--            </RelativeLayout>-->
+                </RelativeLayout>
+            </RelativeLayout>
 
-<!--        </androidx.cardview.widget.CardView>-->
+        </androidx.cardview.widget.CardView>
 
-<!--        <androidx.cardview.widget.CardView-->
-<!--            android:id="@+id/cv_calendar"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="150dp"-->
-<!--            android:layout_margin="8dp"-->
-<!--            android:layout_below="@+id/cv_schedule">-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_below="@+id/cv_schedule">
 
-<!--            <RelativeLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent">-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/iv_cardview_calendar"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:src="@drawable/ex"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:alpha="0.7" />-->
+                <ImageView
+                    android:id="@+id/iv_cardview_calendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/calendar"
+                    android:layout_toStartOf="@+id/rl_calendar"
+                    android:scaleType="centerInside"
+                    android:alpha="0.7" />
 
-<!--                <View-->
-<!--                    android:layout_width="150dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:alpha="0.5"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:background="#e6e9ef"/>-->
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:layout_alignParentEnd="true"
+                    android:background="#e6e9ef"/>
 
-<!--                <RelativeLayout-->
-<!--                    android:layout_width="200dp"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:layout_centerInParent="true"-->
-<!--                    android:gravity="center|end"-->
-<!--                    >-->
+                <RelativeLayout
+                    android:id="@+id/rl_calendar"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:gravity="center|end"
+                    >
 
-<!--                    <TextView-->
-<!--                        android:id="@+id/tv_cardview_calendar"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_alignParentEnd="true"-->
-<!--                        android:text="Calendar"-->
-<!--                        android:textSize="30sp"-->
-<!--                        android:textAppearance="@color/colorText"-->
-<!--                        android:textStyle="bold"-->
-<!--                        />-->
+                    <TextView
+                        android:id="@+id/tv_cardview_calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="Calendar"
+                        android:textSize="24sp"
+                        android:layout_marginEnd="16dp"
+                        android:textAppearance="@color/colorText"
+                        android:textStyle="bold"
+                        />
 <!--                    <ImageView-->
 <!--                        android:id="@+id/iv_cardview_calendar_pic"-->
 <!--                        android:layout_width="60dp"-->
@@ -293,10 +309,10 @@
 <!--                        />-->
 
 
-<!--                </RelativeLayout>-->
-<!--            </RelativeLayout>-->
+                </RelativeLayout>
+            </RelativeLayout>
 
-<!--        </androidx.cardview.widget.CardView>-->
+        </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 
