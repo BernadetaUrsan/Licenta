@@ -9,28 +9,55 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.licenta.Activities.EditProfileActivity;
 import com.example.licenta.Activities.LoginActivity;
+import com.example.licenta.Helpers.UserHelper;
+import com.example.licenta.Models.StudentModel;
 import com.example.licenta.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileFragment extends Fragment {
+
+    private StudentModel userCurent;
     private ImageView signOutBtn, editProfileBtn;
+    private EditText nume, prenume, telefon, matricol;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
         InitializeViews(view);
+        SetValues();
         setBtnActions();
 
         return view;
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        SetValues();
+    }
+
+    private void SetValues(){
+
+        userCurent = UserHelper.Instance().getStudent();
+        nume.setText(userCurent.getName());
+        prenume.setText(userCurent.getSurname());
+        telefon.setText(userCurent.getPhoneNumber());
+        matricol.setText(userCurent.getNumber());
+    }
+
     private void InitializeViews(View view) {
         editProfileBtn= view.findViewById(R.id.iv_edit);
         signOutBtn= view.findViewById(R.id.iv_log_out);
+
+        nume=view.findViewById(R.id.et_nume);
+        prenume=view.findViewById(R.id.et_prenume);
+        matricol=view.findViewById(R.id.et_matricol);
+        telefon=view.findViewById(R.id.et_telefon);
     }
 
     private void setBtnActions(){
@@ -51,6 +78,9 @@ public class ProfileFragment extends Fragment {
 
     public void OnSignOut() {
         FirebaseAuth.getInstance().signOut();
+
+        userCurent = null;
+
         Intent myInt= new Intent(getActivity(), LoginActivity.class);
         startActivity(myInt);
     }

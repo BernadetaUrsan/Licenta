@@ -62,7 +62,8 @@
                     android:singleLine="true"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    android:id="@+id/et_prenume"/>
 
                 <EditText
                     android:layout_width="wrap_content"
@@ -73,7 +74,8 @@
                     android:singleLine="true"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"
-                    android:textSize="20sp"/>
+                    android:textSize="20sp"
+                    android:id="@+id/et_nume"/>
 
             </LinearLayout>
 
@@ -117,6 +119,7 @@
                     android:singleLine="true"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"
+                    android:id="@+id/et_telefon"
                     android:editable="false"
                     android:textSize="20sp"/>
 
@@ -154,6 +157,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="MFS085308"
+                    android:id="@+id/et_matricol"
                     android:layout_marginStart="40dp"
                     android:singleLine="true"
                     android:textColor="@color/colorText"

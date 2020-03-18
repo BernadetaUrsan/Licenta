@@ -91,7 +91,8 @@ tools:context=".Activities.EditProfileActivity">
             android:singleLine="true"
             android:textColor="@color/colorText"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:id="@+id/et_prenume"/>
 
         <EditText
             android:layout_width="wrap_content"
@@ -102,6 +103,7 @@ tools:context=".Activities.EditProfileActivity">
             android:singleLine="true"
             android:textColor="@color/colorText"
             android:textStyle="bold"
+            android:id="@+id/et_nume"
             android:textSize="20sp"/>
 
     </LinearLayout>
@@ -139,6 +141,7 @@ tools:context=".Activities.EditProfileActivity">
         android:id="@+id/ll_telefon_edit">
 
         <EditText
+            android:id="@+id/et_telefon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="070175032"
@@ -180,6 +183,7 @@ tools:context=".Activities.EditProfileActivity">
         android:id="@+id/ll_matricol_edit">
 
         <EditText
+            android:id="@+id/et_matricol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="MFS085308"

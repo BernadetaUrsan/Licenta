@@ -59,18 +59,6 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
 
     }
 
-//    public void shareOnFacebook(View view) {
-//        if (ShareDialog.canShow(ShareLinkContent.class)) {
-//            ShareLinkContent linkContent = new ShareLinkContent.Builder()
-//                    .setContentTitle("Android Facebook Integration and Login Tutorial")
-//                    .setQuote("Testing test")
-//                    .setImageUrl(Uri.parse("https://www.studytutorial.in/wp-content/uploads/2017/02/FacebookLoginButton-min-300x136.png"))
-//                                   .setContentUrl(Uri.parse("https://www.studytutorial.in/android-facebook-integration-and-login-tutorial"))
-//                                                                    .build();
-//            shareDialog.show(linkContent);
-//        }
-//    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
