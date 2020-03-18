@@ -37,4 +37,11 @@ public class SchedulesActivity extends AppCompatActivity {
         intent3.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         getApplicationContext().startActivity(intent3);
     }
+
+    public void OnBazin (View view){
+
+        Intent intent4 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ligaac.ro/node/830"));
+        intent4.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getApplicationContext().startActivity(intent4);
+    }
 }

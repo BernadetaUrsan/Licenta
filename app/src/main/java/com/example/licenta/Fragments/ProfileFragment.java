@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.example.licenta.Activities.EditProfileActivity;
 import com.example.licenta.Activities.LoginActivity;
@@ -16,7 +17,7 @@ import com.example.licenta.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ProfileFragment extends Fragment {
-    private Button signOutBtn, editProfileBtn;
+    private ImageView signOutBtn, editProfileBtn;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,8 +29,8 @@ public class ProfileFragment extends Fragment {
     }
 
     private void InitializeViews(View view) {
-        signOutBtn= view.findViewById(R.id.btn_signout);
-        editProfileBtn= view.findViewById(R.id.btn_edit);
+        editProfileBtn= view.findViewById(R.id.iv_edit);
+        signOutBtn= view.findViewById(R.id.iv_log_out);
     }
 
     private void setBtnActions(){

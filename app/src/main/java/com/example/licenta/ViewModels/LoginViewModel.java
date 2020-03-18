@@ -121,7 +121,7 @@ public class LoginViewModel extends ViewModel{
         userEmail = email;
         FirebaseApp.initializeApp(context);
         mAuth = FirebaseAuth.getInstance();
-        mAuth.signInWithEmailAndPassword(email, password)
+        mAuth.signInWithEmailAndPassword("berna3@classboard.com", "cosmin")
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {

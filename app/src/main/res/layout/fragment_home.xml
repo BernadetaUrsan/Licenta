@@ -169,7 +169,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
-                        android:text="Noutăți"
+                        android:text="Informații"
                         android:textSize="24sp"
                         android:layout_marginEnd="16dp"
                         android:textAppearance="@color/colorText"

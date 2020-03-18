@@ -62,4 +62,8 @@ public class AddEventActivity extends AppCompatActivity implements TimePickerDia
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         picker.setText("Ora "+ hourOfDay + " : "+ minute);
     }
+
+    public void OnAddEvent(View view){
+
+    }
 }

@@ -10,7 +10,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="600dp">
 
     <LinearLayout
         android:id="@+id/ll_calendar"
@@ -61,6 +61,10 @@
 
     </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="620dp">
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_add_post"
             android:layout_width="wrap_content"
@@ -72,5 +76,7 @@
             android:layout_margin="20dp"
             android:layout_alignParentBottom="true"
             android:onClick="OnAddEvent"/>
+        </RelativeLayout>
+
     </RelativeLayout>
 </LinearLayout>

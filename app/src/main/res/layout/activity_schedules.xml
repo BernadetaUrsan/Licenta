@@ -139,6 +139,52 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_4"
+            android:layout_below="@+id/cv_3"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:onClick="OnBazin">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@+id/tv_3"
+                android:scaleType="centerInside"
+                android:src="@drawable/inot"
+                android:alpha="0.7"/>
+
+            <View
+                android:id="@+id/v_4"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:alpha="0.7"
+                android:background="#e6e9ef"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_4"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:id="@+id/tv_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Bazin înot, Baza 2"
+                    android:maxLines="1"
+                    android:textSize="24sp"
+                    android:textAppearance="@color/colorText"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="16dp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        // SECRETARIAT parter, et 5, et 6, ASPC
+        // IS/CTI/INFO/săli
+
     </RelativeLayout>
 
 </androidx.core.widget.NestedScrollView>

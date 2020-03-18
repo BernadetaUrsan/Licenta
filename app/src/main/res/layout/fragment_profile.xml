@@ -13,214 +13,200 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-
             <LinearLayout
-
-                android:id="@+id/ll_name_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                android:weightSum="2"
-                >
+                android:layout_marginTop="20dp"
+                android:id="@+id/ll_prenume">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+
+                <TextView
+                    android:id="@+id/tv_prenume"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="1"
-                    >
+                    android:text="Prenume"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="24dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorText"
+                    />
 
-                    <TextView
-                        android:id="@+id/tv_firstname"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="PRENUME"
-                        android:layout_below="@+id/iv_icon"
-                        android:layout_marginTop="24dp"
-                        android:textSize="16sp"
-                        android:textColor="@color/colorText"
-                        />
-
-                    <EditText
-                        android:id="@+id/et_firstname"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_firstname"
-                        android:singleLine="true"
-                        android:textSize="22sp"
-                        android:inputType="textPersonName"
-                        android:padding="6dp"
-                        android:textColor="@color/colorText"
-                        android:textStyle="bold"
-                        android:backgroundTint="@color/colorTextBold"
-                        android:layout_marginBottom="10dp"
-                        />
-
-                    <TextView
-                        android:id="@+id/tv_name"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="NUME"
-                        android:layout_marginTop="16dp"
-                        android:textSize="16sp"
-                        android:textColor="@color/colorText"
-                        />
-
-                    <EditText
-                        android:id="@+id/et_name"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/tv_name"
-                        android:singleLine="true"
-                        android:textSize="22sp"
-                        android:inputType="textPersonName"
-                        android:padding="6dp"
-                        android:textColor="@color/colorText"
-                        android:textStyle="bold"
-                        android:backgroundTint="@color/colorTextBold"
-                        android:layout_marginBottom="10dp"
-                        />
-
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_nume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nume"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="24dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorText"
+                    />
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_matricolnr"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NUMĂR MATRICOL"
-                android:layout_below="@+id/ll_name_container"
-                android:layout_marginTop="16dp"
-                android:textSize="16sp"
-                android:textColor="@color/colorText"
-                />
-
-            <EditText
-                android:id="@+id/et_matricolnr"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_matricolnr"
-                android:singleLine="true"
-                android:textSize="22sp"
-                android:padding="6dp"
-                android:textColor="@color/colorText"
-                android:textStyle="bold"
-                android:backgroundTint="@color/colorTextBold"
-                android:layout_marginBottom="10dp"
-                />
+                android:layout_below="@+id/ll_prenume"
+                android:layout_marginTop="20dp"
+                android:id="@+id/ll_prenume_edit">
 
-            <TextView
-                android:id="@+id/tv_phone"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TELEFON"
-                android:layout_below="@+id/et_matricolnr"
-                android:layout_marginTop="16dp"
-                android:textSize="16sp"
-                android:textColor="@color/colorText"
-                />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ajfalfjaw"
+                    android:editable="false"
+                    android:layout_marginStart="40dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
 
-            <EditText
-                android:id="@+id/et_phone"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ajfalfjaw"
+                    android:editable="false"
+                    android:layout_marginStart="60dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+
+
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_phone"
-                android:singleLine="true"
-                android:textSize="22sp"
-                android:padding="6dp"
-                android:textColor="@color/colorText"
-                android:textStyle="bold"
-                android:backgroundTint="@color/colorTextBold"
-                android:layout_marginBottom="10dp"
-                />
+                android:layout_marginTop="20dp"
+                android:id="@+id/ll_telefon"
+                android:layout_below="@+id/ll_matricol_edit">
 
-            <TextView
-                android:id="@+id/tv_car"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NUMĂR DE ÎNMATRICULARE"
-                android:layout_below="@+id/et_phone"
-                android:layout_marginTop="16dp"
-                android:textSize="16sp"
-                android:textColor="@color/colorText"
-                />
+                <TextView
+                    android:id="@+id/tv_telefon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Număr telefon"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="24dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorText"
+                    />
 
-            <EditText
-                android:id="@+id/et_car"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_car"
-                android:singleLine="true"
-                android:textSize="22sp"
-                android:padding="6dp"
-                android:textColor="@color/colorText"
-                android:textStyle="bold"
-                android:backgroundTint="@color/colorTextBold"
-                android:layout_marginBottom="10dp"
-                />
+                android:layout_below="@+id/ll_telefon"
+                android:layout_marginTop="20dp"
+                android:id="@+id/ll_telefon_edit">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="070175032"
+                    android:layout_marginStart="40dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    android:editable="false"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:id="@+id/ll_matricol"
+                android:layout_below="@+id/ll_prenume_edit">
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Număr matricol"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="24dp"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorText"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_matricol"
+                android:layout_marginTop="20dp"
+                android:id="@+id/ll_matricol_edit">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MFS085308"
+                    android:layout_marginStart="40dp"
+                    android:singleLine="true"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:editable="false"/>
+
+            </LinearLayout>
+
+
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="2"
-                android:layout_below="@+id/et_car"
+                android:layout_below="@+id/ll_telefon_edit"
+                android:layout_marginTop="40dp"
                 >
 
-                <Button
-                    android:id="@+id/btn_edit"
-                    android:layout_marginStart="20dp"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/iv_edit"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_width="200dp"
+                    android:layout_height="36dp"
                     android:layout_weight="1"
                     android:layout_marginTop="20dp"
                     android:textSize="20sp"
-                    android:text="Editează profil"
                     android:padding="6dp"
                     android:textAllCaps="false"
                     android:textColor="@color/colorTextButton"
-                    android:background="@drawable/border_blue"
                     android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_edit_white_24dp"
+                    android:background="@drawable/border_blue_full"
                     />
 
-                <Button
-                    android:id="@+id/btn_signout"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_width="350dp"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/iv_log_out"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_width="200dp"
+                    android:layout_height="36dp"
                     android:layout_weight="1"
-                    android:layout_below="@+id/et_car"
                     android:layout_marginTop="20dp"
                     android:textSize="20sp"
-                    android:text="Deconectare"
                     android:padding="6dp"
                     android:textAllCaps="false"
                     android:textColor="@color/colorWhite"
                     android:background="@drawable/border_blue_full"
                     android:layout_marginBottom="20dp"
+                    android:src="@drawable/ic_exit_to_app_white_24dp"
                     />
             </LinearLayout>
 
