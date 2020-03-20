@@ -1,6 +1,7 @@
 package com.example.licenta.Fragments;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -12,12 +13,16 @@ import android.view.ViewGroup;
 import com.example.licenta.Activities.CalendarActivity;
 import com.example.licenta.Activities.HomeActivity;
 import com.example.licenta.Activities.LoginActivity;
+import com.example.licenta.Activities.MapActivity;
 import com.example.licenta.Activities.NewsActivity;
+import com.example.licenta.Activities.OrarActivity;
 import com.example.licenta.Activities.ParkingActivity;
 import com.example.licenta.Activities.SchedulesActivity;
 import com.example.licenta.Activities.SignUpActivity;
 import com.example.licenta.Activities.YearGroupActivity;
 import com.example.licenta.R;
+
+import java.util.Map;
 
 public class HomeFragment extends Fragment {
 
@@ -26,6 +31,8 @@ public class HomeFragment extends Fragment {
     private CardView newsV;
     private CardView schedulesV;
     private CardView calendarV;
+    private CardView orarV;
+    private CardView hartaV;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,6 +80,22 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        orarV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myInt7 = new Intent(getActivity(), OrarActivity.class);
+                startActivity(myInt7);
+            }
+        });
+
+        hartaV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myInt8 = new Intent(getActivity(), MapActivity.class);
+                startActivity(myInt8);
+            }
+        });
+
         return rootView;
     }
 
@@ -82,5 +105,7 @@ public class HomeFragment extends Fragment {
         newsV = view.findViewById(R.id.cv_news);
         schedulesV = view.findViewById(R.id.cv_schedule);
         calendarV = view.findViewById(R.id.cv_calendar);
+        orarV = view.findViewById(R.id.cv_orar);
+        hartaV = view.findViewById(R.id.cv_harta);
     }
 }

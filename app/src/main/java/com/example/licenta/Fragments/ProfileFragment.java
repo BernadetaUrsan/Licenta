@@ -23,7 +23,7 @@ public class ProfileFragment extends Fragment {
 
     private StudentModel userCurent;
     private ImageView signOutBtn, editProfileBtn;
-    private EditText nume, prenume, telefon, matricol;
+    private EditText nume, prenume, telefon, matricol, numeComplet;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,8 +44,7 @@ public class ProfileFragment extends Fragment {
     private void SetValues(){
 
         userCurent = UserHelper.Instance().getStudent();
-        nume.setText(userCurent.getName());
-        prenume.setText(userCurent.getSurname());
+        numeComplet.setText(userCurent.getFullName());
         telefon.setText(userCurent.getPhoneNumber());
         matricol.setText(userCurent.getNumber());
     }
@@ -54,8 +53,7 @@ public class ProfileFragment extends Fragment {
         editProfileBtn= view.findViewById(R.id.iv_edit);
         signOutBtn= view.findViewById(R.id.iv_log_out);
 
-        nume=view.findViewById(R.id.et_nume);
-        prenume=view.findViewById(R.id.et_prenume);
+        numeComplet = view.findViewById(R.id.et_nume_complet);
         matricol=view.findViewById(R.id.et_matricol);
         telefon=view.findViewById(R.id.et_telefon);
     }

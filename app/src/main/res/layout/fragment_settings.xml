@@ -42,11 +42,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_email"
-            android:layout_marginTop="20dp"
             android:id="@+id/ll_email_nou">
 
             <EditText
-                android:layout_width="wrap_content"
+                android:id="@+id/et_email_nou"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:text="ajfalfjaw"
                 android:layout_marginStart="60dp"
@@ -91,11 +91,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_parola"
-            android:layout_marginTop="20dp"
             android:id="@+id/ll_parola_noua">
 
             <EditText
-                android:layout_width="wrap_content"
+                android:id="@+id/et_parola_noua"
+                android:layout_width="240dp"
+                android:password="true"
                 android:layout_height="wrap_content"
                 android:text="ajfalfjaw"
                 android:layout_marginStart="60dp"
@@ -140,12 +141,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_notificari"
-            android:layout_marginTop="30dp"
             android:id="@+id/ll_on_off"
-            android:layout_marginStart="40dp">
+            android:layout_marginStart="60dp">
         <Switch
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="44dp"
+            android:layout_height="40dp"
             android:id="@+id/switch1"
             android:checked="false"/>
 
@@ -162,7 +162,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_below="@+id/ll_on_off"
             >
 

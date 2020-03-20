@@ -25,7 +25,7 @@ public class EditProfileActivity extends AppCompatActivity {
 
     private StudentModel userCurent;
     private ImageView signOutBtn, editProfileBtn;
-    private EditText nume, prenume, telefon, matricol;
+    private EditText numeComplet, telefon, matricol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,7 @@ public class EditProfileActivity extends AppCompatActivity {
     private void SetValues(){
 
         userCurent = UserHelper.Instance().getStudent();
-        nume.setText(userCurent.getName());
-        prenume.setText(userCurent.getSurname());
+        numeComplet.setText(userCurent.getFullName());
         telefon.setText(userCurent.getPhoneNumber());
         matricol.setText(userCurent.getNumber());
     }
@@ -50,15 +49,14 @@ public class EditProfileActivity extends AppCompatActivity {
         editProfileBtn= findViewById(R.id.iv_edit);
         signOutBtn= findViewById(R.id.iv_log_out);
 
-        nume=findViewById(R.id.et_nume);
-        prenume=findViewById(R.id.et_prenume);
+        numeComplet = findViewById(R.id.et_nume_complet);
         matricol=findViewById(R.id.et_matricol);
         telefon=findViewById(R.id.et_telefon);
     }
 
     public void OnSave(View view) {
 
-        FirebaseHelper.usersDatabase.child(userCurent.getNumber()).addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseHelper.getInstance().usersDatabase.child(userCurent.getNumber()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String matricolNou = matricol.getText().toString();
@@ -70,7 +68,7 @@ public class EditProfileActivity extends AppCompatActivity {
                 HashMap<String, Object> map = new HashMap<>();
                 map.put("number", matricolNou);
                 map.put("phoneNumber", telefonNou);
-                FirebaseHelper.usersDatabase.child(userCurent.getNumber()).updateChildren(map);
+                FirebaseHelper.getInstance().usersDatabase.child(userCurent.getNumber()).updateChildren(map);
                 OnCancel();
             }
 

@@ -8,8 +8,9 @@ public class StudentModel {
     private String imageUrl;
     private String carId;
     private String email;
+    private String fullName;
 
-    public StudentModel(String name, String surname, String number, String phoneNumber, String imageUrl, String carId, String email){
+    public StudentModel(String name, String surname, String number, String phoneNumber, String imageUrl, String carId, String email, String fullName){
         this.name = name;
         this.surname = surname;
         this.number = number;
@@ -17,6 +18,7 @@ public class StudentModel {
         this.imageUrl = imageUrl;
         this.carId = carId;
         this.email = email;
+        this.fullName = fullName;
     }
 
     public StudentModel() {
@@ -56,6 +58,19 @@ public class StudentModel {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+
+    public String getFullName() {
+        setFullName(name,surname);
+        return fullName;
+    }
+
+    public void setFullName(String name, String surname) {
+        this.fullName = name + " " + surname;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public void setPhoneNumber(String phoneNumber) {

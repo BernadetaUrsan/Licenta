@@ -7,6 +7,7 @@ public class UserHelper {
     private static UserHelper userHelper;
     private StudentModel student;
     private static FirebaseUser firebaseUser;
+    private boolean isLoggedIn;
 
     private UserHelper(){
 
@@ -45,5 +46,13 @@ public class UserHelper {
     public static boolean isUserSet()
     {
         return firebaseUser != null;
+    }
+
+    public boolean isLoggedIn() {
+        return isLoggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        isLoggedIn = loggedIn;
     }
 }

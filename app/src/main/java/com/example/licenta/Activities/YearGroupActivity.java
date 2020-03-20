@@ -29,7 +29,7 @@ public class YearGroupActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_year_group);
-        super.setToolbarTitle("Știri studenți");
+        super.setToolbarTitle("Postări studenți");
         initializeViews();
 
         getData();
@@ -41,7 +41,7 @@ public class YearGroupActivity extends BaseActivity {
     }
 
     private void getData(){
-        FirebaseHelper.yearGroupPostsDatabase.addValueEventListener(new ValueEventListener() {
+        FirebaseHelper.getInstance().yearGroupPostsDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 postsList = new ArrayList<>();

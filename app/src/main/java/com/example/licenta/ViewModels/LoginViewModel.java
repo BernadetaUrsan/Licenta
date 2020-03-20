@@ -141,7 +141,7 @@ public class LoginViewModel extends ViewModel{
 
     private void onSignInSuccesful()
     {
-        FirebaseHelper.usersDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseHelper.getInstance().usersDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot data: dataSnapshot.getChildren()) {

@@ -44,7 +44,7 @@ public class OnePostActivity extends BaseActivity {
         initializeViews();
         postId = getIntent().getStringExtra("id_key");
 
-        FirebaseHelper.yearGroupPostsDatabase.child(postId).addValueEventListener(new ValueEventListener() {
+        FirebaseHelper.getInstance().yearGroupPostsDatabase.child(postId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 PostModel post = dataSnapshot.getValue(PostModel.class);
@@ -55,7 +55,7 @@ public class OnePostActivity extends BaseActivity {
             }
         });
 
-        FirebaseHelper.postCommentsDatabase.child(postId).addValueEventListener(new ValueEventListener() {
+        FirebaseHelper.getInstance().postCommentsDatabase.child(postId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 commentsList = new ArrayList<>();
@@ -99,7 +99,7 @@ public class OnePostActivity extends BaseActivity {
         newComment.setDate(currentTime);
         newComment.setMessage(commentEt.getText().toString());
 
-        FirebaseHelper.postCommentsDatabase.child(postId).push().setValue(newComment);
+        FirebaseHelper.getInstance().postCommentsDatabase.child(postId).push().setValue(newComment);
         commentEt.setText("");
     }
 

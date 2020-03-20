@@ -82,7 +82,7 @@ public class SendMailActivity extends AppCompatActivity {
 
     public void OnChooseProf(View view) {
         final List<TeacherModel> teachers = new ArrayList<>();
-        FirebaseHelper.teachersDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseHelper.getInstance().teachersDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot data: dataSnapshot.getChildren()) {

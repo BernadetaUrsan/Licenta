@@ -57,7 +57,7 @@ public class AddPostActivity extends BaseActivity {
 
     public void onAddPost(View view) {
         getValues();
-        FirebaseHelper.yearGroupPostsDatabase.child(post.getId()).setValue(post);
+        FirebaseHelper.getInstance().yearGroupPostsDatabase.child(post.getId()).setValue(post);
         finish();
     }
 

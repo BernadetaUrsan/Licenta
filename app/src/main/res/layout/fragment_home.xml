@@ -10,11 +10,61 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_orar"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_cardview_orar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toStartOf="@+id/rl_orar"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/orar"
+
+                    android:alpha="0.7"/>
+
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:layout_alignParentEnd="true"
+                    android:background="#e6e9ef"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_orar"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true">
+
+                    <TextView
+                        android:id="@+id/tv_cardview_orar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
+                        android:text="Orar"
+                        android:textColor="@color/colorText"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_year"
             android:layout_width="match_parent"
             android:layout_height="150dp"
+            android:layout_below="@id/cv_orar"
             android:layout_margin="8dp">
 
             <RelativeLayout
@@ -28,7 +78,6 @@
                     android:layout_toStartOf="@+id/rl_grup"
                     android:scaleType="centerInside"
                     android:src="@drawable/grup"
-
                     android:alpha="0.7"/>
 
                 <View
@@ -42,28 +91,19 @@
                     android:id="@+id/rl_grup"
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:gravity="center|end">
+                    android:layout_alignParentEnd="true">
 
                     <TextView
                         android:id="@+id/tv_cardview_yeargroup"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:text="Grup de an"
-                        android:textSize="24sp"
-                        android:textAppearance="@color/colorText"
-                        android:textStyle="bold"
-                        android:layout_marginEnd="16dp"/>
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
+                        android:text="Grup studenți"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorText"
+                        android:textStyle="bold" />
 
-<!--                    <ImageView-->
-<!--                    android:id="@+id/iv_cardview_group_pic"-->
-<!--                    android:layout_width="60dp"-->
-<!--                    android:layout_height="60dp"-->
-<!--                    android:layout_alignParentEnd="true"-->
-<!--                    android:src="@drawable/ic_stud"-->
-<!--                    android:layout_below="@+id/tv_cardview_yeargroup"-->
-<!--                    />-->
                 </RelativeLayout>
 
             </RelativeLayout>
@@ -101,29 +141,20 @@
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
-                    android:layout_centerInParent="true"
-                    android:gravity="center|end"
-                    >
+                    android:layout_centerInParent="true">
 
                     <TextView
                         android:id="@+id/tv_cardview_parking"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
                         android:text="Grup șoferi"
-                        android:textSize="24sp"
-                        android:layout_marginEnd="16dp"
-                        android:textAppearance="@color/colorText"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorText"
                         android:textStyle="bold"
                         />
-<!--                    <ImageView-->
-<!--                        android:id="@+id/iv_cardview_parking_pic"-->
-<!--                        android:layout_width="60dp"-->
-<!--                        android:layout_height="60dp"-->
-<!--                        android:layout_alignParentEnd="true"-->
-<!--                        android:src="@drawable/mm"-->
-<!--                        android:layout_below="@+id/tv_cardview_parking"-->
-<!--                        />-->
+
                 </RelativeLayout>
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -161,29 +192,18 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_centerInParent="true"
-                    android:gravity="center|end"
                     >
 
                     <TextView
                         android:id="@+id/tv_cardview_news"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
                         android:text="Informații"
-                        android:textSize="24sp"
-                        android:layout_marginEnd="16dp"
-                        android:textAppearance="@color/colorText"
-                        android:textStyle="bold"
-                        />
-<!--                    <ImageView-->
-<!--                        android:id="@+id/iv_cardview_news_pic"-->
-<!--                        android:layout_width="60dp"-->
-<!--                        android:layout_height="60dp"-->
-<!--                        android:layout_alignParentEnd="true"-->
-<!--                        android:src="@drawable/mm"-->
-<!--                        android:layout_below="@+id/tv_cardview_news"-->
-<!--                        />-->
-
+                        android:textColor="@color/colorText"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
             </RelativeLayout>
@@ -223,29 +243,19 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_centerInParent="true"
-                    android:gravity="center|end"
                     >
 
                     <TextView
                         android:id="@+id/tv_cardview_schedule"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
                         android:text="Orare"
-                        android:textSize="24sp"
-                        android:layout_marginEnd="16dp"
-                        android:textAppearance="@color/colorText"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorText"
                         android:textStyle="bold"
                         />
-<!--                    <ImageView-->
-<!--                        android:id="@+id/iv_cardview_schedule_pic"-->
-<!--                        android:layout_width="60dp"-->
-<!--                        android:layout_height="60dp"-->
-<!--                        android:layout_alignParentEnd="true"-->
-<!--                        android:src="@drawable/mm"-->
-<!--                        android:layout_below="@+id/tv_cardview_schedule"-->
-<!--                        />-->
-
 
                 </RelativeLayout>
             </RelativeLayout>
@@ -285,29 +295,71 @@
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_centerInParent="true"
-                    android:gravity="center|end"
                     >
 
                     <TextView
                         android:id="@+id/tv_cardview_calendar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
                         android:text="Calendar"
-                        android:textSize="24sp"
-                        android:layout_marginEnd="16dp"
-                        android:textAppearance="@color/colorText"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorText"
                         android:textStyle="bold"
                         />
-<!--                    <ImageView-->
-<!--                        android:id="@+id/iv_cardview_calendar_pic"-->
-<!--                        android:layout_width="60dp"-->
-<!--                        android:layout_height="60dp"-->
-<!--                        android:layout_alignParentEnd="true"-->
-<!--                        android:src="@drawable/mm"-->
-<!--                        android:layout_below="@+id/tv_cardview_calendar"-->
-<!--                        />-->
 
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_harta"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:layout_below="@+id/cv_calendar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_cardview_harta"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/harta"
+                    android:layout_toStartOf="@+id/rl_harta"
+                    android:scaleType="centerInside"
+                    android:alpha="0.7" />
+
+                <View
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:layout_alignParentEnd="true"
+                    android:background="#e6e9ef"/>
+
+                <RelativeLayout
+                    android:id="@+id/rl_harta"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_cardview_harta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerInParent="true"
+                        android:text="Hartă campus"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorText"
+                        android:textStyle="bold"
+                        />
 
                 </RelativeLayout>
             </RelativeLayout>

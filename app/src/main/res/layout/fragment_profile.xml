@@ -24,20 +24,8 @@
                     android:id="@+id/tv_prenume"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Prenume"
+                    android:text="Nume și prenume"
                     android:layout_marginStart="40dp"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginTop="24dp"
-                    android:textSize="18sp"
-                    android:textColor="@color/colorText"
-                    />
-
-                <TextView
-                    android:id="@+id/tv_nume"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nume"
-                    android:layout_marginStart="60dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginTop="24dp"
                     android:textSize="18sp"
@@ -50,11 +38,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ll_prenume"
-                android:layout_marginTop="20dp"
                 android:id="@+id/ll_prenume_edit">
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:text="ajfalfjaw"
                     android:editable="false"
@@ -63,19 +50,8 @@
                     android:textColor="@color/colorText"
                     android:textStyle="bold"
                     android:textSize="20sp"
-                    android:id="@+id/et_prenume"/>
-
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ajfalfjaw"
-                    android:editable="false"
-                    android:layout_marginStart="60dp"
-                    android:singleLine="true"
-                    android:textColor="@color/colorText"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:id="@+id/et_nume"/>
+                    android:id="@+id/et_nume_complet"/>
+                />
 
             </LinearLayout>
 
@@ -108,11 +84,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ll_telefon"
-                android:layout_marginTop="20dp"
                 android:id="@+id/ll_telefon_edit">
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:text="070175032"
                     android:layout_marginStart="40dp"
@@ -150,11 +125,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ll_matricol"
-                android:layout_marginTop="20dp"
                 android:id="@+id/ll_matricol_edit">
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:text="MFS085308"
                     android:id="@+id/et_matricol"

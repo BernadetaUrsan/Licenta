@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.OrarActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:id="@+id/ll_zile">
+
+            <TextView
+                android:id="@+id/tv_luni"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Luni"
+                android:textStyle="bold"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorText"
+                android:onClick="OnLuni"
+                />
+
+            <TextView
+                android:id="@+id/tv_marti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marți"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorText"
+                android:onClick="OnMarti"
+                />
+
+            <TextView
+                android:id="@+id/tv_miercuri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Miercuri"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorText"
+                android:onClick="OnMiercuri"
+                />
+
+            <TextView
+                android:id="@+id/tv_joi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Joi"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorText"
+                android:onClick="OnJoi"
+                />
+
+            <TextView
+                android:id="@+id/tv_vineri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vineri"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:textSize="16sp"
+                android:textColor="@color/colorText"
+                android:onClick="OnVineri"
+                />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
