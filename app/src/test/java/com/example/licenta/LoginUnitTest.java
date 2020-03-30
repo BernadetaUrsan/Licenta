@@ -33,21 +33,21 @@ public class LoginUnitTest {
 //        loginViewModel.setmAuth(mAuth);
     }
 
-    @Test
-    public void areInputsValid() {
-        boolean validEmail =  loginViewModel.validateEmail("berna@gmail.com");
-        assertEquals(true, validEmail);
-    }
+//    @Test
+//    public void areInputsValid() {
+//        boolean validEmail =  loginViewModel.validateEmail("berna@gmail.com");
+//        assertEquals(true, validEmail);
+//    }
 
-    @Test
-    public void isPasswordValid(){
-        boolean validPassword =  loginViewModel.validatePassword("berna");
-        assertEquals( true, validPassword);
-    }
-
-    @Test
-    public void checkLogin(){
-        String result = loginViewModel.onSignIn("berna@classboard.com","cosmin");
-        assertEquals(LOGIN_SUCCES, result);
-    }
+//    @Test
+//    public void isPasswordValid(){
+//        boolean validPassword =  loginViewModel.validatePassword("berna");
+//        assertEquals( true, validPassword);
+//    }
+//
+//    @Test
+//    public void checkLogin(){
+//        String result = loginViewModel.onSignIn("berna@classboard.com","cosmin");
+//        assertEquals(LOGIN_SUCCES, result);
+//    }
 }
