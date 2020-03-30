@@ -44,4 +44,11 @@ public class SchedulesActivity extends AppCompatActivity {
         intent4.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         getApplicationContext().startActivity(intent4);
     }
+
+    public void OnFacultate (View view){
+
+        Intent intent5 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ac.upt.ro/orare.php#top"));
+        intent5.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getApplicationContext().startActivity(intent5);
+    }
 }

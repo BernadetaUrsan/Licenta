@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
@@ -45,6 +46,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         for (LocationModel location: StorageHelper.mockLocations()) {
             Marker marker = googleMap.addMarker(new MarkerOptions()
                     .position(new LatLng(location.getLatitude(), location.getLongitude()))
+                    .icon(getMarkerIconFromDrawable(circleDrawable))
                     .title(location.getNumeLocatie()));
             marker.setTag(location);
         }
@@ -59,15 +61,22 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
 //        return BitmapDescriptorFactory.fromBitmap(bitmap);
 //    }
 
-    private BitmapDescriptor getBitmapDescriptor(int id) {
-        Drawable vectorDrawable = this.getDrawable(id);
-        int h = ((int) convertDpToPixel(42));
-        int w = ((int) convertDpToPixel(25));
-        vectorDrawable.setBounds(0, 0, w, h);
-        Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bm);
+    private BitmapDescriptor getMarkerIconFromDrawable(Drawable drawable) {
+        Canvas canvas = new Canvas();
+        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        canvas.setBitmap(bitmap);
+        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
+        drawable.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
+    }
+
+    private BitmapDescriptor bitmapDescriptorFromVector(Context context, int vectorResId) {
+        Drawable vectorDrawable = ContextCompat.getDrawable(context, vectorResId);
+        vectorDrawable.setBounds(0, 0, vectorDrawable.getIntrinsicWidth(), vectorDrawable.getIntrinsicHeight());
+        Bitmap bitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
         vectorDrawable.draw(canvas);
-        return BitmapDescriptorFactory.fromBitmap(bm);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
     public float  convertDpToPixel(int dp){

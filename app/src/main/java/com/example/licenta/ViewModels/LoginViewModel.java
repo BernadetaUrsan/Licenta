@@ -145,12 +145,10 @@ public class LoginViewModel extends ViewModel{
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot data: dataSnapshot.getChildren()) {
-                    StudentModel student = data.getValue(StudentModel.class);
-                    if (student.getEmail().equalsIgnoreCase(userEmail))
-                    {
-                        setData(student);
-                        break;
-                    }
+                    StudentModel myUser = dataSnapshot.getValue(StudentModel.class);
+                    UserHelper.Instance().setStudent(myUser);
+                    UserHelper.Instance().setFirebaseUser(mAuth.getCurrentUser());
+                    UserHelper.Instance().setLoggedIn(true);
                 }
             }
 

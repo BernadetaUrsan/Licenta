@@ -39,7 +39,7 @@ public class SplashActivity extends AppCompatActivity {
             if (mUser != null) {
                 ifLoggedIn(mUser);
             } else {
-                Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }
