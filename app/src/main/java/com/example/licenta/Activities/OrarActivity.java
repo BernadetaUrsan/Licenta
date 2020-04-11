@@ -38,7 +38,7 @@ public class OrarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_orar);
         initializeViews();
 
-        FirebaseHelper.getInstance().timetableDatabase.child(UserHelper.Instance().getFirebaseUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+        FirebaseHelper.getInstance().timetableDatabase.child(UserHelper.Instance().getStudent().getUserId()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 timetable = dataSnapshot.getValue(TimetabelModel.class);

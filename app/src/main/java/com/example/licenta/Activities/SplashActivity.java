@@ -45,7 +45,6 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void ifLoggedIn(final FirebaseUser user) {
-
         mDatabaseReference = FirebaseHelper.getInstance().usersDatabase.child(user.getUid());
         mDatabaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -53,6 +52,7 @@ public class SplashActivity extends AppCompatActivity {
                 StudentModel myUser = dataSnapshot.getValue(StudentModel.class);
                 UserHelper.Instance().setStudent(myUser);
                 UserHelper.Instance().setFirebaseUser(user);
+                UserHelper.Instance().getStudent().setUserId(user.getUid());
                 UserHelper.Instance().setLoggedIn(true);
                 Intent intent = new Intent(SplashActivity.this, HomeActivity.class);
                 startActivity(intent);

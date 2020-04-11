@@ -40,8 +40,8 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
 //        ActivityLoginBinding loginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
 //        loginBinding.setViewModel(ViewModelProviders.of(this, new LoginViewModelFactory(this, this)).get(LoginViewModel.class));
         //shareDialog = new ShareDialog(this);  // initialize facebook shareDialog.
-
     }
+
     public void onSignIn(String email, String password)
     {
         userEmail = email;
@@ -69,6 +69,7 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
                 StudentModel myUser = dataSnapshot.getValue(StudentModel.class);
                 UserHelper.Instance().setStudent(myUser);
                 UserHelper.Instance().setFirebaseUser(mAuth.getCurrentUser());
+                UserHelper.Instance().getStudent().setUserId(mAuth.getCurrentUser().getUid());
                 UserHelper.Instance().setLoggedIn(true);
                 Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(intent);

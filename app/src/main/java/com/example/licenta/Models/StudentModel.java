@@ -9,6 +9,7 @@ public class StudentModel {
     private String carId;
     private String email;
     private String fullName;
+    private String userId;
 
     public StudentModel(String name, String surname, String number, String phoneNumber, String imageUrl, String carId, String email, String fullName){
         this.name = name;
@@ -63,6 +64,14 @@ public class StudentModel {
     public String getFullName() {
         setFullName(name,surname);
         return fullName;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public void setFullName(String name, String surname) {
