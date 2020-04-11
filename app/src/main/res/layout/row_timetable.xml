@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="70dp"
     android:background="@color/colorWhite"
-    android:layout_marginTop="20dp">
+    android:layout_marginTop="10dp">
 
     <TextView
         android:id="@+id/tv_materie"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="POO"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="6dp"
         android:layout_marginBottom="6dp"
         android:textColor="@color/colorText"
         android:textSize="22sp"
