@@ -112,4 +112,8 @@ public class OrarActivity extends AppCompatActivity {
         vineri = findViewById(R.id.tv_vineri);
         recyclerView= findViewById(R.id.rv_timetable);
     }
+
+    public void onAddTimetable(View view){
+        
+    }
 }

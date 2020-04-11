@@ -108,4 +108,9 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
     public void onSignIn(View view) {
         onSignIn(userEmail, userPassword);
     }
+
+    public void onSignUp(View view){
+        Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+        startActivity(intent);
+    }
 }
