@@ -146,6 +146,6 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
     }
 
     public void OnSaveTimetable(View view){
-        FirebaseHelper.getInstance().timetableDatabase.child(UserHelper.Instance().getStudent().getUserId()).setValue(timetable).;
+        FirebaseHelper.getInstance().timetableDatabase.child(UserHelper.Instance().getStudent().getUserId()).setValue(timetable);
     }
 }
