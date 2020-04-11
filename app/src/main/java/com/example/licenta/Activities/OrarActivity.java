@@ -26,7 +26,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.List;
 
 public class OrarActivity extends AppCompatActivity implements TimetableClickListener {
-    private static final int LAUNCH_ACTIVITY = 749;
+    private static final int LAUNCH_ACTIVITY = 7419;
     TextView luni, marti, miercuri, joi, vineri;
     private TimetableAdapter timetableAdapter;
     private RecyclerView recyclerView;
