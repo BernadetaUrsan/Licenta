@@ -29,6 +29,7 @@
         android:layout_centerVertical="true"
         android:src="@drawable/ic_add_orar_black"
         android:visibility="invisible"
+        android:onClick="onAddTimetable"
         />
 
     <TextView
