@@ -32,6 +32,7 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
     private RecyclerView recyclerView;
     private TimetabelModel timetable;
     private int changedRowPosition = -1;
+    private int selectedDayPosition = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +67,7 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
         miercuri.setTextSize(16);
         joi.setTextSize(16);
         vineri.setTextSize(16);
+        selectedDayPosition = 0;
         SetRecyclerView(timetable.getmWeeklyTimetable().get(0).getmDailyTimetable());
     }
 
@@ -75,6 +77,7 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
         miercuri.setTextSize(16);
         joi.setTextSize(16);
         vineri.setTextSize(16);
+        selectedDayPosition = 1;
         SetRecyclerView(timetable.getmWeeklyTimetable().get(1).getmDailyTimetable());
     }
 
@@ -85,6 +88,7 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
         miercuri.setTextSize(26);
         joi.setTextSize(16);
         vineri.setTextSize(16);
+        selectedDayPosition = 2;
         SetRecyclerView(timetable.getmWeeklyTimetable().get(2).getmDailyTimetable());
     }
 
@@ -95,6 +99,7 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
         miercuri.setTextSize(16);
         joi.setTextSize(26);
         vineri.setTextSize(16);
+        selectedDayPosition = 3;
         SetRecyclerView(timetable.getmWeeklyTimetable().get(3).getmDailyTimetable());
     }
 
@@ -105,6 +110,7 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
         miercuri.setTextSize(16);
         joi.setTextSize(16);
         vineri.setTextSize(26);
+        selectedDayPosition = 4;
         SetRecyclerView(timetable.getmWeeklyTimetable().get(4).getmDailyTimetable());
     }
 
@@ -133,7 +139,7 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
             if(resultCode == Activity.RESULT_OK){
                 Object obj =  data.getSerializableExtra("class_id");
                 TimetableRowModel rowModel = (TimetableRowModel)obj;
-                timetable.getmWeeklyTimetable().get(0).getmDailyTimetable().get(changedRowPosition).setTimetableRowModel(rowModel);
+                timetable.getmWeeklyTimetable().get(selectedDayPosition).getmDailyTimetable().get(changedRowPosition).setTimetableRowModel(rowModel);
                 timetableAdapter.notifyDataSetChanged();
             }
         }
