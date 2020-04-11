@@ -47,15 +47,12 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
         initializeViews(rootView);
 
         aSwitch.setOnCheckedChangeListener(this);
-
-        SetValues();
         setBtnActions();
 
         return rootView;
     }
 
     private void SetValues(){
-
         userCurent = UserHelper.Instance().getStudent();
         email.setText(userCurent.getEmail());
         //parola.setText(userCurent.());
@@ -101,12 +98,10 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
     }
 
     public void OnCancel() {
-
-        onResume();
+        SetValues();
     }
 
     public void OnSave() {
-
         FirebaseHelper.getInstance().usersDatabase.child(userCurent.getNumber()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -117,7 +112,7 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
 //                HashMap<String, Object> map = new HashMap<>();
 //                map.put("email", emailNou);
 //                FirebaseHelper.usersDatabase.child(userCurent.getEmail()).updateChildren(map);
-                onResume();
+                SetValues();
             }
 
             @Override
@@ -130,6 +125,5 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
     @Override
     public void onResume() {
         super.onResume();
-        SetValues();
     }
 }
