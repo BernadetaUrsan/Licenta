@@ -1,5 +1,6 @@
 package com.example.licenta.Activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,9 +11,14 @@ import android.widget.TextView;
 
 import com.example.licenta.Adapters.TimetableAdapter;
 import com.example.licenta.Adapters.YearPostsAdapter;
+import com.example.licenta.Helpers.FirebaseHelper;
+import com.example.licenta.Helpers.UserHelper;
 import com.example.licenta.Models.PostModel;
 import com.example.licenta.Models.TimetabelModel;
 import com.example.licenta.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -29,6 +35,18 @@ public class OrarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orar);
         initializeViews();
+
+        FirebaseHelper.getInstance().timetableDatabase.child(UserHelper.Instance().getFirebaseUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                TimetabelModel model = dataSnapshot.getValue(TimetabelModel.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
 

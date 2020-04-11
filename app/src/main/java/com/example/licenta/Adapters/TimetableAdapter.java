@@ -42,6 +42,11 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
         String sala = listaZi.get(position).getmLocationName();
         String oraStart = listaZi.get(position).getmStartTime();
         String oraStop = listaZi.get(position).getmEndTime();
+        if (materie.isEmpty() && sala.isEmpty())
+        {
+            holder.materieTV.setVisibility(View.GONE);
+            holder.salaTv.setVisibility(View.GONE);
+        }
 
         holder.materieTV.setText(materie);
         holder.salaTv.setText(sala);
