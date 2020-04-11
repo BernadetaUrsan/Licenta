@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Licenta.iml" filepath="$PROJECT_DIR$/Licenta.iml" group="Licenta" />
+      <module fileurl="file://$PROJECT_DIR$/app/Licenta-app.iml" filepath="$PROJECT_DIR$/app/Licenta-app.iml" group="Licenta/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Licenta/app" />
+      <module fileurl="file://$PROJECT_DIR$/git-Licenta.iml" filepath="$PROJECT_DIR$/git-Licenta.iml" group="Licenta" />
     </modules>
   </component>
 </project>

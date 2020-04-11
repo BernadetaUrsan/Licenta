@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.licenta.Enums.ClassTypeEnum;
+import com.example.licenta.Models.TimetableRowModel;
 import com.example.licenta.R;
 
 import java.util.List;
@@ -16,9 +18,9 @@ import java.util.List;
 public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.ViewHolder>{
 
     private Context context;
-    private List<OneDayScheduleModel> listaZi;
+    private List<TimetableRowModel> listaZi;
 
-    public TimetableAdapter(List<OneDayScheduleModel> listaZi, Context context) {
+    public TimetableAdapter(List<TimetableRowModel> listaZi, Context context) {
         this.listaZi = listaZi;
         this.context = context;
     }
@@ -36,13 +38,15 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
     @Override
     public void onBindViewHolder(@NonNull TimetableAdapter.ViewHolder holder, int position) {
 
-        String materie = listaZi.get(position).getNumeMaterie();
-        String sala = listaZi.get(position).getSalaMaterie();
-        String ora = listaZi.get(position).getOraMaterie();
+        String materie = listaZi.get(position).getmClassName();
+        String sala = listaZi.get(position).getmLocationName();
+        String oraStart = listaZi.get(position).getmStartTime();
+        String oraStop = listaZi.get(position).getmEndTime();
 
         holder.materieTV.setText(materie);
         holder.salaTv.setText(sala);
-        holder.oraTv.setText(ora);
+        holder.oraStartTv.setText(oraStart);
+        holder.oraStopTv.setText(oraStop);
     }
 
     @Override
@@ -54,7 +58,8 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
 
         private TextView materieTV;
         private TextView salaTv;
-        private TextView oraTv;
+        private TextView oraStartTv;
+        private TextView oraStopTv;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -66,7 +71,8 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
         {
             materieTV= itemView.findViewById(R.id.tv_materie);
             salaTv= itemView.findViewById(R.id.tv_sala);
-            oraTv= itemView.findViewById(R.id.tv_ora);
+            oraStartTv= itemView.findViewById(R.id.tv_oraStart);
+            oraStopTv= itemView.findViewById(R.id.tv_oraStop);
         }
     }
 }

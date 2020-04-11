@@ -12,8 +12,10 @@
     <color name="colorYellowLight">#dd4065</color>
 
     <color name="colorText">#444143</color>
+    <color name="colorTextSters">#a8a4a6</color>
     <color name="colorTextHint">#4d5273</color>
     <color name="colorTextButton">#4d5273</color>
+    <color name="colorTextButtonSters">#b1b1cd</color>
     <color name="colorTextBold">#231f20</color>
     <color name="colorGray">#231f20</color>
     <color name="colorWhite">#ffffff</color>
