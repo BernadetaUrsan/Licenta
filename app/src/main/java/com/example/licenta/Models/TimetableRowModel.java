@@ -7,12 +7,12 @@ public class TimetableRowModel {
     private String mLocationName;
     private String mStartTime;
     private String mEndTime;
-    private ClassTypeEnum mClassType;
+    private int mClassType;
 
     public TimetableRowModel() {
     }
 
-    public TimetableRowModel(String mClassName, String mLocationName, String mStartTime, String mEndTime, ClassTypeEnum mClassType) {
+    public TimetableRowModel(String mClassName, String mLocationName, String mStartTime, String mEndTime, int mClassType) {
         this.mClassName = mClassName;
         this.mLocationName = mLocationName;
         this.mStartTime = mStartTime;
@@ -52,11 +52,11 @@ public class TimetableRowModel {
         this.mEndTime = mEndTime;
     }
 
-    public ClassTypeEnum getmClassType() {
+    public int getmClassType() {
         return mClassType;
     }
 
-    public void setmClassType(ClassTypeEnum mClassType) {
+    public void setmClassType(int mClassType) {
         this.mClassType = mClassType;
     }
 }

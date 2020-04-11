@@ -1,6 +1,8 @@
 package com.example.licenta.Activities;
 
 import androidx.annotation.NonNull;
+
+import com.example.licenta.Mockers;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +31,8 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         navigation.setOnNavigationItemSelectedListener(this);
         initializeViews();
         LoadFragment(fragmentHome);
+
+        Mockers.getMockTimetable();
     }
 
     private void initializeViews(){

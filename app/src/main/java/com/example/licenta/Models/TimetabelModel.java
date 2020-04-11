@@ -1,15 +1,15 @@
 package com.example.licenta.Models;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class TimetabelModel {
-    private List<DailyTimetable> mWeeklyTimetable;
+    private ArrayList<DailyTimetable> mWeeklyTimetable;
 
-    public List<DailyTimetable> getmWeeklyTimetable() {
+    public ArrayList<DailyTimetable> getmWeeklyTimetable() {
         return mWeeklyTimetable;
     }
 
-    public void setmWeeklyTimetable(List<DailyTimetable> mWeeklyTimetable) {
+    public void setmWeeklyTimetable(ArrayList<DailyTimetable> mWeeklyTimetable) {
         this.mWeeklyTimetable = mWeeklyTimetable;
     }
 }
