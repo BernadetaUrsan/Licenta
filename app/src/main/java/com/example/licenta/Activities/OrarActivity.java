@@ -12,6 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
 import com.example.licenta.Adapters.TimetableAdapter;
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Helpers.UserHelper;
@@ -123,25 +128,5 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
         recyclerView= findViewById(R.id.rv_timetable);
     }
 
-    @Override
-    public void OnClick(TimetableRowModel timetableRowModel, int position) {
-        Intent intent = new Intent(this, AddClassTimetableActivity.class);
-        intent.putExtra("class_id", timetableRowModel);
         startActivityForResult(intent, LAUNCH_ACTIVITY);
-        changedRowPosition = position;
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == LAUNCH_ACTIVITY) {
-            if(resultCode == Activity.RESULT_OK){
-                Object obj =  data.getSerializableExtra("class_id");
-                TimetableRowModel rowModel = (TimetableRowModel)obj;
-                timetable.getmWeeklyTimetable().get(selectedDayPosition).getmDailyTimetable().get(changedRowPosition).setTimetableRowModel(rowModel);
-                timetableAdapter.notifyDataSetChanged();
-            }
-        }
-    }
 }

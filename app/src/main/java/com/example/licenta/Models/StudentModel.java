@@ -12,7 +12,7 @@ public class StudentModel {
     private String userId;
 
     public StudentModel(String name, String surname, String number, String phoneNumber, String imageUrl, String carId, String email, String fullName){
-        this.name = name;
+            this.name = name;
         this.surname = surname;
         this.number = number;
         this.phoneNumber = phoneNumber;
