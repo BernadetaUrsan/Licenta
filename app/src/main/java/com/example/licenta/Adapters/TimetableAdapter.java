@@ -2,6 +2,7 @@ package com.example.licenta.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,12 +54,14 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
             holder.materieTV.setVisibility(View.GONE);
             holder.salaTv.setVisibility(View.GONE);
             holder.pauzaTv.setVisibility(View.VISIBLE);
+            holder.oraStartTv.setBackgroundColor(Color.parseColor("#dad8d9"));
+            holder.oraStopTv.setBackgroundColor(Color.parseColor("#dad8d9"));
         }
         else{
             holder.materieTV.setVisibility(View.VISIBLE);
             holder.salaTv.setVisibility(View.VISIBLE);
             holder.pauzaTv.setVisibility(View.GONE);
-        }
+    }
 
         holder.materieTV.setText(materie);
         holder.salaTv.setText(sala);
