@@ -7,19 +7,19 @@
     tools:context=".Activities.OrarActivity">
 
     <RelativeLayout
+        android:id="@+id/rl_zile"
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
+            android:id="@+id/ll_zile"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:layout_centerInParent="true"
-            android:id="@+id/ll_zile">
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true">
 
             <TextView
                 android:id="@+id/tv_luni"
@@ -87,8 +87,13 @@
 
         </LinearLayout>
 
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_timetable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_zile"
+            android:layout_margin="20dp"
+            />
 
     </RelativeLayout>
-
 </androidx.core.widget.NestedScrollView>
