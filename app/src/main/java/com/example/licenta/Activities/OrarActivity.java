@@ -13,13 +13,6 @@ import com.example.licenta.R;
 public class OrarActivity extends AppCompatActivity {
 
     TextView luni, marti, miercuri, joi, vineri;
-
-//    private LuniFragment fragmentLuni;
-//    private MartiFragment fragmentMarti;
-//    private MiercuriFragment fragmentMiercuri;
-//    private JoiFragment fragmentJoi;
-//    private VineriFragment fragmentVineri;
-
     private TimetableAdapter listaZi;
 
     @Override

@@ -19,7 +19,18 @@ public class Mockers {
         timetabelModel.getmWeeklyTimetable().add(new DailyTimetable());
         timetabelModel.getmWeeklyTimetable().add(new DailyTimetable());
 
-        DailyTimetable aux =  timetabelModel.getmWeeklyTimetable().get(0);
+        timetabelModel.getmWeeklyTimetable().get(0).setmDailyTimetable(new ArrayList<TimetableRowModel>());
+        timetabelModel.getmWeeklyTimetable().get(1).setmDailyTimetable(new ArrayList<TimetableRowModel>());
+        timetabelModel.getmWeeklyTimetable().get(2).setmDailyTimetable(new ArrayList<TimetableRowModel>());
+        timetabelModel.getmWeeklyTimetable().get(3).setmDailyTimetable(new ArrayList<TimetableRowModel>());
+        timetabelModel.getmWeeklyTimetable().get(4).setmDailyTimetable(new ArrayList<TimetableRowModel>());
+
+        for (int i = 0; i < 5; i++)
+        {
+            timetabelModel.getmWeeklyTimetable().get(i).getmDailyTimetable().add(rowModel);
+            timetabelModel.getmWeeklyTimetable().get(i).getmDailyTimetable().add(rowModel);
+            timetabelModel.getmWeeklyTimetable().get(i).getmDailyTimetable().add(rowModel);
+        }
 
         return  timetabelModel;
     }

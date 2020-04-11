@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -20,7 +21,14 @@ import com.example.licenta.Activities.ParkingActivity;
 import com.example.licenta.Activities.SchedulesActivity;
 import com.example.licenta.Activities.SignUpActivity;
 import com.example.licenta.Activities.YearGroupActivity;
+import com.example.licenta.Helpers.FirebaseHelper;
+import com.example.licenta.Helpers.UserHelper;
+import com.example.licenta.Mockers;
+import com.example.licenta.Models.TimetabelModel;
 import com.example.licenta.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 

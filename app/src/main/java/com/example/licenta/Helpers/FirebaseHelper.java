@@ -13,6 +13,7 @@ public class FirebaseHelper {
     public DatabaseReference postCommentsDatabase = firebaseDatabase.getReference("Comments");
     public DatabaseReference usersDatabase = firebaseDatabase.getReference("Users");
     public DatabaseReference teachersDatabase = firebaseDatabase.getReference("Teachers");
+    public DatabaseReference timetableDatabase = firebaseDatabase.getReference("Timetable");
     public FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     public FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 

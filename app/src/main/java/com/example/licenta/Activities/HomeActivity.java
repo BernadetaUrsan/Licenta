@@ -31,8 +31,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         navigation.setOnNavigationItemSelectedListener(this);
         initializeViews();
         LoadFragment(fragmentHome);
-
-        Mockers.getMockTimetable();
     }
 
     private void initializeViews(){
