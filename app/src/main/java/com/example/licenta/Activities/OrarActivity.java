@@ -1,20 +1,17 @@
 package com.example.licenta.Activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.licenta.Adapters.TimetableAdapter;
-import com.example.licenta.Adapters.YearPostsAdapter;
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Helpers.UserHelper;
-import com.example.licenta.Models.PostModel;
 import com.example.licenta.Models.TimetabelModel;
 import com.example.licenta.Models.TimetableRowModel;
 import com.example.licenta.R;
@@ -42,9 +39,7 @@ public class OrarActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 timetable = dataSnapshot.getValue(TimetabelModel.class);
-
                 luni.setTextSize(26);
-
                 SetRecyclerView(timetable.getmWeeklyTimetable().get(0).getmDailyTimetable());
             }
 

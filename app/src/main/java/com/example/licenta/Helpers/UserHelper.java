@@ -10,7 +10,6 @@ public class UserHelper {
     private boolean isLoggedIn;
 
     private UserHelper(){
-
     }
 
     public static UserHelper Instance()

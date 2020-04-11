@@ -1,6 +1,7 @@
 package com.example.licenta.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,9 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.licenta.Activities.OnePostActivity;
 import com.example.licenta.Enums.ClassTypeEnum;
+import com.example.licenta.Interfaces.ITimetableInterface;
 import com.example.licenta.Models.TimetableRowModel;
 import com.example.licenta.R;
 
@@ -38,11 +42,11 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull TimetableAdapter.ViewHolder holder, int position) {
-
-        String materie = listaZi.get(position).getmClassName();
-        String sala = listaZi.get(position).getmLocationName();
-        String oraStart = listaZi.get(position).getmStartTime();
-        String oraStop = listaZi.get(position).getmEndTime();
+        TimetableRowModel rowModel = listaZi.get(position);
+        String materie = rowModel.getmClassName();
+        String sala = rowModel.getmLocationName();
+        String oraStart = rowModel.getmStartTime();
+        String oraStop = rowModel.getmEndTime();
         if (materie.isEmpty() && sala.isEmpty())
         {
             holder.materieTV.setVisibility(View.GONE);
@@ -59,6 +63,17 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
         holder.salaTv.setText(sala);
         holder.oraStartTv.setText(oraStart);
         holder.oraStopTv.setText(oraStop);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, OnePostActivity.class);
+//                intent.putExtra("id_key",id);
+                ((AppCompatActivity)context).startActivityForResult();
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
