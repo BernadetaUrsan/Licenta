@@ -42,6 +42,9 @@ public class OrarActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 timetable = dataSnapshot.getValue(TimetabelModel.class);
+
+                luni.setTextSize(26);
+
                 SetRecyclerView(timetable.getmWeeklyTimetable().get(0).getmDailyTimetable());
             }
 

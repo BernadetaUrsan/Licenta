@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -46,6 +47,12 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
         {
             holder.materieTV.setVisibility(View.GONE);
             holder.salaTv.setVisibility(View.GONE);
+            holder.pauzaTv.setVisibility(View.VISIBLE);
+        }
+        else{
+            holder.materieTV.setVisibility(View.VISIBLE);
+            holder.salaTv.setVisibility(View.VISIBLE);
+            holder.pauzaTv.setVisibility(View.GONE);
         }
 
         holder.materieTV.setText(materie);
@@ -65,6 +72,7 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
         private TextView salaTv;
         private TextView oraStartTv;
         private TextView oraStopTv;
+        private ImageView pauzaTv;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -78,6 +86,7 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
             salaTv= itemView.findViewById(R.id.tv_sala);
             oraStartTv= itemView.findViewById(R.id.tv_oraStart);
             oraStopTv= itemView.findViewById(R.id.tv_oraStop);
+            pauzaTv= itemView.findViewById(R.id.iv_pauza);
         }
     }
 }
