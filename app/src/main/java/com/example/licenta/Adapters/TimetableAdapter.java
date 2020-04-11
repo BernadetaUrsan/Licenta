@@ -12,9 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.licenta.Activities.OnePostActivity;
-import com.example.licenta.Enums.ClassTypeEnum;
-import com.example.licenta.Interfaces.ITimetableInterface;
+import com.example.licenta.Activities.AddClassTimetableActivity;
+import com.example.licenta.Interfaces.TimetableClickListener;
 import com.example.licenta.Models.TimetableRowModel;
 import com.example.licenta.R;
 
@@ -24,10 +23,12 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
 
     private Context context;
     private List<TimetableRowModel> listaZi;
+    private TimetableClickListener clickListener;
 
-    public TimetableAdapter(List<TimetableRowModel> listaZi, Context context) {
+    public TimetableAdapter(List<TimetableRowModel> listaZi, Context context, TimetableClickListener clickListener) {
         this.listaZi = listaZi;
         this.context = context;
+        this.clickListener = clickListener;
     }
 
     @NonNull
@@ -41,8 +42,8 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TimetableAdapter.ViewHolder holder, int position) {
-        TimetableRowModel rowModel = listaZi.get(position);
+    public void onBindViewHolder(@NonNull TimetableAdapter.ViewHolder holder, final int position) {
+        final TimetableRowModel rowModel = listaZi.get(position);
         String materie = rowModel.getmClassName();
         String sala = rowModel.getmLocationName();
         String oraStart = rowModel.getmStartTime();
@@ -67,11 +68,7 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, OnePostActivity.class);
-//                intent.putExtra("id_key",id);
-                ((AppCompatActivity)context).startActivityForResult();
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+                clickListener.OnClick(rowModel, position);
             }
         });
     }

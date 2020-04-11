@@ -1,10 +1,13 @@
 package com.example.licenta.Activities;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.licenta.Adapters.TimetableAdapter;
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Helpers.UserHelper;
+import com.example.licenta.Interfaces.TimetableClickListener;
 import com.example.licenta.Models.TimetabelModel;
 import com.example.licenta.Models.TimetableRowModel;
 import com.example.licenta.R;
@@ -21,13 +25,13 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
-public class OrarActivity extends AppCompatActivity {
-
+public class OrarActivity extends AppCompatActivity implements TimetableClickListener {
+    private static final int LAUNCH_ACTIVITY = 749;
     TextView luni, marti, miercuri, joi, vineri;
     private TimetableAdapter timetableAdapter;
-    private List<TimetabelModel> timetableList;
     private RecyclerView recyclerView;
     private TimetabelModel timetable;
+    private int changedRowPosition = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +53,10 @@ public class OrarActivity extends AppCompatActivity {
         });
     }
 
-    private void SetRecyclerView(List<TimetableRowModel> timetableRow)
+    private void SetRecyclerView(List<TimetableRowModel> timetableRows)
     {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        timetableAdapter = new TimetableAdapter(timetableRow, getApplicationContext());
+        timetableAdapter = new TimetableAdapter(timetableRows, getApplicationContext(), this);
         recyclerView.setAdapter(timetableAdapter);
     }
 
@@ -113,7 +117,25 @@ public class OrarActivity extends AppCompatActivity {
         recyclerView= findViewById(R.id.rv_timetable);
     }
 
-    public void onAddTimetable(View view){
-        
+    @Override
+    public void OnClick(TimetableRowModel timetableRowModel, int position) {
+        Intent intent = new Intent(this, AddClassTimetableActivity.class);
+        intent.putExtra("class_id", timetableRowModel);
+        startActivityForResult(intent, LAUNCH_ACTIVITY);
+        changedRowPosition = position;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == LAUNCH_ACTIVITY) {
+            if(resultCode == Activity.RESULT_OK){
+                Object obj =  data.getSerializableExtra("class_id");
+                TimetableRowModel rowModel = (TimetableRowModel)obj;
+                timetable.getmWeeklyTimetable().get(0).getmDailyTimetable().get(changedRowPosition).setTimetableRowModel(rowModel);
+                timetableAdapter.notifyDataSetChanged();
+            }
+        }
     }
 }

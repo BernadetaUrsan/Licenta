@@ -2,7 +2,9 @@ package com.example.licenta.Models;
 
 import com.example.licenta.Enums.ClassTypeEnum;
 
-public class TimetableRowModel {
+import java.io.Serializable;
+
+public class TimetableRowModel implements Serializable {
     private String mClassName;
     private String mLocationName;
     private String mStartTime;
@@ -18,6 +20,12 @@ public class TimetableRowModel {
         this.mStartTime = mStartTime;
         this.mEndTime = mEndTime;
         this.mClassType = mClassType;
+    }
+
+    public void setTimetableRowModel(TimetableRowModel timetableRow) {
+        mClassName = timetableRow.getmClassName();
+        mLocationName = timetableRow.getmLocationName();
+        mClassType = timetableRow.getmClassType();
     }
 
     public String getmClassName() {
