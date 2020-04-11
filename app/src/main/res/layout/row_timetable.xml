@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="70dp"
+    android:layout_height="66dp"
     android:background="@drawable/border_blue"
     android:layout_marginTop="10dp">
 
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="POO"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="1dp"
         android:layout_marginBottom="6dp"
         android:textColor="@color/colorText"
         android:textSize="18sp"

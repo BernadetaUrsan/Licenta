@@ -15,8 +15,8 @@
         <LinearLayout
             android:id="@+id/ll_zile"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="6dp"
             android:orientation="horizontal"
             android:gravity="center_horizontal"
             android:layout_centerHorizontal="true">
@@ -25,14 +25,13 @@
                 android:id="@+id/tv_luni"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Luni"
-                android:textStyle="bold"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
-                android:textSize="16sp"
-                android:textColor="@color/colorText"
                 android:onClick="OnLuni"
-                />
+                android:text="Luni"
+                android:textColor="@color/colorText"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_marti"
@@ -99,6 +98,21 @@
             android:layout_below="@+id/ll_zile"
             android:layout_margin="20dp"
             />
+
+        <Button
+            android:id="@+id/btn_add_post"
+            android:layout_below="@+id/rv_timetable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            app:fabSize="mini"
+            android:background="@drawable/border_blue_full"
+            android:text="Salvare"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="20dp"
+            android:layout_alignParentBottom="true"
+            android:onClick="OnSaveTimetable"/>
 
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
