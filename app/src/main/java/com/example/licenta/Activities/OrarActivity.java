@@ -1,22 +1,14 @@
 package com.example.licenta.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.licenta.Fragments.HomeFragment;
-import com.example.licenta.Fragments.NotificationsFragment;
-import com.example.licenta.Fragments.ProfileFragment;
-import com.example.licenta.Fragments.SettingsFragment;
+import com.example.licenta.Adapters.TimetableAdapter;
 import com.example.licenta.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class OrarActivity extends AppCompatActivity {
 
@@ -28,6 +20,7 @@ public class OrarActivity extends AppCompatActivity {
 //    private JoiFragment fragmentJoi;
 //    private VineriFragment fragmentVineri;
 
+    private TimetableAdapter listaZi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
