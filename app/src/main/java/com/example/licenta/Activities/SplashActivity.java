@@ -3,6 +3,8 @@ package com.example.licenta.Activities;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Helpers.UserHelper;
 import com.example.licenta.Models.StudentModel;
@@ -13,11 +15,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseReference;
