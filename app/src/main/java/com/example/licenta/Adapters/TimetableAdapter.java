@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,8 @@ import com.example.licenta.Models.TimetableRowModel;
 import com.example.licenta.R;
 
 import java.util.List;
+
+import static com.example.licenta.Constants.ColorConstants.DisabledColor;
 
 public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.ViewHolder>{
 
@@ -54,8 +57,8 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
             holder.materieTV.setVisibility(View.GONE);
             holder.salaTv.setVisibility(View.GONE);
             holder.pauzaTv.setVisibility(View.VISIBLE);
-            holder.oraStartTv.setBackgroundColor(Color.parseColor("#dad8d9"));
-            holder.oraStopTv.setBackgroundColor(Color.parseColor("#dad8d9"));
+            holder.oraStartTv.setBackgroundColor(Color.parseColor(DisabledColor));
+            holder.oraStopTv.setBackgroundColor(Color.parseColor(DisabledColor));
         }
         else{
             holder.materieTV.setVisibility(View.VISIBLE);

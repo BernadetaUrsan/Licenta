@@ -9,12 +9,13 @@ import android.view.View;
 
 import com.example.licenta.R;
 
-public class RegulamenteActivity extends AppCompatActivity {
+public class RegulamenteActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regulamente);
+        setToolbarTitle("Regulamente");
     }
 
     public void OnBurse(View view){

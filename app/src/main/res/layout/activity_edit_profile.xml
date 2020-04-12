@@ -11,50 +11,26 @@ tools:context=".Activities.EditProfileActivity">
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/ll_edit_container"-->
-<!--        android:layout_marginEnd="20dp"-->
-<!--        android:layout_marginStart="200dp"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@+id/iv_icon"-->
-<!--        android:layout_marginTop="48dp"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:weightSum="2"-->
-<!--        >-->
-<!--    <TextView-->
-<!--        android:id="@+id/tv_photo_details"-->
-<!--        android:layout_width="90dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Încarcă o fotografie, aceasta va fi poza ta de profil"-->
-<!--        android:textSize="14sp"-->
-<!--        android:textColor="@color/colorText"-->
-<!--        android:gravity="center_horizontal"-->
-<!--        android:layout_weight="1"-->
-<!--        />-->
-
-<!--    <ImageView-->
-<!--        android:layout_width="90dp"-->
-<!--        android:layout_height="90dp"-->
-<!--        android:layout_weight="1"-->
-<!--        android:src="@drawable/ic_home"-->
-<!--        />-->
-
-<!--    </LinearLayout>-->
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:id="@+id/ll_prenume">
 
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_person"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="20dp"
+            />
 
         <TextView
             android:id="@+id/tv_prenume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nume și prenume"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="24dp"
             android:textSize="18sp"
@@ -73,7 +49,7 @@ tools:context=".Activities.EditProfileActivity">
             android:id="@+id/et_nume_complet"
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="60dp"
             android:editable="false"
             android:singleLine="true"
             android:text="ajfalfjaw"
@@ -92,12 +68,20 @@ tools:context=".Activities.EditProfileActivity">
         android:id="@+id/ll_telefon"
         android:layout_below="@+id/ll_matricol_edit">
 
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_phone"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="20dp"
+            />
+
         <TextView
             android:id="@+id/tv_telefon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Număr telefon"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="24dp"
             android:textSize="18sp"
@@ -117,7 +101,7 @@ tools:context=".Activities.EditProfileActivity">
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:text="070175032"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="60dp"
             android:singleLine="true"
             android:textColor="@color/colorText"
             android:textStyle="bold"
@@ -133,12 +117,20 @@ tools:context=".Activities.EditProfileActivity">
         android:id="@+id/ll_matricol"
         android:layout_below="@+id/ll_prenume_edit">
 
+        <ImageView
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/ic_nr"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="20dp"
+            />
+
         <TextView
             android:id="@+id/tv_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Număr matricol"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="24dp"
             android:textSize="18sp"
@@ -158,7 +150,7 @@ tools:context=".Activities.EditProfileActivity">
             android:layout_width="240dp"
             android:layout_height="wrap_content"
             android:text="MFS085308"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="60dp"
             android:singleLine="true"
             android:textColor="@color/colorText"
             android:textStyle="bold"

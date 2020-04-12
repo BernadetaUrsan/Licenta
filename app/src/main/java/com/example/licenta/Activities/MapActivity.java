@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapActivity extends BaseActivity implements OnMapReadyCallback {
     private LocationModel locatie;
     private SupportMapFragment mapFragment;
     private GoogleMap googleMap;
@@ -37,6 +37,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         initializeViews();
+        setToolbarTitle("Hartă campus");
         mapFragment.getMapAsync(this);
     }
 

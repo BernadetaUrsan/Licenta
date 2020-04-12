@@ -7,18 +7,25 @@
     tools:context=".Activities.AddEventActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="600dp">
+
+    <include layout="@layout/toolbar_with_back_button"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_with_back_button">
 
     <TextView
         android:id="@+id/tv_event_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DENUMIRE EVENIMENT"
+        android:text="Denumire eveniment"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="30dp"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textColor="@color/colorText"
         />
 
@@ -31,7 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_event_name"
         android:singleLine="true"
-        android:textSize="20sp"
+        android:textSize="22sp"
+        android:hint="Examen P1 la ..."
         android:inputType="textPersonName"
         android:padding="6dp"
         android:textColor="@color/colorText"
@@ -45,11 +53,11 @@
         android:layout_below="@+id/et_event_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ORĂ DE ÎNCEPUT"
+        android:text="Oră start"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="30dp"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textColor="@color/colorText"
         />
 
@@ -57,11 +65,12 @@
             android:id="@+id/tv_pick_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Click pentru a alege ora de inceput"
+            android:text="Click"
             android:layout_below="@id/tv_event_hour"
             android:textColor="@color/colorText"
             android:layout_marginStart="20dp"
-            android:textSize="16sp"
+            android:textSize="22sp"
+            android:textStyle="bold"
             android:layout_marginTop="30dp" />
 
     <RelativeLayout
@@ -83,4 +92,6 @@
     </RelativeLayout>
 
     </RelativeLayout>
+    </RelativeLayout>
+
 </androidx.core.widget.NestedScrollView>

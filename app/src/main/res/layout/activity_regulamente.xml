@@ -8,12 +8,21 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
+
+        <include layout="@layout/toolbar_with_back_button"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/toolbar_with_back_button">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_1"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="70dp"
             android:layout_margin="8dp"
             android:onClick="OnBurse">
 
@@ -22,18 +31,34 @@
                 android:layout_height="match_parent"
                 android:layout_toStartOf="@+id/tv_1"
                 android:scaleType="centerInside"
-                android:background="@color/colorPurple"
+                android:background="@drawable/border_blue"
                 android:alpha="0.7"/>
 
+
+            <ImageView
+                android:id="@+id/iv_ic1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="2dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic__money"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="90dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REGULAMENT BURSE"
-                android:layout_marginStart="30dp"
+                android:text="Burse"
                 android:layout_marginEnd="30dp"
-                android:textColor="@color/colorWhite"
-                android:textSize="24sp"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:layout_gravity="center"/>
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -41,7 +66,7 @@
             android:id="@+id/cv_2"
             android:layout_width="match_parent"
             android:layout_below="@id/cv_1"
-            android:layout_height="150dp"
+            android:layout_height="70dp"
             android:layout_margin="8dp"
             android:onClick="OnCazare">
 
@@ -50,18 +75,33 @@
                 android:layout_height="match_parent"
                 android:layout_toStartOf="@+id/tv_1"
                 android:scaleType="centerInside"
-                android:background="@color/colorPurple"
+                android:background="@drawable/border_blue"
                 android:alpha="0.7"/>
 
+            <ImageView
+                android:id="@+id/iv_ic2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="2dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_hotel"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="90dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REGULAMENT CAZARE"
-                android:layout_marginStart="30dp"
+                android:text="Cazare"
                 android:layout_marginEnd="30dp"
-                android:textColor="@color/colorWhite"
-                android:textSize="24sp"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:layout_gravity="center"/>
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -69,7 +109,7 @@
             android:id="@+id/cv_3"
             android:layout_width="match_parent"
             android:layout_below="@id/cv_2"
-            android:layout_height="150dp"
+            android:layout_height="70dp"
             android:layout_margin="8dp"
             android:onClick="OnTabere">
 
@@ -78,18 +118,33 @@
                 android:layout_height="match_parent"
                 android:layout_toStartOf="@+id/tv_1"
                 android:scaleType="centerInside"
-                android:background="@color/colorPurple"
+                android:background="@drawable/border_blue"
                 android:alpha="0.7"/>
 
+            <ImageView
+                android:id="@+id/iv_ic3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="2dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_terrain"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="90dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REGULAMENT TABERE"
-                android:layout_marginStart="30dp"
+                android:text="Tabere"
                 android:layout_marginEnd="30dp"
-                android:textColor="@color/colorWhite"
-                android:textSize="24sp"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:layout_gravity="center"/>
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
@@ -97,7 +152,7 @@
         android:id="@+id/cv_4"
         android:layout_width="match_parent"
         android:layout_below="@id/cv_3"
-        android:layout_height="150dp"
+        android:layout_height="70dp"
         android:layout_margin="8dp"
         android:onClick="OnEvaluare">
 
@@ -106,19 +161,34 @@
             android:layout_height="match_parent"
             android:layout_toStartOf="@+id/tv_1"
             android:scaleType="centerInside"
-            android:background="@color/colorPurple"
+            android:background="@drawable/border_blue"
             android:alpha="0.7"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="REGULAMENT EVALUARE ȘI NOTARE"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:textColor="@color/colorWhite"
-            android:textSize="24sp"
-            android:layout_gravity="center"
-            android:textAlignment="center"/>
+            <ImageView
+                android:id="@+id/iv_ic4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="2dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_school"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="90dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:text="Evaluare și notare"
+                android:textColor="@color/colorText"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_gravity="center"/>
+            </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
@@ -126,7 +196,7 @@
             android:id="@+id/cv_5"
             android:layout_width="match_parent"
             android:layout_below="@id/cv_4"
-            android:layout_height="150dp"
+            android:layout_height="70dp"
             android:layout_margin="8dp"
             android:onClick="OnSef">
 
@@ -135,22 +205,37 @@
                 android:layout_height="match_parent"
                 android:layout_toStartOf="@+id/tv_1"
                 android:scaleType="centerInside"
-                android:background="@color/colorPurple"
+                android:background="@drawable/border_blue"
                 android:alpha="0.7"/>
 
+            <ImageView
+                android:id="@+id/iv_ic5"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="2dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_person"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="90dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REGULAMENT ALEGERE STUDENȚI REPREZENTANȚI"
-                android:layout_marginStart="30dp"
+                android:text="Alegere studenți reprezentanți"
                 android:layout_marginEnd="30dp"
-                android:textColor="@color/colorWhite"
-                android:textSize="24sp"
+                android:textColor="@color/colorText"
+                android:textStyle="bold"
+                android:textSize="16sp"
                 android:layout_gravity="center"
                 android:textAlignment="center"/>
+            </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
-
+    </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

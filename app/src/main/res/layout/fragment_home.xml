@@ -14,7 +14,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_orar"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_margin="8dp">
 
             <RelativeLayout
@@ -24,7 +24,8 @@
                 <ImageView
                     android:id="@+id/iv_cardview_orar"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
                     android:layout_toStartOf="@+id/rl_orar"
                     android:scaleType="centerInside"
                     android:src="@drawable/orar"
@@ -63,7 +64,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_year"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_below="@id/cv_orar"
             android:layout_margin="8dp">
 
@@ -74,7 +75,8 @@
                 <ImageView
                     android:id="@+id/iv_cardview_group"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
                     android:layout_toStartOf="@+id/rl_grup"
                     android:scaleType="centerInside"
                     android:src="@drawable/grup"
@@ -112,7 +114,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_park"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_margin="8dp"
             android:layout_below="@+id/cv_year">
 
@@ -123,7 +125,8 @@
                 <ImageView
                     android:id="@+id/iv_cardview_parking"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/parcari"
                     android:layout_toStartOf="@+id/rl_parcare"
                     android:scaleType="centerInside"
@@ -162,7 +165,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_news"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_margin="8dp"
             android:layout_below="@id/cv_park">
 
@@ -173,7 +176,8 @@
                 <ImageView
                     android:id="@+id/iv_cardview_news"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/stiri"
                     android:layout_toStartOf="@+id/rl_stiri"
                     android:scaleType="centerInside"
@@ -213,7 +217,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_schedule"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_margin="8dp"
             android:layout_below="@+id/cv_news">
 
@@ -224,7 +228,8 @@
                 <ImageView
                     android:id="@+id/iv_cardview_schedule"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/orare"
                     android:layout_toStartOf="@+id/rl_orare"
                     android:scaleType="centerInside"
@@ -265,7 +270,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_calendar"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_margin="8dp"
             android:layout_below="@+id/cv_schedule">
 
@@ -276,7 +281,8 @@
                 <ImageView
                     android:id="@+id/iv_cardview_calendar"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/calendar"
                     android:layout_toStartOf="@+id/rl_calendar"
                     android:scaleType="centerInside"
@@ -317,7 +323,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_harta"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="100dp"
             android:layout_margin="8dp"
             android:layout_below="@+id/cv_calendar">
 
@@ -328,7 +334,8 @@
                 <ImageView
                     android:id="@+id/iv_cardview_harta"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
                     android:src="@drawable/harta"
                     android:layout_toStartOf="@+id/rl_harta"
                     android:scaleType="centerInside"

@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
-public class OrarActivity extends AppCompatActivity implements TimetableClickListener {
+public class OrarActivity extends BaseActivity implements TimetableClickListener {
     private static final int LAUNCH_ACTIVITY = 7419;
     TextView luni, marti, miercuri, joi, vineri;
     private TimetableAdapter timetableAdapter;
@@ -39,6 +39,7 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orar);
         initializeViews();
+        setToolbarTitle("Orar");
 
         FirebaseHelper.getInstance().timetableDatabase.child(UserHelper.Instance().getStudent().getUserId()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -63,52 +64,52 @@ public class OrarActivity extends AppCompatActivity implements TimetableClickLis
 
     public void OnLuni (View view){
         luni.setTextSize(26);
-        marti.setTextSize(16);
-        miercuri.setTextSize(16);
-        joi.setTextSize(16);
-        vineri.setTextSize(16);
+        marti.setTextSize(12);
+        miercuri.setTextSize(12);
+        joi.setTextSize(12);
+        vineri.setTextSize(12);
         selectedDayPosition = 0;
         SetRecyclerView(timetable.getmWeeklyTimetable().get(0).getmDailyTimetable());
     }
 
     public void OnMarti (View view){
-        luni.setTextSize(16);
+        luni.setTextSize(12);
         marti.setTextSize(26);
-        miercuri.setTextSize(16);
-        joi.setTextSize(16);
-        vineri.setTextSize(16);
+        miercuri.setTextSize(12);
+        joi.setTextSize(12);
+        vineri.setTextSize(12);
         selectedDayPosition = 1;
         SetRecyclerView(timetable.getmWeeklyTimetable().get(1).getmDailyTimetable());
     }
 
     public void OnMiercuri (View view)
     {
-        luni.setTextSize(16);
-        marti.setTextSize(16);
+        luni.setTextSize(12);
+        marti.setTextSize(12);
         miercuri.setTextSize(26);
-        joi.setTextSize(16);
-        vineri.setTextSize(16);
+        joi.setTextSize(12);
+        vineri.setTextSize(12);
         selectedDayPosition = 2;
         SetRecyclerView(timetable.getmWeeklyTimetable().get(2).getmDailyTimetable());
     }
 
     public void OnJoi (View view)
     {
-        luni.setTextSize(16);
-        marti.setTextSize(16);
-        miercuri.setTextSize(16);
+        luni.setTextSize(12);
+        marti.setTextSize(12);
+        miercuri.setTextSize(12);
         joi.setTextSize(26);
-        vineri.setTextSize(16);
+        vineri.setTextSize(12);
         selectedDayPosition = 3;
         SetRecyclerView(timetable.getmWeeklyTimetable().get(3).getmDailyTimetable());
     }
 
     public void OnVineri (View view)
     {
-        luni.setTextSize(16);
-        marti.setTextSize(16);
-        miercuri.setTextSize(16);
-        joi.setTextSize(16);
+        luni.setTextSize(12);
+        marti.setTextSize(12);
+        miercuri.setTextSize(12);
+        joi.setTextSize(12);
         vineri.setTextSize(26);
         selectedDayPosition = 4;
         SetRecyclerView(timetable.getmWeeklyTimetable().get(4).getmDailyTimetable());

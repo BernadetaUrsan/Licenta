@@ -36,7 +36,7 @@ public class AddClassTimetableActivity extends BaseActivity {
         Intent returnIntent = new Intent();
         returnIntent.putExtra("class_id", rowModel);
         setResult(Activity.RESULT_OK,returnIntent);
-        finish();
+        this.finish();
     }
 
     private void initializeViews()

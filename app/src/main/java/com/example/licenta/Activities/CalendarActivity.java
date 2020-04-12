@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.licenta.R;
 
-public class CalendarActivity extends AppCompatActivity {
+public class CalendarActivity extends BaseActivity {
 
     CalendarView calendarView;
     TextView myDate;
@@ -23,6 +23,8 @@ public class CalendarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+
+        setToolbarTitle("Calendar");
 
         calendarView = (CalendarView) findViewById(R.id.cv_calendar_view);
         myDate = (TextView) findViewById(R.id.tv_calendar);

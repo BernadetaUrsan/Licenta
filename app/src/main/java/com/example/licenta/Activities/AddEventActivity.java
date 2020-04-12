@@ -24,10 +24,15 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
-public class AddEventActivity extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener {
+public class AddEventActivity extends BaseActivity implements TimePickerDialog.OnTimeSetListener {
 
     private EditText eventEt;
     private String descriere;
@@ -38,6 +43,11 @@ public class AddEventActivity extends AppCompatActivity implements TimePickerDia
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_event);
         initializeViews();
+
+        String currentTime = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
+
+        picker.setText(currentTime);
+        setToolbarTitle("Adăugare eveniment");
         picker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +70,7 @@ public class AddEventActivity extends AppCompatActivity implements TimePickerDia
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        picker.setText("Ora "+ hourOfDay + " : "+ minute);
+        picker.setText(hourOfDay + " : "+ minute);
     }
 
     public void OnAddEvent(View view){

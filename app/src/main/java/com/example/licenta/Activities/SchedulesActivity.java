@@ -9,12 +9,13 @@ import android.view.View;
 
 import com.example.licenta.R;
 
-public class SchedulesActivity extends AppCompatActivity {
+public class SchedulesActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedules);
+        setToolbarTitle("Orare");
     }
 
     public void OnBiblioteca (View view){

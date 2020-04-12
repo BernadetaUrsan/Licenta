@@ -9,12 +9,13 @@ import android.view.View;
 
 import com.example.licenta.R;
 
-public class NewsActivity extends AppCompatActivity {
+public class NewsActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
+        setToolbarTitle("Informații");
     }
 
     public void OnRegulamente(View view){
@@ -36,6 +37,18 @@ public class NewsActivity extends AppCompatActivity {
 
     public void OnExamene(View view){
         Intent intent2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://docs.google.com/spreadsheets/d/10Txn1y2aHZNRqJnJ-zSWDQ75V1fp_Ip9Mxl00aJ8R_o/edit#gid=1273101482"));
+        intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getApplicationContext().startActivity(intent2);
+    }
+
+    public void OnOptionale(View view){
+        Intent intent2 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ac.upt.ro/alegere_optionale.php#top"));
+        intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getApplicationContext().startActivity(intent2);
+    }
+
+    public void OnSecretariat(View view){
+        Intent intent2 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ac.upt.ro/contact.php#top"));
         intent2.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         getApplicationContext().startActivity(intent2);
     }

@@ -19,13 +19,20 @@
                 android:layout_marginTop="20dp"
                 android:id="@+id/ll_prenume">
 
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/ic_person"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="20dp"
+                    />
 
                 <TextView
                     android:id="@+id/tv_prenume"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nume și prenume"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginTop="24dp"
                     android:textSize="18sp"
@@ -40,12 +47,13 @@
                 android:layout_below="@+id/ll_prenume"
                 android:id="@+id/ll_prenume_edit">
 
+
                 <EditText
                     android:layout_width="240dp"
                     android:layout_height="wrap_content"
                     android:text="ajfalfjaw"
                     android:editable="false"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="60dp"
                     android:singleLine="true"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"
@@ -66,12 +74,20 @@
                 android:id="@+id/ll_telefon"
                 android:layout_below="@+id/ll_matricol_edit">
 
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/ic_phone"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="20dp"
+                    />
+
                 <TextView
                     android:id="@+id/tv_telefon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Număr telefon"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginTop="24dp"
                     android:textSize="18sp"
@@ -87,16 +103,16 @@
                 android:id="@+id/ll_telefon_edit">
 
                 <EditText
+                    android:id="@+id/et_telefon"
                     android:layout_width="240dp"
                     android:layout_height="wrap_content"
-                    android:text="070175032"
-                    android:layout_marginStart="40dp"
-                    android:singleLine="true"
-                    android:textColor="@color/colorText"
-                    android:textStyle="bold"
-                    android:id="@+id/et_telefon"
+                    android:layout_marginStart="60dp"
                     android:editable="false"
-                    android:textSize="20sp"/>
+                    android:singleLine="true"
+                    android:text="070175032"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -107,12 +123,20 @@
                 android:id="@+id/ll_matricol"
                 android:layout_below="@+id/ll_prenume_edit">
 
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@drawable/ic_nr"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="20dp"
+                    />
+
                 <TextView
                     android:id="@+id/tv_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Număr matricol"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginTop="24dp"
                     android:textSize="18sp"
@@ -132,7 +156,7 @@
                     android:layout_height="wrap_content"
                     android:text="MFS085308"
                     android:id="@+id/et_matricol"
-                    android:layout_marginStart="40dp"
+                    android:layout_marginStart="60dp"
                     android:singleLine="true"
                     android:textColor="@color/colorText"
                     android:textStyle="bold"
