@@ -64,7 +64,7 @@ public class AddEventActivity extends BaseActivity implements TimePickerDialog.O
 
     private void initializeViews()
     {
-        eventEt = findViewById(R.id.et_event_name);
+        //eventEt = findViewById(R.id.et_event_name);
         picker = findViewById(R.id.tv_pick_time);
     }
 

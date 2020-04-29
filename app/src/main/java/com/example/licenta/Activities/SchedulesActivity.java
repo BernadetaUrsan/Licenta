@@ -46,10 +46,17 @@ public class SchedulesActivity extends BaseActivity {
         getApplicationContext().startActivity(intent4);
     }
 
-    public void OnFacultate (View view){
+    public void OnSecretariat (View view){
 
-        Intent intent5 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ac.upt.ro/orare.php#top"));
+        Intent intent5 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ac.upt.ro/contact.php"));
         intent5.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         getApplicationContext().startActivity(intent5);
+    }
+
+    public void OnSectii (View view){
+
+        Intent intent6 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ac.upt.ro/orare.php#top"));
+        intent6.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        getApplicationContext().startActivity(intent6);
     }
 }

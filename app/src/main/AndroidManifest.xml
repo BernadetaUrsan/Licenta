@@ -48,7 +48,6 @@
         <activity android:name=".Activities.ForgetPasswordActivity" />
         <activity android:name=".Activities.OnePostActivity" />
         <activity android:name=".Activities.OneScheduleActivity" />
-        <activity android:name=".Activities.ParkingActivity" />
         <activity android:name=".Activities.YearGroupActivity" />
         <activity
             android:name=".Activities.LoginActivity"

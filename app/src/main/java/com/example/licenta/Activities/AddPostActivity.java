@@ -36,7 +36,7 @@ public class AddPostActivity extends BaseActivity {
         setContentView(R.layout.activity_add_post);
         initializeViews();
         post = new PostModel();
-        shareDialog = new ShareDialog(this);  // initialize facebook shareDialog.
+        //shareDialog = new ShareDialog(this);  // initialize facebook shareDialog.
     }
 
     private void getValues(){
@@ -56,21 +56,22 @@ public class AddPostActivity extends BaseActivity {
     }
 
     public void onAddPost(View view) {
+
         getValues();
         FirebaseHelper.getInstance().yearGroupPostsDatabase.child(post.getId()).setValue(post);
         finish();
     }
 
-    public void shareOnFacebook(View view) {
-        getValues();
-        if (ShareDialog.canShow(ShareLinkContent.class)) {
-            ShareLinkContent linkContent = new ShareLinkContent.Builder()
-                    .setContentTitle(titleEt.getText().toString())
-                    .setQuote(messageEt.getText().toString())
-                    .setImageUrl(Uri.parse("https://www.studytutorial.in/wp-content/uploads/2017/02/FacebookLoginButton-min-300x136.png"))
-                    .setContentUrl(Uri.parse("https://www.studytutorial.in/android-facebook-integration-and-login-tutorial"))
-                    .build();
-            shareDialog.show(linkContent);
-        }
-    }
+//    public void shareOnFacebook(View view) {
+//        getValues();
+//        if (ShareDialog.canShow(ShareLinkContent.class)) {
+//            ShareLinkContent linkContent = new ShareLinkContent.Builder()
+//                    .setContentTitle(titleEt.getText().toString())
+//                    .setQuote(messageEt.getText().toString())
+//                    .setImageUrl(Uri.parse("https://www.studytutorial.in/wp-content/uploads/2017/02/FacebookLoginButton-min-300x136.png"))
+//                    .setContentUrl(Uri.parse("https://www.studytutorial.in/android-facebook-integration-and-login-tutorial"))
+//                    .build();
+//            shareDialog.show(linkContent);
+//        }
+//    }
 }

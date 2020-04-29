@@ -1,6 +1,7 @@
 package com.example.licenta.Activities;
 
 import android.content.Intent;
+import android.icu.text.RelativeDateTimeFormatter;
 import android.os.Bundle;
 import android.view.View;
 
@@ -8,6 +9,7 @@ import com.example.licenta.Adapters.YearPostsAdapter;
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Models.PostModel;
 import com.example.licenta.R;
+import com.google.android.material.internal.DescendantOffsetUtils;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -41,7 +43,7 @@ public class YearGroupActivity extends BaseActivity {
     }
 
     private void getData(){
-        FirebaseHelper.getInstance().yearGroupPostsDatabase.addValueEventListener(new ValueEventListener() {
+        FirebaseHelper.getInstance().yearGroupPostsDatabase.orderByChild("date/time").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 postsList = new ArrayList<>();

@@ -21,12 +21,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="22dp"
                 android:layout_marginEnd="20dp"
                 android:text="Subiect"
                 android:textColor="@color/colorText"
-                android:textSize="22sp"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
+
             <TextView
                 android:id="@+id/tv_date_subject"
                 android:layout_width="wrap_content"
@@ -60,8 +61,7 @@
                 android:textSize="10sp"
                 android:layout_alignParentEnd="true"
                 android:textStyle="bold"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="20dp"
                 android:textColor="@color/colorText"
                 android:layout_below="@id/tv_hour_subject"
                 android:text="Author name"
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_author"
-                android:textSize="14sp"
+                android:textSize="16sp"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
@@ -83,27 +83,12 @@
                 android:backgroundTint="@color/colorTextBold"
                 />
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Comentarii"
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="24dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/colorText"
-                android:layout_below="@+id/tv_text_subject"
-                />
-
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_listed_comments"
                 android:layout_margin="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_name"
+                android:layout_below="@+id/tv_text_subject"
                 android:layout_marginStart="10dp"/>
 
 
@@ -119,19 +104,23 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:maxLength="180"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
                     android:maxLines="3"
                     android:layout_toStartOf="@+id/iv_send_message"
+                    android:textSize="16sp"
                     android:padding="6dp"
                     android:backgroundTint="@color/colorTextBold"
                     android:hint="Adaugă un comentariu ..."/>
 
                 <ImageView
                     android:id="@+id/iv_send_message"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ic_message"
+                    android:layout_marginEnd="20dp"
                     android:onClick="OnAddComment"/>
 
             </RelativeLayout>

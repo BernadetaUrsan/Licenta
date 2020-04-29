@@ -96,6 +96,23 @@
                 android:onClick="onAdd"
                 />
 
+            <Button
+                android:id="@+id/btn_stergere"
+                android:layout_marginStart="20dp"
+                android:padding="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_sala"
+                android:layout_marginTop="32dp"
+                android:text="Ștergere"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/colorWhite"
+                android:background="@drawable/border_blue_full"
+                android:onClick="onDelete"
+                />
+
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>

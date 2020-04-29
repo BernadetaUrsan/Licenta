@@ -112,62 +112,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cv_park"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
-            android:layout_below="@+id/cv_year">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/iv_cardview_parking"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/parcari"
-                    android:layout_toStartOf="@+id/rl_parcare"
-                    android:scaleType="centerInside"
-                    android:alpha="0.7" />
-
-                <View
-                    android:layout_width="150dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:alpha="0.5"
-                    android:background="#e6e9ef"/>
-
-                <RelativeLayout
-                    android:id="@+id/rl_parcare"
-                    android:layout_width="150dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerInParent="true">
-
-                    <TextView
-                        android:id="@+id/tv_cardview_parking"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerInParent="true"
-                        android:text="Grup șoferi"
-                        android:textSize="20sp"
-                        android:textColor="@color/colorText"
-                        android:textStyle="bold"
-                        />
-
-                </RelativeLayout>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
             android:id="@+id/cv_news"
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="8dp"
-            android:layout_below="@id/cv_park">
+            android:layout_below="@id/cv_year">
 
             <RelativeLayout
                 android:layout_width="match_parent"

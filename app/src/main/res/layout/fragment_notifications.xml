@@ -44,23 +44,17 @@
                     android:layout_alignParentEnd="true"
                     android:gravity="center">
 
-                    <ImageView
-                        android:id="@+id/iv_m1"
-                        android:layout_width="26dp"
-                        android:layout_height="26dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/ic_email_black_24dp" />
+
 
                     <TextView
                         android:id="@+id/tv_1"
-                        android:layout_below="@+id/iv_m1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:text="Coleg"
                         android:textSize="20sp"
                         android:textColor="@color/colorText"
-                        android:textStyle="bold" />
+                         />
 
                 </RelativeLayout>
 
@@ -102,23 +96,16 @@
                     android:layout_alignParentEnd="true"
                     android:gravity="center">
 
-                    <ImageView
-                        android:id="@+id/iv_m2"
-                        android:layout_width="26dp"
-                        android:layout_height="26dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/ic_email_black_24dp" />
 
                     <TextView
                         android:id="@+id/tv_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Profesor"
-                        android:layout_below="@+id/iv_m2"
                         android:layout_centerHorizontal="true"
                         android:textSize="20sp"
                         android:textColor="@color/colorText"
-                        android:textStyle="bold" />
+                         />
 
                 </RelativeLayout>
 

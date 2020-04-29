@@ -39,6 +39,17 @@ public class AddClassTimetableActivity extends BaseActivity {
         this.finish();
     }
 
+    public void onDelete(View view) {
+        materieEt.setText("");
+        salaEt.setText("");
+        rowModel.setmClassName(materieEt.getText().toString());
+        rowModel.setmLocationName(salaEt.getText().toString());
+        Intent returnIntent = new Intent();
+        returnIntent.putExtra("class_id", rowModel);
+        setResult(Activity.RESULT_OK,returnIntent);
+        this.finish();
+    }
+
     private void initializeViews()
     {
         materieEt = findViewById(R.id.et_materie);

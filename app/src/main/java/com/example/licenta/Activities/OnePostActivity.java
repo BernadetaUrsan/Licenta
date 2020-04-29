@@ -40,7 +40,7 @@ public class OnePostActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one_post);
-        super.setToolbarTitle("Știri studenți");
+        super.setToolbarTitle("Postare");
         initializeViews();
         postId = getIntent().getStringExtra("id_key");
 
@@ -55,7 +55,7 @@ public class OnePostActivity extends BaseActivity {
             }
         });
 
-        FirebaseHelper.getInstance().postCommentsDatabase.child(postId).addValueEventListener(new ValueEventListener() {
+        FirebaseHelper.getInstance().postCommentsDatabase.child(postId).orderByChild("date/time").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 commentsList = new ArrayList<>();
@@ -81,7 +81,7 @@ public class OnePostActivity extends BaseActivity {
         subjectTv.setText(post.getTitle());
         messageTv.setText(post.getMessage());
         dateTv.setText(post.getDate().toString().substring(11,16));
-        timeTv.setText(post.getDate().toString().substring(1,5));
+        timeTv.setText(post.getDate().toString().substring(4,10));
         authorTv.setText(post.getAuthorName());
     }
 

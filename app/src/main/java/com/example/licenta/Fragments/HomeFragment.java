@@ -1,10 +1,8 @@
 package com.example.licenta.Fragments;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,30 +10,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.licenta.Activities.CalendarActivity;
-import com.example.licenta.Activities.HomeActivity;
-import com.example.licenta.Activities.LoginActivity;
 import com.example.licenta.Activities.MapActivity;
 import com.example.licenta.Activities.NewsActivity;
 import com.example.licenta.Activities.OrarActivity;
-import com.example.licenta.Activities.ParkingActivity;
 import com.example.licenta.Activities.SchedulesActivity;
-import com.example.licenta.Activities.SignUpActivity;
 import com.example.licenta.Activities.YearGroupActivity;
-import com.example.licenta.Helpers.FirebaseHelper;
-import com.example.licenta.Helpers.UserHelper;
-import com.example.licenta.Mockers;
-import com.example.licenta.Models.TimetabelModel;
 import com.example.licenta.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.Map;
 
 public class HomeFragment extends Fragment {
 
     private CardView yearGroupV;
-    private CardView parkingsV;
     private CardView newsV;
     private CardView schedulesV;
     private CardView calendarV;
@@ -53,14 +37,6 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 Intent myInt2 = new Intent(getActivity(), YearGroupActivity.class);
                 startActivity(myInt2);
-            }
-        });
-
-        parkingsV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myInt3 = new Intent(getActivity(), ParkingActivity.class);
-                startActivity(myInt3);
             }
         });
 
@@ -109,7 +85,6 @@ public class HomeFragment extends Fragment {
 
     private void initializeViews(View view){
         yearGroupV = view.findViewById(R.id.cv_year);
-        parkingsV = view.findViewById(R.id.cv_park);
         newsV = view.findViewById(R.id.cv_news);
         schedulesV = view.findViewById(R.id.cv_schedule);
         calendarV = view.findViewById(R.id.cv_calendar);
