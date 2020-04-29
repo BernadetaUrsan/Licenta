@@ -84,7 +84,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
                     String searchStr = constraint.toString().toLowerCase();
                     List<StudentModel> resultData = new ArrayList<>();
                     for(StudentModel studentModel:studentsPosts){
-                        if(studentModel.getFullName().contains(searchStr) || studentModel.getEmail().contains(searchStr) || studentModel.getPhoneNumber().contains(searchStr)){
+                        if(studentModel.getName().contains(searchStr) || studentModel.getSurname().contains(searchStr) || studentModel.getEmail().contains(searchStr) || studentModel.getPhoneNumber().contains(searchStr)){
                             resultData.add(studentModel);
                         }
                         filterResults.count = resultData.size();

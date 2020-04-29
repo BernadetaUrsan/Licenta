@@ -51,9 +51,13 @@ public class YearGroupActivity extends BaseActivity {
                     PostModel post = data.getValue(PostModel.class);
                     postsList.add(post);
                 }
-                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+                linearLayoutManager.setReverseLayout(true);
+                linearLayoutManager.setStackFromEnd(true);
+                recyclerView.setLayoutManager(linearLayoutManager);
                 yearPostsAdapter = new YearPostsAdapter(postsList, getApplicationContext());
                 recyclerView.setAdapter(yearPostsAdapter);
+
             }
 
             @Override

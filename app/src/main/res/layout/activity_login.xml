@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/iv_icon"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="100dp"
             android:layout_alignParentTop="true"
             android:layout_marginTop="40dp"
             android:layout_marginBottom="30dp"
@@ -26,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv_icon"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/ll_email">
 
             <ImageView
@@ -41,7 +41,8 @@
                 android:id="@+id/tv_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EMAIL"
+                android:text="E-mail"
+                android:textStyle="bold"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="24dp"
@@ -62,7 +63,6 @@
             android:inputType="textPersonName"
             android:padding="6dp"
             android:textColor="@color/colorText"
-            android:textStyle="bold"
             android:backgroundTint="@color/colorTextBold"
             android:layout_marginBottom="10dp"
             />
@@ -87,7 +87,8 @@
                 android:layout_marginEnd="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PAROLĂ"
+                android:text="Parolă"
+                android:textStyle="bold"
                 android:layout_below="@+id/et_username"
                 android:layout_marginTop="24dp"
                 android:textSize="16sp"
@@ -99,7 +100,6 @@
             android:id="@+id/et_password"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_parola"
