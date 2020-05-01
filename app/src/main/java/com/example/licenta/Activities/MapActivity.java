@@ -17,6 +17,7 @@ import android.view.View;
 import com.example.licenta.Adapters.LocationAdapter;
 import com.example.licenta.Adapters.TimetableAdapter;
 import com.example.licenta.Helpers.StorageHelper;
+import com.example.licenta.Interfaces.MapClickListener;
 import com.example.licenta.Models.LocationModel;
 import com.example.licenta.Models.PostModel;
 import com.example.licenta.Models.TimetabelModel;
@@ -36,7 +37,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapActivity extends BaseActivity implements OnMapReadyCallback {
+public class MapActivity extends BaseActivity implements OnMapReadyCallback, MapClickListener {
     private LocationModel locatie;
     private List<LocationModel> listaLocatii;
     private SupportMapFragment mapFragment;
@@ -58,18 +59,14 @@ public class MapActivity extends BaseActivity implements OnMapReadyCallback {
         SetRecyclerView(listaLocatii);
     }
 
-
-
     public void OnLocatie(LocationModel locatie){
-
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(locatie.getLatitude(), locatie.getLongitude()),15.0f));
-
     }
 
     private void SetRecyclerView(List<LocationModel> listaLocatii)
     {
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
-        locationAdapter = new LocationAdapter(listaLocatii, getApplicationContext());
+        locationAdapter = new LocationAdapter(listaLocatii, getApplicationContext(), this);
         recyclerView.setAdapter(locationAdapter);
     }
 
@@ -84,15 +81,6 @@ public class MapActivity extends BaseActivity implements OnMapReadyCallback {
             marker.setTag(location);
         }
     }
-//
-//    private BitmapDescriptor bitmapDescriptorFromVector(Drawable drawable) {
-//        Canvas canvas = new Canvas();
-//        Bitmap bitmap = Bitmap.createBitmap(50 , 50, Bitmap.Config.ARGB_8888);
-//        canvas.setBitmap(bitmap);
-//        drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight());
-//        drawable.draw(canvas);
-//        return BitmapDescriptorFactory.fromBitmap(bitmap);
-//    }
 
     private BitmapDescriptor getMarkerIconFromDrawable(Drawable drawable) {
         Canvas canvas = new Canvas();
@@ -151,5 +139,10 @@ public class MapActivity extends BaseActivity implements OnMapReadyCallback {
         for (LocationModel location: StorageHelper.mockLocations()){
             listaLocatii.add(location);
         }
+    }
+
+    @Override
+    public void OnClick(LocationModel location) {
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()),17.0f));
     }
 }

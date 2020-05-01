@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.licenta.Activities.MapActivity;
+import com.example.licenta.Interfaces.MapClickListener;
 import com.example.licenta.Models.LocationModel;
 import com.example.licenta.Models.TimetableRowModel;
 import com.example.licenta.R;
@@ -22,12 +24,13 @@ import static com.example.licenta.Constants.ColorConstants.DisabledColor;
 public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHolder> {
     private Context context;
     private List<LocationModel> locatii;
+    private MapClickListener clickListener;
 
-    public LocationAdapter(List<LocationModel> locatii, Context context) {
+    public LocationAdapter(List<LocationModel> locatii, Context context, MapClickListener clickListener) {
         this.locatii = locatii;
         this.context = context;
+        this.clickListener = clickListener;
     }
-
 
     @NonNull
     @Override
@@ -42,11 +45,19 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull LocationAdapter.ViewHolder holder, final int position) {
         final LocationModel locatie = locatii.get(position);
-        String nume = locatie.getNumeLocatie();
-        Double latitudine = locatie.getLatitude();
-        Double longitudine = locatie.getLongitude();
+        final String nume = locatie.getNumeLocatie();
+        final Double latitudine = locatie.getLatitude();
+        final Double longitudine = locatie.getLongitude();
 
         holder.numeTV.setText(nume);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LocationModel locationModel = new LocationModel(nume, latitudine, longitudine);
+                clickListener.OnClick(locationModel);
+            }
+        });
     }
 
     @Override
@@ -54,7 +65,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHo
         return locatii.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView numeTV;
 
