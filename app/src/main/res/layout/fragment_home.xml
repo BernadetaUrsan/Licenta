@@ -270,57 +270,57 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cv_harta"
+        android:id="@+id/cv_harta"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:layout_below="@+id/cv_calendar">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_margin="8dp"
-            android:layout_below="@+id/cv_calendar">
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_cardview_harta"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/harta"
+                android:layout_toStartOf="@+id/rl_harta"
+                android:scaleType="centerInside"
+                android:alpha="0.7" />
+
+            <View
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:layout_alignParentEnd="true"
+                android:background="#e6e9ef"/>
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:id="@+id/rl_harta"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                >
 
-                <ImageView
-                    android:id="@+id/iv_cardview_harta"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/harta"
-                    android:layout_toStartOf="@+id/rl_harta"
-                    android:scaleType="centerInside"
-                    android:alpha="0.7" />
-
-                <View
-                    android:layout_width="150dp"
-                    android:layout_height="match_parent"
-                    android:alpha="0.5"
-                    android:layout_alignParentEnd="true"
-                    android:background="#e6e9ef"/>
-
-                <RelativeLayout
-                    android:id="@+id/rl_harta"
-                    android:layout_width="150dp"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
+                <TextView
+                    android:id="@+id/tv_cardview_harta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
                     android:layout_centerInParent="true"
-                    >
+                    android:text="Hartă campus"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    />
 
-                    <TextView
-                        android:id="@+id/tv_cardview_harta"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerInParent="true"
-                        android:text="Hartă campus"
-                        android:textSize="20sp"
-                        android:textColor="@color/colorText"
-                        android:textStyle="bold"
-                        />
-
-                </RelativeLayout>
             </RelativeLayout>
+        </RelativeLayout>
 
-        </androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
     </RelativeLayout>
 

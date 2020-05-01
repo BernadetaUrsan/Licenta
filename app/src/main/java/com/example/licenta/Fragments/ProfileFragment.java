@@ -11,7 +11,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
+import com.example.licenta.Activities.ContractStudiiActivity;
 import com.example.licenta.Activities.EditProfileActivity;
 import com.example.licenta.Activities.LoginActivity;
 import com.example.licenta.Helpers.UserHelper;
@@ -24,6 +26,7 @@ public class ProfileFragment extends Fragment {
     private StudentModel userCurent;
     private ImageView signOutBtn, editProfileBtn;
     private EditText nume, prenume, telefon, matricol, numeComplet;
+    private LinearLayout linearLayout;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -56,6 +59,7 @@ public class ProfileFragment extends Fragment {
         numeComplet = view.findViewById(R.id.et_nume_complet);
         matricol=view.findViewById(R.id.et_matricol);
         telefon=view.findViewById(R.id.et_telefon);
+        linearLayout = view.findViewById(R.id.ll_contract);
     }
 
     private void setBtnActions(){
@@ -65,7 +69,12 @@ public class ProfileFragment extends Fragment {
                 OnSignOut();
             }
         });
-
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OnAddContract();
+            }
+        });
         editProfileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +94,11 @@ public class ProfileFragment extends Fragment {
 
     public void OnEditProfile() {
         Intent myInt= new Intent(getActivity(), EditProfileActivity.class);
+        startActivity(myInt);
+    }
+
+    public void OnAddContract(){
+        Intent myInt= new Intent(getActivity(), ContractStudiiActivity.class);
         startActivity(myInt);
     }
 }

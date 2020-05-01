@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.licenta.Activities.CalendarActivity;
+import com.example.licenta.Activities.ContractStudiiActivity;
 import com.example.licenta.Activities.MapActivity;
 import com.example.licenta.Activities.NewsActivity;
 import com.example.licenta.Activities.OrarActivity;

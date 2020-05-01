@@ -20,7 +20,8 @@
         android:roundIcon="@drawable/sigla4"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.AddClassTimetableActivity"></activity>
+        <activity android:name=".Activities.ContractStudiiActivity"></activity>
+        <activity android:name=".Activities.AddClassTimetableActivity" />
         <activity android:name=".Activities.MapActivity" />
         <activity android:name=".Activities.OrarActivity" />
         <activity android:name=".Activities.RegulamenteActivity" />
