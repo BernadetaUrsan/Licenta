@@ -46,10 +46,10 @@ public class YearGroupActivity extends BaseActivity {
         FirebaseHelper.getInstance().yearGroupPostsDatabase.orderByChild("date/time").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                postsList = new ArrayList<>();
-                for (DataSnapshot data: dataSnapshot.getChildren()) {
-                    PostModel post = data.getValue(PostModel.class);
-                    postsList.add(post);
+                        postsList = new ArrayList<>();
+                        for (DataSnapshot data: dataSnapshot.getChildren()) {
+                            PostModel post = data.getValue(PostModel.class);
+                            postsList.add(post);
                 }
                 LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
                 linearLayoutManager.setReverseLayout(true);

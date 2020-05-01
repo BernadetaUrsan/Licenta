@@ -2,16 +2,25 @@ package com.example.licenta.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.FragmentActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
 
+import com.example.licenta.Adapters.LocationAdapter;
+import com.example.licenta.Adapters.TimetableAdapter;
 import com.example.licenta.Helpers.StorageHelper;
 import com.example.licenta.Models.LocationModel;
+import com.example.licenta.Models.PostModel;
+import com.example.licenta.Models.TimetabelModel;
+import com.example.licenta.Models.TimetableRowModel;
 import com.example.licenta.R;
 import com.facebook.appevents.ml.Utils;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -24,21 +33,44 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MapActivity extends BaseActivity implements OnMapReadyCallback {
     private LocationModel locatie;
+    private List<LocationModel> listaLocatii;
     private SupportMapFragment mapFragment;
     private GoogleMap googleMap;
     private boolean isLocationSet;
     private LatLng position;
     private MarkerOptions markerOptions;
+    private RecyclerView recyclerView;
+    private LocationAdapter locationAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        listaLocatii = new ArrayList<>();
         initializeViews();
         setToolbarTitle("Hartă campus");
         mapFragment.getMapAsync(this);
+        SetRecyclerView(listaLocatii);
+    }
+
+
+
+    public void OnLocatie(LocationModel locatie){
+
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(locatie.getLatitude(), locatie.getLongitude()),15.0f));
+
+    }
+
+    private void SetRecyclerView(List<LocationModel> listaLocatii)
+    {
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        locationAdapter = new LocationAdapter(listaLocatii, getApplicationContext());
+        recyclerView.setAdapter(locationAdapter);
     }
 
     private void displayLocations(){
@@ -113,5 +145,11 @@ public class MapActivity extends BaseActivity implements OnMapReadyCallback {
     private void initializeViews()
     {
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_fragment);
+        recyclerView = findViewById(R.id.rv_lista_locatii);
+
+
+        for (LocationModel location: StorageHelper.mockLocations()){
+            listaLocatii.add(location);
+        }
     }
 }
