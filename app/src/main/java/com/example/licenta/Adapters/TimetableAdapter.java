@@ -22,6 +22,8 @@ import com.example.licenta.R;
 import java.util.List;
 
 import static com.example.licenta.Constants.ColorConstants.DisabledColor;
+import static com.example.licenta.Constants.ColorConstants.GrayColor;
+import static com.example.licenta.Constants.ColorConstants.MainColor;
 
 public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.ViewHolder>{
 
@@ -64,6 +66,8 @@ public class TimetableAdapter extends RecyclerView.Adapter<TimetableAdapter.View
             holder.materieTV.setVisibility(View.VISIBLE);
             holder.salaTv.setVisibility(View.VISIBLE);
             holder.pauzaTv.setVisibility(View.GONE);
+            holder.oraStartTv.setBackgroundColor(Color.parseColor(MainColor));
+            holder.oraStopTv.setBackgroundColor(Color.parseColor(GrayColor));
     }
 
         holder.materieTV.setText(materie);

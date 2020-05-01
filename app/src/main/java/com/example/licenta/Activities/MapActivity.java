@@ -135,7 +135,6 @@ public class MapActivity extends BaseActivity implements OnMapReadyCallback, Map
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_fragment);
         recyclerView = findViewById(R.id.rv_lista_locatii);
 
-
         for (LocationModel location: StorageHelper.mockLocations()){
             listaLocatii.add(location);
         }
