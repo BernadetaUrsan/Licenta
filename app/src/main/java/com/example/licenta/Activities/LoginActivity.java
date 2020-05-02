@@ -37,16 +37,14 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initializeViews();
-//        ActivityLoginBinding loginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
-//        loginBinding.setViewModel(ViewModelProviders.of(this, new LoginViewModelFactory(this, this)).get(LoginViewModel.class));
-        //shareDialog = new ShareDialog(this);  // initialize facebook shareDialog.
+        emailEt.setText("berna3@classboard.com");
+        passwordEt.setText("cosmin");
     }
 
     public void onSignIn(String email, String password)
     {
-        userEmail = email;
         mAuth = FirebaseAuth.getInstance();
-        mAuth.signInWithEmailAndPassword("berna3@classboard.com", "cosmin")
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -106,6 +104,8 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
     }
 
     public void onSignIn(View view) {
+        userEmail = emailEt.getText().toString();
+        userPassword = passwordEt.getText().toString();
         onSignIn(userEmail, userPassword);
     }
 
