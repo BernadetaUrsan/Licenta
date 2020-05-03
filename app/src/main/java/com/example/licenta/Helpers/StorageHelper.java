@@ -1,9 +1,15 @@
 package com.example.licenta.Helpers;
 
+import com.example.licenta.Enums.ClassTypeEnum;
+import com.example.licenta.Models.DailyTimetable;
 import com.example.licenta.Models.LocationModel;
 import com.example.licenta.Models.StudentModel;
+import com.example.licenta.Models.TimetabelModel;
+import com.example.licenta.Models.TimetableRowModel;
 
 import java.util.ArrayList;
+
+import static com.example.licenta.Enums.ClassTypeEnum.NOT_SET;
 
 public class StorageHelper {
     public static ArrayList<LocationModel> myLocationsList;
@@ -23,8 +29,32 @@ public class StorageHelper {
         return  myLocationsList;
     }
 
-    public static void InitEmptyTimetable()
+    public static void InitEmptyTimetable(String userId)
     {
+        TimetabelModel timetabelModel = new TimetabelModel();
+        timetabelModel.setmWeeklyTimetable(new ArrayList<DailyTimetable>());
+        timetabelModel.getmWeeklyTimetable().add(new DailyTimetable());
+        timetabelModel.getmWeeklyTimetable().add(new DailyTimetable());
+        timetabelModel.getmWeeklyTimetable().add(new DailyTimetable());
+        timetabelModel.getmWeeklyTimetable().add(new DailyTimetable());
+        timetabelModel.getmWeeklyTimetable().add(new DailyTimetable());
 
+        timetabelModel.getmWeeklyTimetable().get(0).setmDailyTimetable(new ArrayList<TimetableRowModel>());
+        timetabelModel.getmWeeklyTimetable().get(1).setmDailyTimetable(new ArrayList<TimetableRowModel>());
+        timetabelModel.getmWeeklyTimetable().get(2).setmDailyTimetable(new ArrayList<TimetableRowModel>());
+        timetabelModel.getmWeeklyTimetable().get(3).setmDailyTimetable(new ArrayList<TimetableRowModel>());
+        timetabelModel.getmWeeklyTimetable().get(4).setmDailyTimetable(new ArrayList<TimetableRowModel>());
+
+        for (int i =0; i< 5; i++)
+        {
+            timetabelModel.getmWeeklyTimetable().get(i).getmDailyTimetable().add(new TimetableRowModel("", "", "08:00", "10:00", NOT_SET));
+            timetabelModel.getmWeeklyTimetable().get(i).getmDailyTimetable().add(new TimetableRowModel("", "", "10:00", "12:00", NOT_SET));
+            timetabelModel.getmWeeklyTimetable().get(i).getmDailyTimetable().add(new TimetableRowModel("", "", "12:00", "14:00", NOT_SET));
+            timetabelModel.getmWeeklyTimetable().get(i).getmDailyTimetable().add(new TimetableRowModel("", "", "14:00", "16:00", NOT_SET));
+            timetabelModel.getmWeeklyTimetable().get(i).getmDailyTimetable().add(new TimetableRowModel("", "", "16:00", "18:00", NOT_SET));
+            timetabelModel.getmWeeklyTimetable().get(i).getmDailyTimetable().add(new TimetableRowModel("", "", "18:00", "20:00", NOT_SET));
+        }
+
+        FirebaseHelper.getInstance().timetableDatabase.child(userId).setValue(timetabelModel);
     }
 }

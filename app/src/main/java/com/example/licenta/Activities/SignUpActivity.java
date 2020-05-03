@@ -10,7 +10,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.licenta.Helpers.FirebaseHelper;
+import com.example.licenta.Helpers.StorageHelper;
 import com.example.licenta.Models.StudentModel;
+import com.example.licenta.Models.TimetabelModel;
 import com.example.licenta.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -68,6 +70,7 @@ public class SignUpActivity extends AppCompatActivity {
     private void writeNewUser(String nume, String prenume, String matricol, String telefon, String email) {
         studentNou = new StudentModel(nume, prenume, matricol, telefon, " ", " ", email, " ");
         FirebaseHelper.getInstance().usersDatabase.child(mUserId).setValue(studentNou);
+        StorageHelper.InitEmptyTimetable(mUserId);
     }
 
     private void initializeViews()

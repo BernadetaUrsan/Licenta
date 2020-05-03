@@ -16,6 +16,7 @@ import com.example.licenta.Activities.NewsActivity;
 import com.example.licenta.Activities.OrarActivity;
 import com.example.licenta.Activities.SchedulesActivity;
 import com.example.licenta.Activities.YearGroupActivity;
+import com.example.licenta.Mockers;
 import com.example.licenta.R;
 
 public class HomeFragment extends Fragment {
@@ -81,6 +82,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        Mockers.getMockTimetable();
         return rootView;
     }
 
