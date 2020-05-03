@@ -45,9 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void onSignUp(View view){
-        // writeNewUser(numeEt.toString(),prenumeEt.toString(),matricolEt.toString(),telefonEt.toString(),emailEt.toString());
-        Register(emailEt.toString(), parolaEt.toString());
-        //FirebaseHelper.getInstance().firebaseAuth.(studentNou.getUserId()).setValue(studentNou);
+        Register(emailEt.getText().toString(), parolaEt.getText().toString());
     }
 
     public void Register(final String Email, final String Password){
@@ -61,6 +59,7 @@ public class SignUpActivity extends AppCompatActivity {
                     writeNewUser( numeEt.getText().toString(),prenumeEt.getText().toString(), matricolEt.getText().toString(), telefonEt.getText().toString(),emailEt.getText().toString());
                     Intent myIntent = new Intent(SignUpActivity.this, LoginActivity.class);
                     startActivity(myIntent);
+                    finish();
                 }
             }
         });
@@ -68,7 +67,6 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void writeNewUser(String nume, String prenume, String matricol, String telefon, String email) {
         studentNou = new StudentModel(nume, prenume, matricol, telefon, " ", " ", email, " ");
-        //mDatabaseReference.child("Users").setValue(studentNou);
         FirebaseHelper.getInstance().usersDatabase.child(mUserId).setValue(studentNou);
     }
 

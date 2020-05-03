@@ -22,4 +22,9 @@ public class StorageHelper {
         myLocationsList.add(new LocationModel("Rectorat UPT",45.7533855 ,21.2249642));
         return  myLocationsList;
     }
+
+    public static void InitEmptyTimetable()
+    {
+
+    }
 }
