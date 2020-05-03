@@ -53,4 +53,8 @@ public class NewsActivity extends BaseActivity {
         getApplicationContext().startActivity(intent2);
     }
 
+    public void OnP3(View view){
+        Intent myInt= new Intent(NewsActivity.this, P3Activity.class);
+        startActivity(myInt);
+    }
 }

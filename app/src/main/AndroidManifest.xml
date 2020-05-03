@@ -20,7 +20,8 @@
         android:roundIcon="@drawable/sigla4"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.ContractStudiiActivity"></activity>
+        <activity android:name=".Activities.P3Activity"></activity>
+        <activity android:name=".Activities.ContractStudiiActivity" />
         <activity android:name=".Activities.AddClassTimetableActivity" />
         <activity android:name=".Activities.MapActivity" />
         <activity android:name=".Activities.OrarActivity" />
@@ -29,20 +30,14 @@
         <activity android:name=".Activities.FindStudentActivity" />
         <activity android:name=".Activities.CalendarActivity" />
         <activity android:name=".Activities.SchedulesActivity" />
-        <activity android:name=".Activities.NewsActivity" /> <!-- <meta-data -->
-        <!-- android:name="com.facebook.sdk.ApplicationId" -->
-        <!-- android:value="@string/facebook_app_id" /> -->
+        <activity android:name=".Activities.NewsActivity" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCFjiuLy0L87Z7V4PNRJaqszUXfEpl3qZw" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
-        <provider
-            android:name="com.facebook.FacebookContentProvider"
-            android:authorities="com.facebook.app.FacebookContentProvider1826765624291580"
-            android:exported="true" />
 
         <activity android:name=".Activities.SendMailActivity" />
         <activity android:name=".Activities.AddPostActivity" />

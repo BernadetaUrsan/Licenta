@@ -1,29 +1,20 @@
 package com.example.licenta.Activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-import androidx.core.widget.NestedScrollView;
-import androidx.fragment.app.FragmentActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
+
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.licenta.Adapters.LocationAdapter;
-import com.example.licenta.Adapters.TimetableAdapter;
 import com.example.licenta.Helpers.StorageHelper;
 import com.example.licenta.Interfaces.MapClickListener;
 import com.example.licenta.Models.LocationModel;
-import com.example.licenta.Models.PostModel;
-import com.example.licenta.Models.TimetabelModel;
-import com.example.licenta.Models.TimetableRowModel;
 import com.example.licenta.R;
-import com.facebook.appevents.ml.Utils;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

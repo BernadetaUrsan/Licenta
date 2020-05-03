@@ -266,6 +266,48 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_7"
+            android:layout_width="match_parent"
+            android:layout_below="@id/cv_6"
+            android:layout_height="70dp"
+            android:layout_margin="8dp"
+            android:onClick="OnP3">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toStartOf="@+id/tv_7"
+                android:scaleType="centerInside"
+                android:background="@drawable/border_blue"
+                android:alpha="0.7"/>
+
+            <ImageView
+                android:id="@+id/iv_ic7"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="2dp"
+                android:src="@drawable/ic_6n" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="90dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Plată P3"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
     </RelativeLayout>
 
     </LinearLayout>

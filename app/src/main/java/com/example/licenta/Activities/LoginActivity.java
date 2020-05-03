@@ -15,7 +15,6 @@ import com.example.licenta.Helpers.UserHelper;
 import com.example.licenta.Interfaces.LoginCallbacks;
 import com.example.licenta.Models.StudentModel;
 import com.example.licenta.R;
-import com.facebook.share.widget.ShareDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -28,7 +27,6 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
     private FirebaseAuth mAuth;
     private EditText emailEt;
     private EditText passwordEt;
-    private ShareDialog shareDialog;
     private String userEmail;
     private String userPassword;
 
@@ -39,7 +37,6 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
         initializeViews();
 //        ActivityLoginBinding loginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
 //        loginBinding.setViewModel(ViewModelProviders.of(this, new LoginViewModelFactory(this, this)).get(LoginViewModel.class));
-        //shareDialog = new ShareDialog(this);  // initialize facebook shareDialog.
     }
 
     public void onSignIn(String email, String password)

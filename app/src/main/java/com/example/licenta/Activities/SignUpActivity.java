@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Models.StudentModel;
 import com.example.licenta.R;
-import com.facebook.share.widget.ShareDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -46,10 +45,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void onSignUp(View view){
-        writeNewUser(numeEt.toString(),prenumeEt.toString(),matricolEt.toString(),telefonEt.toString(),emailEt.toString());
+        // writeNewUser(numeEt.toString(),prenumeEt.toString(),matricolEt.toString(),telefonEt.toString(),emailEt.toString());
         Register(emailEt.toString(), parolaEt.toString());
         //FirebaseHelper.getInstance().firebaseAuth.(studentNou.getUserId()).setValue(studentNou);
-        finish();
     }
 
     public void Register(final String Email, final String Password){
@@ -57,29 +55,21 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-
-                        mAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(SignUpActivity.this, "Înregistrare cu succes!!", Toast.LENGTH_LONG).show();
-                                    mUser = mAuth.getCurrentUser();
-                                    mUserId = mUser.getUid();
-                                    writeNewUser( numeEt.getText().toString(),prenumeEt.getText().toString(), matricolEt.getText().toString(), telefonEt.getText().toString(),emailEt.getText().toString());
-                                    Intent myIntent = new Intent(SignUpActivity.this, LoginActivity.class);
-                                    startActivity(myIntent);
-                                }
-                            }
-                        });
+                    Toast.makeText(SignUpActivity.this, "Înregistrare cu succes!!", Toast.LENGTH_LONG).show();
+                    mUser = mAuth.getCurrentUser();
+                    mUserId = mUser.getUid();
+                    writeNewUser( numeEt.getText().toString(),prenumeEt.getText().toString(), matricolEt.getText().toString(), telefonEt.getText().toString(),emailEt.getText().toString());
+                    Intent myIntent = new Intent(SignUpActivity.this, LoginActivity.class);
+                    startActivity(myIntent);
                 }
-                }
+            }
         });
     }
 
     private void writeNewUser(String nume, String prenume, String matricol, String telefon, String email) {
         studentNou = new StudentModel(nume, prenume, matricol, telefon, " ", " ", email, " ");
         //mDatabaseReference.child("Users").setValue(studentNou);
-        FirebaseHelper.getInstance().usersDatabase.child(studentNou.getUserId()).setValue(studentNou);
+        FirebaseHelper.getInstance().usersDatabase.child(mUserId).setValue(studentNou);
     }
 
     private void initializeViews()
