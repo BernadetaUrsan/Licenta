@@ -30,8 +30,12 @@
         <activity android:name=".Activities.FindStudentActivity" />
         <activity android:name=".Activities.CalendarActivity" />
         <activity android:name=".Activities.SchedulesActivity" />
-        <activity android:name=".Activities.NewsActivity" />
-
+        <activity android:name=".Activities.NewsActivity" /> <!-- <meta-data -->
+        <!-- android:name="com.facebook.sdk.ApplicationId" -->
+        <!-- android:value="@string/facebook_app_id" /> -->
+        <meta-data
+         android:name="com.facebook.sdk.ApplicationId"
+         android:value="@string/facebook_app_id" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCFjiuLy0L87Z7V4PNRJaqszUXfEpl3qZw" />
