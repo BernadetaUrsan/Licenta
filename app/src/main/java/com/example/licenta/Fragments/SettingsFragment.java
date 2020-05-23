@@ -31,8 +31,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.HashMap;
+import java.util.Set;
 
 public class SettingsFragment extends Fragment implements CompoundButton.OnCheckedChangeListener {
 
@@ -48,7 +50,8 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView =  inflater.inflate(R.layout.fragment_settings, container, false);
         initializeViews(rootView);
-
+        SetValues();
+        aSwitch.setChecked(UserHelper.Instance().getStudent().isNotificationsActivated());
         aSwitch.setOnCheckedChangeListener(this);
         setBtnActions();
 
@@ -77,10 +80,16 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
         if(aSwitch.isChecked())
         {
             aTextView.setText("Pornite");
+            UserHelper.Instance().getStudent().setNotificationsActivated(true);
+            FirebaseMessaging.getInstance().subscribeToTopic("pushNotifications");
+            FirebaseHelper.getInstance().usersDatabase.child(userCurent.getUserId()).child("notificationsActivated").setValue(UserHelper.Instance().getStudent().isNotificationsActivated());
         }
         else
         {
+            UserHelper.Instance().getStudent().setNotificationsActivated(false);
             aTextView.setText("Oprite");
+            FirebaseMessaging.getInstance().unsubscribeFromTopic("pushNotifications");
+            FirebaseHelper.getInstance().usersDatabase.child(userCurent.getUserId()).child("notificationsActivated").setValue(UserHelper.Instance().getStudent().isNotificationsActivated());
         }
     }
 

@@ -36,8 +36,6 @@ public class YearGroupActivity extends BaseActivity {
         initializeViews();
 
         getData();
-
-        FirebaseMessaging.getInstance().subscribeToTopic("pushNotifications");
     }
 
     public void OnAddPost(View view) {

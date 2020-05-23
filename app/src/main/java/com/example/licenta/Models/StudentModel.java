@@ -10,8 +10,9 @@ public class StudentModel {
     private String email;
     private String fullName;
     private String userId;
+    private boolean notificationsActivated;
 
-    public StudentModel(String name, String surname, String number, String phoneNumber, String imageUrl, String carId, String email, String fullName){
+    public StudentModel(String name, String surname, String number, String phoneNumber, String imageUrl, String carId, String email, String fullName, boolean notificationsActivated){
             this.name = name;
         this.surname = surname;
         this.number = number;
@@ -20,6 +21,7 @@ public class StudentModel {
         this.carId = carId;
         this.email = email;
         this.fullName = fullName;
+        this.notificationsActivated = notificationsActivated;
     }
 
     public StudentModel() {
@@ -100,5 +102,13 @@ public class StudentModel {
 
     public void setCarId(String carId) {
         this.carId = carId;
+    }
+
+    public boolean isNotificationsActivated() {
+        return notificationsActivated;
+    }
+
+    public void setNotificationsActivated(boolean notificationsActivated) {
+        this.notificationsActivated = notificationsActivated;
     }
 }

@@ -68,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void writeNewUser(String nume, String prenume, String matricol, String telefon, String email) {
-        studentNou = new StudentModel(nume, prenume, matricol, telefon, " ", " ", email, " ");
+        studentNou = new StudentModel(nume, prenume, matricol, telefon, " ", " ", email, " ",false);
         FirebaseHelper.getInstance().usersDatabase.child(mUserId).setValue(studentNou);
         StorageHelper.InitEmptyTimetable(mUserId);
     }

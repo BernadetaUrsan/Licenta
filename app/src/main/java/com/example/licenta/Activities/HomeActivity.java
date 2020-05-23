@@ -2,11 +2,13 @@ package com.example.licenta.Activities;
 
 import androidx.annotation.NonNull;
 
+import com.example.licenta.Helpers.UserHelper;
 import com.example.licenta.Mockers;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.UserHandle;
 import android.view.MenuItem;
 
 import com.example.licenta.Fragments.HomeFragment;
@@ -32,6 +34,9 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         navigation.setOnNavigationItemSelectedListener(this);
         initializeViews();
         LoadFragment(fragmentHome);
+        if(UserHelper.Instance().getStudent().isNotificationsActivated()){
+            FirebaseMessaging.getInstance().subscribeToTopic("pushNotifications");
+        }
     }
 
     private void initializeViews(){
