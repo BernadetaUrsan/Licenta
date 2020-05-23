@@ -4,6 +4,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class FirebaseHelper {
 
@@ -16,6 +18,7 @@ public class FirebaseHelper {
     public DatabaseReference timetableDatabase = firebaseDatabase.getReference("Timetable");
     public FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     public FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+    public StorageReference contractStudii = FirebaseStorage.getInstance().getReference("ContracteStudii");
 
     public static FirebaseHelper getInstance()
     {
