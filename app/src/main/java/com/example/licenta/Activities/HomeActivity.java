@@ -14,6 +14,7 @@ import com.example.licenta.Fragments.NotificationsFragment;
 import com.example.licenta.Fragments.ProfileFragment;
 import com.example.licenta.Fragments.SettingsFragment;
 import com.example.licenta.R;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
