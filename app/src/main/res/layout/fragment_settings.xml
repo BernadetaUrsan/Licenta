@@ -28,7 +28,7 @@
             android:id="@+id/tv_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Schimbare e-mail"
+            android:text="E-mail"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="24dp"
@@ -53,64 +53,64 @@
                 android:singleLine="true"
                 android:textColor="@color/colorText"
                 android:textStyle="bold"
+                android:editable="false"
                 android:textSize="20sp"/>
 
         </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/ll_email_nou"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:id="@+id/ll_parola">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="26dp"-->
+<!--                android:layout_height="26dp"-->
+<!--                android:src="@drawable/ic_security_black_24dp"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                android:layout_marginStart="20dp"-->
+
+<!--                />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_password"-->
+<!--                android:layout_marginStart="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Grupul de studenți"-->
+<!--                android:layout_below="@+id/et_username"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textColor="@color/colorText"-->
+<!--                />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/ll_email_nou"-->
+<!--            android:id="@+id/ll_parola_noua">-->
+
+<!--            <EditText-->
+<!--                android:id="@+id/et_parola_noua"-->
+<!--                android:layout_width="240dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="când un student postează o nouă informație există"-->
+<!--                android:layout_marginStart="60dp"-->
+<!--                android:textColor="@color/colorText"-->
+<!--                android:singleLine="true"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="20sp"/>-->
+
+<!--        </LinearLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_email_nou"
-            android:layout_marginTop="20dp"
-            android:id="@+id/ll_parola">
-
-            <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:src="@drawable/ic_security_black_24dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginStart="20dp"
-
-                />
-
-            <TextView
-                android:id="@+id/tv_password"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Schimbare parolă"
-                android:layout_below="@+id/et_username"
-                android:layout_marginTop="24dp"
-                android:textSize="18sp"
-                android:textColor="@color/colorText"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_parola"
-            android:id="@+id/ll_parola_noua">
-
-            <EditText
-                android:id="@+id/et_parola_noua"
-                android:layout_width="240dp"
-                android:password="true"
-                android:layout_height="wrap_content"
-                android:text="ajfalfjaw"
-                android:layout_marginStart="60dp"
-                android:textColor="@color/colorText"
-                android:singleLine="true"
-                android:textStyle="bold"
-                android:textSize="20sp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll_parola_noua"
             android:layout_marginTop="20dp"
             android:id="@+id/ll_notificari">
 
@@ -158,50 +158,31 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:layout_marginTop="40dp"
-            android:layout_below="@+id/ll_on_off"
-            >
+            android:layout_below="@+id/ll_notificari"
+            android:layout_marginTop="20dp"
+            android:id="@+id/ll_explicatii">
 
-            <ImageView
-                android:id="@+id/btn_cancel"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:layout_width="200dp"
-                android:layout_height="36dp"
-                android:layout_weight="1"
-                android:layout_marginTop="20dp"
-                android:textSize="20sp"
-                android:padding="6dp"
-                android:textAllCaps="false"
-                android:textColor="@color/colorTextButton"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/ic_clear_white_24dp"
-                android:background="@drawable/border_blue_full"
-                />
 
-            <ImageView
-                android:id="@+id/btn_save"
-                android:layout_marginStart="40dp"
-                android:layout_marginEnd="40dp"
-                android:layout_width="200dp"
-                android:layout_height="36dp"
-                android:layout_weight="1"
-                android:layout_below="@+id/et_car"
-                android:layout_marginTop="20dp"
-                android:textSize="20sp"
-                android:padding="6dp"
-                android:textAllCaps="false"
-                android:textColor="@color/colorWhite"
-                android:background="@drawable/border_blue_full"
-                android:layout_marginBottom="20dp"
-                android:src="@drawable/ic_done_white_24dp"
+            <TextView
+                android:id="@+id/tv_notificari"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* când un alt student va posta o nouă informație în grup, notificările pot fi active și când aplicația nu este deschisă pentru a nu pierde nicio informație *"
+                android:layout_below="@+id/ll_notificari"
+                android:layout_marginTop="50dp"
+                android:textSize="18sp"
+                android:textColor="@color/colorText"
                 />
         </LinearLayout>
+
+
+
 
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

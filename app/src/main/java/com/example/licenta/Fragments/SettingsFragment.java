@@ -43,7 +43,7 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
 
     private StudentModel userCurent;
     private ImageView saveBtn, cancelBtn;
-    private EditText email, parola;
+    private EditText email;
 
     @Nullable
     @Override
@@ -53,7 +53,6 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
         SetValues();
         aSwitch.setChecked(UserHelper.Instance().getStudent().isNotificationsActivated());
         aSwitch.setOnCheckedChangeListener(this);
-        setBtnActions();
 
         return rootView;
     }
@@ -61,18 +60,13 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
     private void SetValues(){
         userCurent = UserHelper.Instance().getStudent();
         email.setText(userCurent.getEmail());
-        //parola.setText(userCurent.());
     }
 
     private void initializeViews(View view)
     {
         aSwitch = view.findViewById(R.id.switch1);
         aTextView = view.findViewById(R.id.tv_on_off);
-
-        saveBtn = view.findViewById(R.id.btn_save);
-        cancelBtn = view.findViewById(R.id.btn_cancel);
         email = view.findViewById(R.id.et_email_nou);
-        parola = view.findViewById(R.id.et_parola_noua);
     }
 
     @Override
@@ -93,21 +87,6 @@ public class SettingsFragment extends Fragment implements CompoundButton.OnCheck
         }
     }
 
-    private void setBtnActions(){
-        saveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OnSave();
-            }
-        });
-
-        cancelBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OnCancel();
-            }
-        });
-    }
 
     public void OnCancel() {
         SetValues();

@@ -171,8 +171,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="2"
-                android:layout_below="@+id/ll_telefon_edit"
-                android:layout_marginTop="40dp"
+                android:layout_below="@+id/ll_contract"
+                android:layout_marginTop="20dp"
                 >
 
                 <ImageView
@@ -217,7 +217,7 @@
                 android:layout_height="60dp"
                 android:orientation="horizontal"
                 android:weightSum="2"
-                android:layout_below="@+id/ll_butoane"
+                android:layout_below="@+id/ll_telefon_edit"
                 android:layout_marginTop="20dp"
                 >
                 <ImageView
