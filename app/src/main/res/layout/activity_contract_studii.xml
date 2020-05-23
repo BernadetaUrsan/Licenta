@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activities.ContractStudiiActivity">
 
+    <include layout="@layout/toolbar_with_back_button"/>
+
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-
-        <include layout="@layout/toolbar_with_back_button"/>
-
-
-        <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
@@ -23,18 +17,17 @@
         <ImageView
             android:id="@+id/iv_poza_contract"
             android:layout_width="match_parent"
+            android:layout_height="300dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_height="200dp"
+            android:scaleType="fitXY"
             android:src="@drawable/ic_contract" />
 
         <Button
             android:id="@+id/btn_add_contract"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/iv_poza_contract"
             android:layout_width="200dp"
             android:layout_height="36dp"
-            android:layout_weight="1"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:text="Actualizează"
@@ -43,8 +36,24 @@
             android:textColor="@color/colorWhite"
             android:layout_marginBottom="20dp"
             android:background="@drawable/border_blue_full"
+            android:layout_below="@+id/iv_poza_contract"
             android:onClick="OnAddContract"/>
 
+        <Button
+            android:id="@+id/btn_save_contract"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_width="200dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:text="Salvează"
+            android:padding="6dp"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/btn_add_contract"
+            android:background="@drawable/border_blue_full"
+            android:onClick="OnSaveContract"/>
     </RelativeLayout>
-    </RelativeLayout>
-</androidx.core.widget.NestedScrollView>
+</RelativeLayout>
