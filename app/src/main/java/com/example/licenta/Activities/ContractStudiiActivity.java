@@ -15,12 +15,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Helpers.UserHelper;
 import com.example.licenta.R;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.StorageTask;
@@ -33,6 +35,7 @@ public class ContractStudiiActivity extends BaseActivity {
     private Button buttonAdd, buttonSave;
     private StorageTask uploadTask;
     private Uri imageData;
+    private StorageReference mStorageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,23 @@ public class ContractStudiiActivity extends BaseActivity {
         setContentView(R.layout.activity_contract_studii);
         setToolbarTitle("Contract de studii");
         initializeViews();
+        GetContractImage();
+    }
+
+    private void GetContractImage()
+    {
+        mStorageReference = FirebaseHelper.getInstance().contractStudii;
+        mStorageReference.child(UserHelper.Instance().getStudent().getUserId()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                Glide.with(ContractStudiiActivity.this).load(uri).into(imageView);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
     }
 
     public void OnAddContract(View view){
@@ -62,8 +82,7 @@ public class ContractStudiiActivity extends BaseActivity {
     }
 
     public void OnSaveContract(View view){
-
-        final StorageReference fileReference = FirebaseHelper.getInstance().contractStudii.child(UserHelper.Instance().getStudent().getUserId()+"."+getFileExtension(imageData));
+        final StorageReference fileReference = FirebaseHelper.getInstance().contractStudii.child(UserHelper.Instance().getStudent().getUserId());
         uploadTask = fileReference.putFile(imageData);
         uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
             @Override
@@ -79,9 +98,7 @@ public class ContractStudiiActivity extends BaseActivity {
             public void onComplete(@NonNull Task<Uri> task) {
                 if (task.isSuccessful())
                 {
-                    Uri downloadUri = task.getResult();
-                    String mUri = downloadUri.toString();
-                    imageList.add(mUri);
+                    Toast.makeText(ContractStudiiActivity.this, "Imaginea s-a încărcat cu succes!", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
