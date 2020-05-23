@@ -4,6 +4,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ public class ContractStudiiActivity extends BaseActivity {
 
     private static final int GALLERY_REQUEST_CODE=123;
     ImageView imageView;
-    Button button;
+    Button buttonAdd, buttonSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class ContractStudiiActivity extends BaseActivity {
     }
 
     public void OnAddContract(View view){
-        button.setOnClickListener(new View.OnClickListener() {
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
@@ -38,6 +39,11 @@ public class ContractStudiiActivity extends BaseActivity {
         });
     }
 
+    public void OnSaveContract(View view){
+
+
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -45,11 +51,13 @@ public class ContractStudiiActivity extends BaseActivity {
             Uri imageData = data.getData();
 
             imageView.setImageURI(imageData);
+            buttonSave.setVisibility(View.VISIBLE);
         }
     }
 
     private void initializeViews(){
         imageView = findViewById(R.id.iv_poza_contract);
-        button = findViewById(R.id.btn_add_contract);
+        buttonAdd = findViewById(R.id.btn_add_contract);
+        buttonSave = findViewById(R.id.btn_save_contract);
     }
 }
