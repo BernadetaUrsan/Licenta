@@ -12,59 +12,51 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="match_parent"
         android:layout_below="@+id/toolbar_with_back_button">
 
-    <LinearLayout
-        android:id="@+id/ll_calendar"
-        android:layout_width="360dp"
-        android:layout_height="324dp"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center">
-
-        <CalendarView
-            android:id="@+id/cv_calendar_view"
-            android:layout_width="360dp"
-            android:layout_height="wrap_content"
-            />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ll_calendar">
-
-        <TextView
-            android:id="@+id/tv_calendar"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@color/colorTextHint"
-            android:textSize="20sp"
-            android:layout_centerInParent="true"
-            android:visibility="invisible"
-            />
-
-
-    <EditText
-        android:id="@+id/et_event"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:textAlignment="center"
-        android:visibility="invisible"
-        android:layout_centerInParent="true" />
-
-    </RelativeLayout>
-
-        <RelativeLayout
+        <LinearLayout
+            android:id="@+id/ll_calendar"
             android:layout_width="match_parent"
-            android:layout_height="550dp">
+            android:layout_height="324dp"
+            android:background="@color/colorWhite"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <CalendarView
+                android:id="@+id/cv_calendar_view"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_calendar">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_no_events"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Niciun eveniment în această zi"
+                    android:textColor="@color/colorTextHint"
+                    android:textSize="20sp"
+                    android:layout_centerInParent="true"
+                    android:visibility="invisible"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_events_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_add_post"
@@ -78,7 +70,5 @@
             android:layout_marginBottom="20dp"
             android:layout_alignParentBottom="true"
             android:onClick="OnAddEvent"/>
-        </RelativeLayout>
-
     </RelativeLayout>
 </LinearLayout>

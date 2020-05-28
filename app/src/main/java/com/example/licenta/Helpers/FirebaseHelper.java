@@ -19,6 +19,7 @@ public class FirebaseHelper {
     public FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
     public FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
     public StorageReference contractStudii = FirebaseStorage.getInstance().getReference("ContracteStudii");
+    public DatabaseReference calendarDatabase = firebaseDatabase.getReference("Calendar");
 
     public static FirebaseHelper getInstance()
     {

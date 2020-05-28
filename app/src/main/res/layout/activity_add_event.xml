@@ -59,7 +59,7 @@
                 android:textColor="@color/colorText"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:id="@+id/et_nume_complet"/>
+                android:id="@+id/et_titlu_eveniment"/>
             />
 
         </LinearLayout>
@@ -108,7 +108,7 @@
                 android:textColor="@color/colorText"
                 android:textStyle="bold"
                 android:textSize="20sp"
-                android:id="@+id/et_nume_locatie"/>
+                android:id="@+id/et_locatie_eveniment"/>
             />
 
         </LinearLayout>
