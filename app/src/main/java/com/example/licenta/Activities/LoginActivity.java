@@ -35,8 +35,6 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initializeViews();
-        emailEt.setText("berna3@classboard.com");
-        passwordEt.setText("cosmin");
     }
 
     public void onSignIn(String email, String password)

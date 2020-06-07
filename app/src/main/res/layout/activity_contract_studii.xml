@@ -14,8 +14,18 @@
         android:layout_marginTop="10dp"
         android:layout_below="@+id/toolbar_with_back_button">
 
+        <TextView
+            android:id="@+id/tv_detalii"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="* Contractul de studii poate fi încărcat în format png pentru a fi salvat în cazul pierderii *"/>
+
         <ImageView
             android:id="@+id/iv_poza_contract"
+            android:layout_below="@+id/tv_detalii"
+            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginStart="20dp"

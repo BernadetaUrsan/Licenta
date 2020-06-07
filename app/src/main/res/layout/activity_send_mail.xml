@@ -33,7 +33,7 @@
             android:textSize="16sp"
             android:layout_marginTop="30dp"
             android:background="@drawable/border_blue"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorText"
             android:text="Profesor ..."
             android:padding="6dp"
             android:onClick="OnChooseProf"
