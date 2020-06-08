@@ -23,12 +23,23 @@
             android:hint=" Nume / Prenume / Telefon / E-mail "
             android:layout_marginEnd="20dp" />
 
+        <TextView
+            android:id="@+id/tv_detalii_lista_studenti"
+            android:layout_below="@+id/et_student_cautat"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="* disponibile: telefonul și adresa de e-mail a studenților *"
+            />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_listed_students"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_below="@+id/et_student_cautat"/>
+            android:layout_below="@+id/tv_detalii_lista_studenti"/>
 
     </RelativeLayout>
 

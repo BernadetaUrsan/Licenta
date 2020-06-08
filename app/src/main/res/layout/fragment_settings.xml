@@ -111,13 +111,14 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_notificari"
+            android:id="@+id/tv_detalii_notificari"
             android:layout_below="@+id/ll_notificari"
-            android:layout_marginTop="30dp"
-            android:padding="26dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="* notificările apar când un student va posta o nouă informație în grup. Acestea se primesc și când aplicația nu este deschisă pentru a nu pierde nicio informație. *"
+            android:text="* notificări când apare o postare nouă sau una deja existentă este modificată. Acestea se primesc și când aplicația nu este deschisă pentru a nu pierde nicio informație. *"
             />
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

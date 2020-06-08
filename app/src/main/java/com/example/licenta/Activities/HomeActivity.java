@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         navigation.setOnNavigationItemSelectedListener(this);
         initializeViews();
         LoadFragment(fragmentHome);
-        if(UserHelper.Instance().getStudent().isNotificationsActivated()){
+        if(UserHelper.Instance().getStudent() != null && UserHelper.Instance().getStudent().isNotificationsActivated()){
             FirebaseMessaging.getInstance().subscribeToTopic("pushNotifications");
         }
     }

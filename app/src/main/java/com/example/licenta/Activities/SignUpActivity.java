@@ -62,7 +62,7 @@ public class SignUpActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Contul nu poate fi creat fără ca toate câmpurile să fie complete", Toast.LENGTH_SHORT).show();
         }
         else{
-            if(parolaEt.getText().equals(confirmParolaEt.getText())){
+            if(parolaEt.getText().toString().equals(confirmParolaEt.getText().toString())){
                 Register(emailEt.getText().toString(), parolaEt.getText().toString());
             }
             else

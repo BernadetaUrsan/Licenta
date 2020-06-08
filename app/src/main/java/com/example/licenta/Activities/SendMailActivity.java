@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class SendMailActivity extends AppCompatActivity {
+public class SendMailActivity extends BaseActivity {
     private EditText subiectEt, messageEt;
     private String subiect, mesaj;
     private TextView teacherTv;
@@ -39,6 +39,7 @@ public class SendMailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_mail);
         initializeViews();
+        setToolbarTitle("Mail profesori");
     }
 
     private void getData()

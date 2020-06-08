@@ -96,7 +96,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rv_listed_comments"
-                android:layout_marginStart="10dp">
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="20dp">
 
                 <EditText
                     android:id="@+id/et_post_new_comment"
@@ -120,7 +121,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:src="@drawable/ic_message"
-                    android:layout_marginEnd="20dp"
+                    android:layout_marginEnd="30dp"
                     android:onClick="OnAddComment"/>
 
             </RelativeLayout>

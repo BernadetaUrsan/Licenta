@@ -21,11 +21,12 @@
             android:layout_height="324dp"
             android:background="@color/colorWhite"
             android:layout_marginTop="10dp"
+
             android:layout_gravity="center">
 
             <CalendarView
                 android:id="@+id/cv_calendar_view"
-                android:layout_width="360dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
         </LinearLayout>
