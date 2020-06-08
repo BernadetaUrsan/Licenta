@@ -60,14 +60,21 @@ public class YearGroupActivity extends BaseActivity {
         }
 
         @Override
-        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            final int position = viewHolder.getAdapterPosition();
+        public int getSwipeDirs(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
+            int position = viewHolder.getAdapterPosition();
             editedPost = postsList.get(position);
             student =  UserHelper.Instance().getStudent();
             String userId = student.getUserId();
-            if(!editedPost.getAuthorId().equals(userId)){
-                return;
+            if(editedPost.getAuthorId().equals(userId)){
+                return ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
             }
+            return 0;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            final int position = viewHolder.getAdapterPosition();
+
             switch(direction){
                 case ItemTouchHelper.LEFT:
         deletedPost = postsList.get(position);
@@ -99,8 +106,6 @@ public class YearGroupActivity extends BaseActivity {
             super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
         }
     };
-
-
 
     public void OnAddPost(View view) {
         Intent myInt2= new Intent(YearGroupActivity.this,AddPostActivity.class);

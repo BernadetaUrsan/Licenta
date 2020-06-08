@@ -51,7 +51,9 @@ public class AddEventActivity extends BaseActivity implements TimePickerDialog.O
         String currentTime = new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date());
 
         picker.setText(currentTime);
+
         setToolbarTitle("Adăugare eveniment");
+
         picker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -23,6 +23,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 
 public class CalendarActivity extends BaseActivity implements CalendarView.OnDateChangeListener {
@@ -45,7 +46,9 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
         noEvents = findViewById(R.id.tv_no_events);
         eventsRecyclerView = findViewById(R.id.rv_events_list);
         calendarView.setOnDateChangeListener(this);
+
     }
+
 
     private void getDateEvents(String date){
         eventsList.clear();
