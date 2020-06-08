@@ -47,7 +47,12 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void onSignUp(View view){
-        Register(emailEt.getText().toString(), parolaEt.getText().toString());
+        if(emailEt.getText().toString().isEmpty() || parolaEt.getText().toString().isEmpty() || numeEt.getText().toString().isEmpty() || prenumeEt.getText().toString().isEmpty() || matricolEt.getText().toString().isEmpty() || telefonEt.getText().toString().isEmpty()){
+            Toast.makeText(getApplicationContext(), "Contul nu poate fi creat fără ca toate câmpurile să fie complete", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Register(emailEt.getText().toString(), parolaEt.getText().toString());
+        }
     }
 
     public void Register(final String Email, final String Password){

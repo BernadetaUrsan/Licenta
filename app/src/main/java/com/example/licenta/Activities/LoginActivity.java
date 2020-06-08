@@ -40,19 +40,25 @@ public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
     public void onSignIn(String email, String password)
     {
         mAuth = FirebaseAuth.getInstance();
-        mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            onSignInSuccesful();
+        if(email.isEmpty() || password.isEmpty())
+        {
+            Toast.makeText(getApplicationContext(), "E-mail sau parolă necompletate", Toast.LENGTH_SHORT).show();
+        }
+        else
+            {
+            mAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                onSignInSuccesful();
+                            } else {
+                                Toast.makeText(getApplicationContext(), "E-mail sau parolă incorectă",
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         }
-                        else {
-                            Toast.makeText(getApplicationContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+                    });
+            }
     }
 
     private void onSignInSuccesful()

@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:text="* Contractul de studii poate fi încărcat în format png pentru a fi salvat în cazul pierderii *"/>
+            android:text="* contractul de studii poate fi încărcat în format png pentru a fi salvat în cazul pierderii *"/>
 
         <ImageView
             android:id="@+id/iv_poza_contract"
@@ -36,8 +36,8 @@
         <Button
             android:id="@+id/btn_add_contract"
             android:layout_centerHorizontal="true"
-            android:layout_width="200dp"
-            android:layout_height="36dp"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:text="Actualizează"

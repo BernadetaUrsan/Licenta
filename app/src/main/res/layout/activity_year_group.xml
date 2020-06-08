@@ -13,6 +13,17 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar_with_back_button">
 
+        <TextView
+            android:id="@+id/tv_detalii_grup"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="* anunțuri informative în interesul tuturor studenților *"
+            />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_add_post"
             android:layout_width="wrap_content"
@@ -30,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:layout_below="@+id/toolbar_with_back_button"/>
+            android:layout_below="@+id/tv_detalii_grup"/>
 
     </RelativeLayout>
 </RelativeLayout>

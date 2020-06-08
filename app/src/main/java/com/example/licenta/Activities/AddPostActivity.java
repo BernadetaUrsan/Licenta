@@ -3,6 +3,7 @@ package com.example.licenta.Activities;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Helpers.UserHelper;
@@ -45,9 +46,14 @@ public class AddPostActivity extends BaseActivity {
     }
 
     public void onAddPost(View view) {
-
-        getValues();
-        FirebaseHelper.getInstance().yearGroupPostsDatabase.child(post.getId()).setValue(post);
-        finish();
+        if(titleEt.getText().toString().isEmpty() || messageEt.getText().toString().isEmpty())
+        {
+            Toast.makeText(getApplicationContext(), "Adaugă informațiile anunțului", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            getValues();
+            FirebaseHelper.getInstance().yearGroupPostsDatabase.child(post.getId()).setValue(post);
+            finish();
+        }
     }
 }

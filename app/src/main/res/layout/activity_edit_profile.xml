@@ -168,12 +168,12 @@ tools:context=".Activities.EditProfileActivity">
         android:orientation="horizontal"
         android:weightSum="2"
         android:layout_below="@+id/ll_telefon_edit"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         >
 
         <ImageView
             android:id="@+id/iv_edit"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="60dp"
             android:layout_marginEnd="40dp"
             android:layout_width="200dp"
             android:layout_height="36dp"
@@ -192,7 +192,7 @@ tools:context=".Activities.EditProfileActivity">
         <ImageView
             android:id="@+id/iv_log_out"
             android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="60dp"
             android:layout_width="200dp"
             android:layout_height="36dp"
             android:layout_weight="1"

@@ -51,7 +51,7 @@
             android:textStyle="bold"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:textSize="16sp"
             android:textColor="@color/colorText"
             />
@@ -81,7 +81,7 @@
             android:textStyle="bold"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:textSize="16sp"
             android:textColor="@color/colorText"
             />
@@ -111,7 +111,7 @@
             android:textStyle="bold"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:textSize="16sp"
             android:textColor="@color/colorText"
             />
@@ -140,7 +140,7 @@
             android:textStyle="bold"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:textSize="16sp"
             android:textColor="@color/colorText"
             />
@@ -170,7 +170,7 @@
             android:textStyle="bold"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="6dp"
             android:textSize="16sp"
             android:textColor="@color/colorText"
             />
@@ -198,7 +198,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/et_parola"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:text="Înregistrare"
             android:padding="6dp"

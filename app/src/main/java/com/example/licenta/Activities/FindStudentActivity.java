@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.licenta.Adapters.StudentsAdapter;
 import com.example.licenta.Adapters.YearPostsAdapter;
@@ -93,5 +94,9 @@ public class FindStudentActivity extends BaseActivity {
 
             }
         });
+    }
+
+    public void OnSeeStudentDetail(View view){
+
     }
 }

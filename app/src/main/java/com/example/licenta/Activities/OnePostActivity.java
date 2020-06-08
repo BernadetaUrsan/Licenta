@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.licenta.Adapters.CommentsAdapter;
 import com.example.licenta.Helpers.FirebaseHelper;
@@ -93,14 +94,20 @@ public class OnePostActivity extends BaseActivity {
     }
 
     public void OnAddComment(View view) {
-        Date currentTime = Calendar.getInstance().getTime();
-        CommentModel newComment = new CommentModel();
-        newComment.setFullName(UserHelper.Instance().getFullName());
-        newComment.setDate(currentTime);
-        newComment.setMessage(commentEt.getText().toString());
+        if(commentEt.getText().toString().isEmpty())
+        {
+            Toast.makeText(getApplicationContext(), "Adaugă comentariul", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Date currentTime = Calendar.getInstance().getTime();
+            CommentModel newComment = new CommentModel();
+            newComment.setFullName(UserHelper.Instance().getFullName());
+            newComment.setDate(currentTime);
+            newComment.setMessage(commentEt.getText().toString());
 
-        FirebaseHelper.getInstance().postCommentsDatabase.child(postId).push().setValue(newComment);
-        commentEt.setText("");
+            FirebaseHelper.getInstance().postCommentsDatabase.child(postId).push().setValue(newComment);
+            commentEt.setText("");
+        }
     }
 
     private void initializeViews()
