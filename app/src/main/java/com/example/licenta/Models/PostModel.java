@@ -6,19 +6,21 @@ import java.util.UUID;
 
 public class PostModel {
     private String id;
+    private String authorId;
     private String title;
     private String message;
     private Date date;
     private String authorName;
     private List<CommentModel> comments;
 
-    public PostModel(String id, String title, String message, Date date, String author, List<CommentModel> comments) {
+    public PostModel(String id, String authorId, String title, String message, Date date, String author, List<CommentModel> comments) {
         this.title = title;
         this.message = message;
         this.date = date;
         this.authorName = author;
         this.comments = comments;
         this.id = id;
+        this.authorId = authorId;
     }
 
     public PostModel() {
@@ -70,5 +72,13 @@ public class PostModel {
 
     public void setComments(List<CommentModel> comments) {
         this.comments = comments;
+    }
+
+    public String getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId;
     }
 }
