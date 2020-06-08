@@ -16,6 +16,8 @@ import com.example.licenta.Models.TimetabelModel;
 import com.example.licenta.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,14 +26,23 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    private EditText emailEt;
-    private EditText parolaEt;
-    private EditText numeEt;
-    private EditText prenumeEt;
-    private EditText matricolEt;
-    private EditText telefonEt;
     private StudentModel studentNou;
     private String mUserId;
+    private TextInputEditText emailEt;
+    private TextInputLayout emailTil;
+    private TextInputEditText numeEt;
+    private TextInputLayout numeTil;
+    private TextInputEditText matricolEt;
+    private TextInputLayout matricolTil;
+    private TextInputEditText telefonEt;
+    private TextInputLayout telefonTil;
+    private TextInputEditText prenumeEt;
+    private TextInputLayout prenumeTil;
+    private TextInputEditText parolaEt;
+    private TextInputLayout parolaTil;
+    private TextInputEditText confirmParolaEt;
+    private TextInputLayout onfirmParolaTil;
+
 
     FirebaseAuth mAuth;
     private FirebaseUser mUser;
@@ -47,11 +58,17 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void onSignUp(View view){
-        if(emailEt.getText().toString().isEmpty() || parolaEt.getText().toString().isEmpty() || numeEt.getText().toString().isEmpty() || prenumeEt.getText().toString().isEmpty() || matricolEt.getText().toString().isEmpty() || telefonEt.getText().toString().isEmpty()){
+        if(emailEt.getText().toString().isEmpty() || parolaEt.getText().toString().isEmpty() || confirmParolaEt.getText().toString().isEmpty() || numeEt.getText().toString().isEmpty() || prenumeEt.getText().toString().isEmpty() || matricolEt.getText().toString().isEmpty() || telefonEt.getText().toString().isEmpty()){
             Toast.makeText(getApplicationContext(), "Contul nu poate fi creat fără ca toate câmpurile să fie complete", Toast.LENGTH_SHORT).show();
         }
         else{
-            Register(emailEt.getText().toString(), parolaEt.getText().toString());
+            if(parolaEt.getText().equals(confirmParolaEt.getText())){
+                Register(emailEt.getText().toString(), parolaEt.getText().toString());
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "Parolele nu corespund", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
@@ -81,6 +98,7 @@ public class SignUpActivity extends AppCompatActivity {
     private void initializeViews()
     {
         emailEt = findViewById(R.id.et_email);
+        confirmParolaEt = findViewById(R.id.et_confirmare_parola);
         parolaEt = findViewById(R.id.et_parola);
         numeEt = findViewById(R.id.et_nume);
         prenumeEt = findViewById(R.id.et_prenume);

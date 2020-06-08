@@ -17,6 +17,8 @@ import com.example.licenta.Models.StudentModel;
 import com.example.licenta.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -25,8 +27,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity implements LoginCallbacks {
     private FirebaseAuth mAuth;
-    private EditText emailEt;
-    private EditText passwordEt;
+    private TextInputEditText emailEt;
+    private TextInputLayout emailTil;
+    private TextInputEditText passwordEt;
+    private TextInputLayout passwordTil;
     private String userEmail;
     private String userPassword;
 
