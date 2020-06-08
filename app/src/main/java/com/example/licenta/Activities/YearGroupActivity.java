@@ -1,6 +1,7 @@
 package com.example.licenta.Activities;
 
 import android.content.Intent;
+import android.graphics.Canvas;
 import android.icu.text.RelativeDateTimeFormatter;
 import android.os.Bundle;
 import android.view.View;
@@ -23,9 +24,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 public class YearGroupActivity extends BaseActivity {
 
@@ -66,21 +70,37 @@ public class YearGroupActivity extends BaseActivity {
             }
             switch(direction){
                 case ItemTouchHelper.LEFT:
-                    deletedPost = postsList.get(position);
+        deletedPost = postsList.get(position);
                     postsList.remove(position);
                     yearPostsAdapter.notifyItemRemoved(position);
                     break;
                 case ItemTouchHelper.RIGHT:
-                    editedPost = postsList.get(position);
-                    Gson gson = new Gson();
-                    String postString = gson.toJson(editedPost);
-                    Intent intent = new Intent(YearGroupActivity.this,AddPostActivity.class);
+        editedPost = postsList.get(position);
+        Gson gson = new Gson();
+        String postString = gson.toJson(editedPost);
+        Intent intent = new Intent(YearGroupActivity.this,AddPostActivity.class);
                     intent.putExtra("post", postString);
-                    startActivity(intent);
+        startActivity(intent);
                     break;
-            }
+    }
+}
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addSwipeLeftBackgroundColor(ContextCompat.getColor(YearGroupActivity.this, R.color.colorDelete))
+                    .addSwipeLeftActionIcon(R.drawable.ic_delete_white_24dp)
+                    .addSwipeRightBackgroundColor(ContextCompat.getColor(YearGroupActivity.this, R.color.colorEdit))
+                    .addSwipeRightActionIcon(R.drawable.ic_edit_white_24dp)
+                    .create()
+                    .decorate();
+
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
         }
     };
+
+
 
     public void OnAddPost(View view) {
         Intent myInt2= new Intent(YearGroupActivity.this,AddPostActivity.class);
@@ -107,8 +127,8 @@ public class YearGroupActivity extends BaseActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
+
         });
 
     }

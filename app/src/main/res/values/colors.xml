@@ -21,4 +21,7 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorToolbar">#4d5273</color>
 
+    <color name="colorDelete">#ff4d4d</color>
+    <color name="colorEdit">#4d4dff</color>
+
 </resources>
