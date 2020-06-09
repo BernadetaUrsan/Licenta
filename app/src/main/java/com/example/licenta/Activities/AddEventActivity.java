@@ -9,6 +9,7 @@ import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CalendarView;
@@ -16,6 +17,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.licenta.Adapters.TeacherDialogAdapter;
 import com.example.licenta.Fragments.TimePickerFragment;
@@ -82,9 +84,16 @@ public class AddEventActivity extends BaseActivity implements TimePickerDialog.O
         Bundle b = getIntent().getExtras();
         String value = b.getString("key"); // or other values
         calendarRowModel.setDate(value);
-        FirebaseHelper.getInstance().calendarDatabase.child(value).push().setValue(calendarRowModel);
 
-        Intent myInt2= new Intent(AddEventActivity.this,CalendarActivity.class);
-        startActivity(myInt2);
+        if(calendarRowModel.getTitle().isEmpty()|calendarRowModel.getLocation().isEmpty()|calendarRowModel.getStartTime().isEmpty()){
+            Toast.makeText(getApplicationContext(),"Trebuie completate toate datele evenimentului",Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            FirebaseHelper.getInstance().calendarDatabase.child(value).push().setValue(calendarRowModel);
+            Intent myInt2= new Intent(AddEventActivity.this,CalendarActivity.class);
+            startActivity(myInt2);
+            finish();
+        }
     }
 }

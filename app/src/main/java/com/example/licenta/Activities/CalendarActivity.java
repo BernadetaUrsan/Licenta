@@ -8,10 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.licenta.Adapters.CalendarAdapter;
 import com.example.licenta.Adapters.YearPostsAdapter;
@@ -23,8 +25,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class CalendarActivity extends BaseActivity implements CalendarView.OnDateChangeListener {
 
@@ -32,6 +37,7 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
     CalendarAdapter calendarAdapter;
     TextView noEvents;
     private String currentDate;
+    private String todayDate;
     RecyclerView eventsRecyclerView;
     private ArrayList<CalendarRowModel> eventsList = new ArrayList<>();
 
@@ -46,7 +52,9 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
         noEvents = findViewById(R.id.tv_no_events);
         eventsRecyclerView = findViewById(R.id.rv_events_list);
         calendarView.setOnDateChangeListener(this);
-
+        SimpleDateFormat formatter= new SimpleDateFormat("yyyyMMdd");
+        Date date = new Date(System.currentTimeMillis());
+        todayDate= formatter.format(date);
     }
 
 
@@ -74,18 +82,42 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
         eventsRecyclerView.setAdapter(calendarAdapter);
     }
 
-    public void OnAddEvent (View view)
-    {
-        Intent myInt2= new Intent(CalendarActivity.this,AddEventActivity.class);
-        Bundle b = new Bundle();
-        b.putString("key", currentDate); //Your id
-        myInt2.putExtras(b); //Put your id to your next Intent
-        startActivity(myInt2);
-    }
-
     @Override
     public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-        currentDate = String.valueOf(dayOfMonth) + String.valueOf(month+1) + String.valueOf(year);
+        String monthString = new String();
+        String dayString = new String();
+        if (month < 10 && dayOfMonth <10) {
+        currentDate = String.valueOf(year) + "0" + String.valueOf(month+1) + "0" +String.valueOf(dayOfMonth);
+        }
+        else {
+            if(dayOfMonth<10){
+                currentDate = String.valueOf(year)  + String.valueOf(month+1) + "0" + String.valueOf(dayOfMonth);
+            }
+            else{
+                if(month<10){
+                    currentDate = String.valueOf(year) + "0" + String.valueOf(month + 1) + String.valueOf(dayOfMonth);
+                }
+                else {
+                    currentDate = String.valueOf(year) + String.valueOf(month + 1) + String.valueOf(dayOfMonth);
+                }
+            }
+        }
         getDateEvents(currentDate);
+    }
+
+    public void OnAddEvent (View view)
+    {
+        if(todayDate.compareTo(currentDate) > 0){
+            Toast.makeText(getApplicationContext(),"Nu se pot adăuga evenimete în trecut",Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Intent myInt2= new Intent(CalendarActivity.this,AddEventActivity.class);
+            Bundle b = new Bundle();
+            b.putString("key", currentDate); //Your id
+            myInt2.putExtras(b); //Put your id to your next Intent
+            startActivity(myInt2);
+        }
+
     }
 }
