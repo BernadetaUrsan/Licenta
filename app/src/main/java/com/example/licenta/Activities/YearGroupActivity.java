@@ -1,5 +1,7 @@
 package com.example.licenta.Activities;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Canvas;
 import android.icu.text.RelativeDateTimeFormatter;
@@ -12,18 +14,23 @@ import com.example.licenta.Helpers.UserHelper;
 import com.example.licenta.Models.PostModel;
 import com.example.licenta.Models.StudentModel;
 import com.example.licenta.R;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.internal.DescendantOffsetUtils;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 
+import java.time.Year;
 import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.VisibleForTesting;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -39,6 +46,7 @@ public class YearGroupActivity extends BaseActivity {
     private PostModel deletedPost;
     private PostModel editedPost;
     private StudentModel student;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,17 +85,36 @@ public class YearGroupActivity extends BaseActivity {
 
             switch(direction){
                 case ItemTouchHelper.LEFT:
-        deletedPost = postsList.get(position);
-                    postsList.remove(position);
-                    yearPostsAdapter.notifyItemRemoved(position);
+
+                    MaterialAlertDialogBuilder dialog = new MaterialAlertDialogBuilder(YearGroupActivity.this);
+                            dialog.setTitle("Doriți să ștergeti postarea?");
+                            dialog.setBackground(getResources().getDrawable(R.drawable.alert_dialog_bg,null));
+                            dialog.setPositiveButton("Da", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    deletedPost = postsList.get(position);
+                                    postsList.remove(position);
+                                    yearPostsAdapter.notifyItemRemoved(position);
+                                    FirebaseHelper.getInstance().yearGroupPostsDatabase.child(deletedPost.getId()).removeValue();
+                                }
+                            });
+                            dialog.setNegativeButton("Nu", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    getData();
+                                }
+                            });
+
+                    dialog.show();
                     break;
                 case ItemTouchHelper.RIGHT:
-        editedPost = postsList.get(position);
-        Gson gson = new Gson();
-        String postString = gson.toJson(editedPost);
-        Intent intent = new Intent(YearGroupActivity.this,AddPostActivity.class);
+                    editedPost = postsList.get(position);
+                    Gson gson = new Gson();
+                    String postString = gson.toJson(editedPost);
+                    Intent intent = new Intent(YearGroupActivity.this,AddPostActivity.class);
                     intent.putExtra("post", postString);
-        startActivity(intent);
+                    startActivity(intent);
+                    getData();
                     break;
     }
 }
