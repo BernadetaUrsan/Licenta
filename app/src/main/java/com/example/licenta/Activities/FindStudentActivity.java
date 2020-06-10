@@ -50,7 +50,6 @@ public class FindStudentActivity extends BaseActivity {
     private void initializeViews(){
         recyclerView = findViewById(R.id.rv_listed_students);
         searchStudent = findViewById(R.id.et_student_cautat);
-
         searchStudent.setVisibility(View.GONE);
     }
 
