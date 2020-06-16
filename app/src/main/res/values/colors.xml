@@ -20,6 +20,7 @@
     <color name="colorGray">#231f20</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorToolbar">#4d5273</color>
+    <color name="calendarIndicator">#ffb84d</color>
 
     <color name="colorDelete">#ff4d4d</color>
     <color name="colorEdit">#4d4dff</color>

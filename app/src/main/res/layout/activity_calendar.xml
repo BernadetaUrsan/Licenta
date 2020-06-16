@@ -24,10 +24,19 @@
 
             android:layout_gravity="center">
 
-            <CalendarView
+            <com.github.sundeepk.compactcalendarview.CompactCalendarView
                 android:id="@+id/cv_calendar_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="300dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                app:compactCalendarTargetHeight="300dp"
+                app:compactCalendarTextSize="12sp"
+                app:compactCalendarBackgroundColor="#fff"
+                app:compactCalendarTextColor="#000"
+                app:compactCalendarCurrentSelectedDayBackgroundColor="@color/colorPurple"
+                app:compactCalendarCurrentDayBackgroundColor="@color/colorPurpleLight"
+                app:compactCalendarEventIndicatorStyle="small_indicator"
                 />
         </LinearLayout>
 

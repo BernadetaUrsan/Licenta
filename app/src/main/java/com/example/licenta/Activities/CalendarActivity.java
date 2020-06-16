@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,18 +22,25 @@ import com.example.licenta.Helpers.FirebaseHelper;
 import com.example.licenta.Models.CalendarRowModel;
 import com.example.licenta.Models.PostModel;
 import com.example.licenta.R;
+import com.github.sundeepk.compactcalendarview.CompactCalendarView;
+import com.github.sundeepk.compactcalendarview.domain.Event;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
-public class CalendarActivity extends BaseActivity implements CalendarView.OnDateChangeListener {
+import static com.github.sundeepk.compactcalendarview.CompactCalendarView.FILL_LARGE_INDICATOR;
 
+public class CalendarActivity extends BaseActivity{
+
+    CompactCalendarView compactCalendarView;
     CalendarView calendarView;
     CalendarAdapter calendarAdapter;
     TextView noEvents;
@@ -48,24 +56,68 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
 
         setToolbarTitle("Calendar");
 
-        calendarView = findViewById(R.id.cv_calendar_view);
         noEvents = findViewById(R.id.tv_no_events);
         eventsRecyclerView = findViewById(R.id.rv_events_list);
-        calendarView.setOnDateChangeListener(this);
-        SimpleDateFormat formatter= new SimpleDateFormat("yyyyMMdd");
+        compactCalendarView = findViewById(R.id.cv_calendar_view);
+        compactCalendarView.setUseThreeLetterAbbreviation(true);
+        compactCalendarView.shouldDrawIndicatorsBelowSelectedDays(true);
+
+        final SimpleDateFormat formatter= new SimpleDateFormat("yyyyMMdd");
         Date date = new Date(System.currentTimeMillis());
         todayDate= formatter.format(date);
+        getDateEvents(todayDate);
+        getAllEvents();
+
+        compactCalendarView.setListener(new CompactCalendarView.CompactCalendarViewListener() {
+            @Override
+            public void onDayClick(Date dateClicked) {
+                currentDate = formatter.format(dateClicked.getTime());
+                getDateEvents(currentDate);
+            }
+
+            @Override
+            public void onMonthScroll(Date firstDayOfNewMonth) {
+            }
+        });
     }
 
+    private void getAllEvents()
+    {
+        FirebaseHelper.getInstance().calendarDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Date newDate = null;
+                for (DataSnapshot data : dataSnapshot.getChildren())
+                {
+                    CalendarRowModel post = data.getValue(CalendarRowModel.class);
+                    try {
+                        newDate = new SimpleDateFormat("yyyyMMdd", Locale.ENGLISH).parse(post.getDate());
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
+                    Event dayEvent = new Event(Color.MAGENTA, newDate.getTime(), "ceva");
+                    compactCalendarView.addEvent(dayEvent);
+                }
+            }
 
-    private void getDateEvents(String date){
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void getDateEvents(final String date){
         eventsList.clear();
-        FirebaseHelper.getInstance().calendarDatabase.child(date).addValueEventListener(new ValueEventListener() {
+        FirebaseHelper.getInstance().calendarDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot data: dataSnapshot.getChildren()) {
                     CalendarRowModel post = data.getValue(CalendarRowModel.class);
-                    eventsList.add(post);
+                    if (post.getDate().equals(date))
+                    {
+                        eventsList.add(post);
+                    }
                 }
                 setAdapter();
             }
@@ -82,29 +134,6 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
         eventsRecyclerView.setAdapter(calendarAdapter);
     }
 
-    @Override
-    public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-        String monthString = new String();
-        String dayString = new String();
-        if (month < 10 && dayOfMonth <10) {
-        currentDate = String.valueOf(year) + "0" + String.valueOf(month+1) + "0" +String.valueOf(dayOfMonth);
-        }
-        else {
-            if(dayOfMonth<10){
-                currentDate = String.valueOf(year)  + String.valueOf(month+1) + "0" + String.valueOf(dayOfMonth);
-            }
-            else{
-                if(month<10){
-                    currentDate = String.valueOf(year) + "0" + String.valueOf(month + 1) + String.valueOf(dayOfMonth);
-                }
-                else {
-                    currentDate = String.valueOf(year) + String.valueOf(month + 1) + String.valueOf(dayOfMonth);
-                }
-            }
-        }
-        getDateEvents(currentDate);
-    }
-
     public void OnAddEvent (View view)
     {
         if(todayDate.compareTo(currentDate) > 0){
@@ -118,6 +147,5 @@ public class CalendarActivity extends BaseActivity implements CalendarView.OnDat
             myInt2.putExtras(b); //Put your id to your next Intent
             startActivity(myInt2);
         }
-
     }
 }

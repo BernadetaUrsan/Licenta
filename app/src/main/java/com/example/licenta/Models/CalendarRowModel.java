@@ -3,14 +3,12 @@ package com.example.licenta.Models;
 import java.io.Serializable;
 
 public class CalendarRowModel implements Serializable {
-
     private String title;
-        private String location;
-        private String startTime;
-        private String date;
+    private String location;
+    private String startTime;
+    private String date;
 
     public CalendarRowModel(){
-
     }
 
     public CalendarRowModel(String title, String location, String startTime, String date) {

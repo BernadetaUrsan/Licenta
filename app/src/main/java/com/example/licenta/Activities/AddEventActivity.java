@@ -36,6 +36,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.UUID;
 
 public class AddEventActivity extends BaseActivity implements TimePickerDialog.OnTimeSetListener {
 
